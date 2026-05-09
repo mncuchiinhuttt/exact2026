@@ -19,7 +19,7 @@ def normalize_unit(unit: str | None) -> str | None:
     return EQUIVALENT_UNITS.get(normalized, normalized)
 
 
-def _within_relative_tolerance(a: float, b: float, tolerance: float = 0.02) -> bool:
+def _within_relative_tolerance(a: float, b: float, tolerance: float = 0.03) -> bool:
     """Return whether two values are within a relative tolerance."""
     scale = max(abs(a), abs(b), 1e-12)
     return abs(a - b) <= tolerance * scale

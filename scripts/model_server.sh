@@ -4,6 +4,9 @@ set -euo pipefail
 MODEL_NAME="${MODEL_NAME:-deepseek-ai/DeepSeek-R1-0528-Qwen3-8B}"
 PORT="${PORT:-8000}"
 GPU_MEMORY_UTILIZATION="${GPU_MEMORY_UTILIZATION:-0.90}"
+MAX_MODEL_LEN_FP8="${MAX_MODEL_LEN_FP8:-16384}"
+MAX_MODEL_LEN_AWQ="${MAX_MODEL_LEN_AWQ:-12288}"
+ENFORCE_EAGER="${ENFORCE_EAGER:-0}"
 
 usage() {
   cat <<EOF
@@ -16,6 +19,9 @@ Environment overrides:
   MODEL_NAME                default: ${MODEL_NAME}
   PORT                      default: ${PORT}
   GPU_MEMORY_UTILIZATION    default: ${GPU_MEMORY_UTILIZATION}
+  MAX_MODEL_LEN_FP8         default: ${MAX_MODEL_LEN_FP8}
+  MAX_MODEL_LEN_AWQ         default: ${MAX_MODEL_LEN_AWQ}
+  ENFORCE_EAGER             default: ${ENFORCE_EAGER}
   HF_HOME                   optional Hugging Face cache directory
   HF_TOKEN                  optional Hugging Face token
 
@@ -42,6 +48,12 @@ reasoning_args() {
     args=(--enable-reasoning "${args[@]}")
   fi
   printf '%s\n' "${args[@]}"
+}
+
+eager_args() {
+  if [[ "${ENFORCE_EAGER}" == "1" || "${ENFORCE_EAGER}" == "true" ]]; then
+    printf '%s\n' "--enforce-eager"
+  fi
 }
 
 check_flashinfer_versions() {
@@ -81,12 +93,14 @@ serve_fp8() {
   require_command vllm
   check_flashinfer_versions
   mapfile -t reasoning_cli_args < <(reasoning_args)
+  mapfile -t eager_cli_args < <(eager_args)
   vllm serve "${MODEL_NAME}" \
     --quantization fp8 \
     --kv-cache-dtype fp8 \
-    --max-model-len 16384 \
+    --max-model-len "${MAX_MODEL_LEN_FP8}" \
     --gpu-memory-utilization "${GPU_MEMORY_UTILIZATION}" \
     "${reasoning_cli_args[@]}" \
+    "${eager_cli_args[@]}" \
     --port "${PORT}"
 }
 
@@ -94,11 +108,13 @@ serve_awq() {
   require_command vllm
   check_flashinfer_versions
   mapfile -t reasoning_cli_args < <(reasoning_args)
+  mapfile -t eager_cli_args < <(eager_args)
   vllm serve "${MODEL_NAME}" \
     --quantization awq_marlin \
-    --max-model-len 12288 \
+    --max-model-len "${MAX_MODEL_LEN_AWQ}" \
     --gpu-memory-utilization "${GPU_MEMORY_UTILIZATION}" \
     "${reasoning_cli_args[@]}" \
+    "${eager_cli_args[@]}" \
     --port "${PORT}"
 }
 

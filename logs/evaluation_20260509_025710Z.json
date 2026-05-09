@@ -1,0 +1,2439 @@
+{
+  "run": {
+    "started_at": "2026-05-09T02:14:00.109642+00:00",
+    "finished_at": "2026-05-09T02:57:10.759028+00:00",
+    "duration_seconds": 2590.649388831,
+    "total_cases": 22,
+    "passed_cases": 22,
+    "failed_cases": 0,
+    "accuracy": 1.0,
+    "settings": {
+      "domain": null,
+      "difficulty": null,
+      "limit": null,
+      "k": 5,
+      "max_tokens": null,
+      "max_formulas": null,
+      "compact_prompt": false,
+      "enable_thinking": null,
+      "direct_first": false,
+      "fast": false,
+      "tolerance": 0.03,
+      "judge": true,
+      "judge_failures_only": false,
+      "judge_model": "gpt-5.4"
+    }
+  },
+  "cases": [
+    {
+      "index": 1,
+      "case": {
+        "id": "circuit_simple_series_current",
+        "difficulty": "simple",
+        "domain": "circuit",
+        "problem": "A 12 V battery is connected to two resistors in series, 4 ohm and 8 ohm. What is the current through the circuit?",
+        "expected_answer": 1.0,
+        "expected_unit": "A"
+      },
+      "started_at": "2026-05-09T02:14:00.109686+00:00",
+      "finished_at": "2026-05-09T02:15:19.248187+00:00",
+      "duration_seconds": 79.13851152699999,
+      "scoring": {
+        "id": "circuit_simple_series_current",
+        "difficulty": "simple",
+        "domain": "circuit",
+        "expected_answer": 1.0,
+        "expected_unit": "A",
+        "predicted_answer": 1.0,
+        "predicted_unit": "A",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\nSTEP 1 - READ: Extract all given quantities with values and SI units. Identify the unknown.  \nGiven:  \n- Battery voltage, V = 12 V  \n- Resistor 1, R1 = 4 Ω  \n- Resistor 2, R2 = 8 Ω  \nUnknown: Current, I  \n\nSTEP 2 - PLAN: Select the relevant formula(s) from the reference. State why each applies.  \nUse the series resistance formula to find the total resistance, as the resistors are in series and carry the same current.  \nFormula: series_resistance: R_total = R1 + R2 + ... + Rn  \nThen, use Ohm's Law to find the current.  \nFormula: ohms_law: V = I * R, so I = V / R_total  \nThese apply because the circuit is a series connection of ohmic resistors, and the voltage is given.  \n\nSTEP 3 - SOLVE: Write Python-style pseudocode or arithmetic to calculate the answer. Show every substitution.  \n```python\n# Given values\nV = 12  # volts\nR1 = 4  # ohms\nR2 = 8  # ohms\n\n# Calculate total resistance\nR_total = R1 + R2  # R_total = 4 + 8 = 12 ohms\n\n# Calculate current using Ohm's Law\nI = V / R_total  # I = 12 / 12 = 1 ampere\n```  \n\nSTEP 4 - ANSWER: State the final answer on its own line in EXACTLY this format:  \nANSWER: 1 A",
+        "formulas_used": [
+          "ohms_law",
+          "kirchhoff_voltage",
+          "kirchhoff_current",
+          "series_resistance",
+          "parallel_resistance",
+          "current_definition",
+          "charge_from_current",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "series_voltage_divider",
+          "parallel_current_divider_two",
+          "conductance_parallel",
+          "two_resistor_parallel",
+          "resistivity_wire",
+          "conductivity_relation",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 1.0,
+            "unit": "A",
+            "raw": "1 A"
+          },
+          {
+            "answer": 1.0,
+            "unit": "A",
+            "raw": "1.0 A"
+          },
+          {
+            "answer": 1.0,
+            "unit": "A",
+            "raw": "1 A"
+          },
+          {
+            "answer": 1.0,
+            "unit": "A",
+            "raw": "1 A"
+          },
+          {
+            "answer": 1.0,
+            "unit": "A",
+            "raw": "1.0 A"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning, formulas, substitutions, and units are all correct. The final current of 1 A matches the expected answer exactly."
+        }
+      },
+      "structured_output": {
+        "answer": "1.0 A",
+        "explanation": "\nSTEP 1 - READ: Extract all given quantities with values and SI units. Identify the unknown.  \nGiven:  \n- Battery voltage, V = 12 V  \n- Resistor 1, R1 = 4 Ω  \n- Resistor 2, R2 = 8 Ω  \nUnknown: Current, I  \n\nSTEP 2 - PLAN: Select the relevant formula(s) from the reference. State why each applies.  \nUse the series resistance formula to find the total resistance, as the resistors are in series and carry the same current.  \nFormula: series_resistance: R_total = R1 + R2 + ... + Rn  \nThen, use Ohm's Law to find the current.  \nFormula: ohms_law: V = I * R, so I = V / R_total  \nThese apply because the circuit is a series connection of ohmic resistors, and the voltage is given.  \n\nSTEP 3 - SOLVE: Write Python-style pseudocode or arithmetic to calculate the answer. Show every substitution.  \n```python\n# Given values\nV = 12  # volts\nR1 = 4  # ohms\nR2 = 8  # ohms\n\n# Calculate total resistance\nR_total = R1 + R2  # R_total = 4 + 8 = 12 ohms\n\n# Calculate current using Ohm's Law\nI = V / R_total  # I = 12 / 12 = 1 ampere\n```  \n\nSTEP 4 - ANSWER: State the final answer on its own line in EXACTLY this format:  \nANSWER: 1 A",
+        "fol": "∀x (CircuitProblem(x) → Uses(OhmsLaw, x) ∨ Uses(KirchhoffLaw, x))",
+        "cot": [
+          "STEP 1 - READ: Extract all given quantities with values and SI units. Identify the unknown. Given: - Battery voltage, V = 12 V - Resistor 1, R1 = 4 Ω - Resistor 2, R2 = 8 Ω Unknown: Current, I",
+          "STEP 2 - PLAN: Select the relevant formula(s) from the reference. State why each applies. Use the series resistance formula to find the total resistance, as the resistors are in series and carry the same current. Formula: series_resistance: R_total = R1 + R2 + ... + Rn Then, use Ohm's Law to find the current. Formula: ohms_law: V = I * R, so I = V / R_total These apply because the circuit is a series connection of ohmic resistors, and the voltage is given.",
+          "STEP 3 - SOLVE: Write Python-style pseudocode or arithmetic to calculate the answer. Show every substitution. ```python # Given values V = 12 # volts R1 = 4 # ohms R2 = 8 # ohms # Calculate total resistance R_total = R1 + R2 # R_total = 4 + 8 = 12 ohms # Calculate current using Ohm's Law I = V / R_total # I = 12 / 12 = 1 ampere ```",
+          "STEP 4 - ANSWER: State the final answer on its own line in EXACTLY this format:"
+        ],
+        "premises": [
+          "Ohm's Law: V = I * R",
+          "Kirchhoff Voltage Law: sum(V) = 0 around any closed loop",
+          "Kirchhoff Current Law: sum(I_in) = sum(I_out) at any node",
+          "Series Resistance: R_total = R1 + R2 + ... + Rn",
+          "Parallel Resistance: 1/R_total = 1/R1 + 1/R2 + ... + 1/Rn",
+          "Current Definition: I = ΔQ / Δt",
+          "Charge Transport: Q = I * t",
+          "Electric Power: P = I * V"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 2,
+      "case": {
+        "id": "circuit_simple_ohms_resistance",
+        "difficulty": "simple",
+        "domain": "circuit",
+        "problem": "A resistor has 24 V across it and carries a current of 3 A. What is its resistance?",
+        "expected_answer": 8.0,
+        "expected_unit": "Ω",
+        "accepted_units": [
+          "Ω",
+          "ohm",
+          "ohms"
+        ]
+      },
+      "started_at": "2026-05-09T02:15:19.248220+00:00",
+      "finished_at": "2026-05-09T02:16:14.390316+00:00",
+      "duration_seconds": 55.14210669299973,
+      "scoring": {
+        "id": "circuit_simple_ohms_resistance",
+        "difficulty": "simple",
+        "domain": "circuit",
+        "expected_answer": 8.0,
+        "expected_unit": "Ω",
+        "predicted_answer": 8.0,
+        "predicted_unit": "Ω",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven quantities: voltage \\( V = 24  \\text{V} \\), current \\( I = 3  \\text{A} \\).  \nUnknown: resistance \\( R \\) in ohms (\\( \\Omega \\)).\n\n**STEP 2 - PLAN:**  \nUse Ohm's Law from the reference table: \\( V = I \\cdot R \\). This applies because the component is a resistor, which is ohmic. Rearranging gives \\( R = V / I \\).\n\n**STEP 3 - SOLVE:**  \nCalculate resistance using the formula:  \n\\( R = V / I \\)  \nSubstitute the given values:  \n\\( R = 24 / 3 \\)  \nPerform the division:  \n\\( 24 / 3 = 8 \\)  \nThus, \\( R = 8  \\Omega \\).\n\n**STEP 4 - ANSWER:**  \nANSWER: 8.00 Ω",
+        "formulas_used": [
+          "ohms_law",
+          "kirchhoff_voltage",
+          "kirchhoff_current",
+          "series_resistance",
+          "parallel_resistance",
+          "current_definition",
+          "charge_from_current",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "series_voltage_divider",
+          "parallel_current_divider_two",
+          "conductance_parallel",
+          "two_resistor_parallel",
+          "resistivity_wire",
+          "conductivity_relation",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 8.0,
+            "unit": "Ω",
+            "raw": "8.00 Ω"
+          },
+          {
+            "answer": 8.0,
+            "unit": "Ω",
+            "raw": "8 Ω"
+          },
+          {
+            "answer": 8.0,
+            "unit": "Ω",
+            "raw": "8 ohm"
+          },
+          {
+            "answer": 8.0,
+            "unit": "Ω",
+            "raw": "8 Ω"
+          },
+          {
+            "answer": 8.0,
+            "unit": "Ω",
+            "raw": "8.0 ohm"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning correctly applies Ohm's law, substitutes the given values properly, and gets the correct resistance with correct units. The final answer matches the expected value exactly."
+        }
+      },
+      "structured_output": {
+        "answer": "8.0 Ω",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven quantities: voltage \\( V = 24  \\text{V} \\), current \\( I = 3  \\text{A} \\).  \nUnknown: resistance \\( R \\) in ohms (\\( \\Omega \\)).\n\n**STEP 2 - PLAN:**  \nUse Ohm's Law from the reference table: \\( V = I \\cdot R \\). This applies because the component is a resistor, which is ohmic. Rearranging gives \\( R = V / I \\).\n\n**STEP 3 - SOLVE:**  \nCalculate resistance using the formula:  \n\\( R = V / I \\)  \nSubstitute the given values:  \n\\( R = 24 / 3 \\)  \nPerform the division:  \n\\( 24 / 3 = 8 \\)  \nThus, \\( R = 8  \\Omega \\).\n\n**STEP 4 - ANSWER:**  \nANSWER: 8.00 Ω",
+        "fol": "∀x (CircuitProblem(x) → Uses(OhmsLaw, x) ∨ Uses(KirchhoffLaw, x))",
+        "cot": [
+          "STEP 1 - READ: Given quantities: voltage \\( V = 24 \\text{V} \\), current \\( I = 3 \\text{A} \\). Unknown: resistance \\( R \\) in ohms (\\( \\Omega \\)).",
+          "STEP 2 - PLAN: Use Ohm's Law from the reference table: \\( V = I \\cdot R \\). This applies because the component is a resistor, which is ohmic. Rearranging gives \\( R = V / I \\).",
+          "STEP 3 - SOLVE: Calculate resistance using the formula: \\( R = V / I \\) Substitute the given values: \\( R = 24 / 3 \\) Perform the division: \\( 24 / 3 = 8 \\) Thus, \\( R = 8 \\Omega \\).",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Ohm's Law: V = I * R",
+          "Kirchhoff Voltage Law: sum(V) = 0 around any closed loop",
+          "Kirchhoff Current Law: sum(I_in) = sum(I_out) at any node",
+          "Series Resistance: R_total = R1 + R2 + ... + Rn",
+          "Parallel Resistance: 1/R_total = 1/R1 + 1/R2 + ... + 1/Rn",
+          "Current Definition: I = ΔQ / Δt",
+          "Charge Transport: Q = I * t",
+          "Electric Power: P = I * V"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 3,
+      "case": {
+        "id": "circuit_simple_voltage_drop",
+        "difficulty": "simple",
+        "domain": "circuit",
+        "problem": "A 5 ohm resistor carries a current of 2.4 A. What is the voltage drop across the resistor?",
+        "expected_answer": 12.0,
+        "expected_unit": "V"
+      },
+      "started_at": "2026-05-09T02:16:14.390350+00:00",
+      "finished_at": "2026-05-09T02:17:21.404357+00:00",
+      "duration_seconds": 67.01401535700006,
+      "scoring": {
+        "id": "circuit_simple_voltage_drop",
+        "difficulty": "simple",
+        "domain": "circuit",
+        "expected_answer": 12.0,
+        "expected_unit": "V",
+        "predicted_answer": 12.0,
+        "predicted_unit": "V",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Resistance \\( R = 5  \\Omega \\), current \\( I = 2.4  \\text{A} \\).  \nUnknown: Voltage drop \\( V \\).\n\n**STEP 2 - PLAN:**  \nUse Ohm's Law: \\( V = I \\times R \\). This applies because the resistor is ohmic, and the formula directly relates current, resistance, and voltage drop.\n\n**STEP 3 - SOLVE:**  \nSubstitute the given values into Ohm's Law:  \n\\( V = 2.4  \\text{A} \\times 5  \\Omega \\).  \nPerform the calculation:  \n\\( V = 2.4 \\times 5 = 12.0  \\text{V} \\).\n\n**STEP 4 - ANSWER:**  \nANSWER: 12.0 V",
+        "formulas_used": [
+          "ohms_law",
+          "kirchhoff_voltage",
+          "kirchhoff_current",
+          "series_resistance",
+          "parallel_resistance",
+          "current_definition",
+          "charge_from_current",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "series_voltage_divider",
+          "parallel_current_divider_two",
+          "conductance_parallel",
+          "two_resistor_parallel",
+          "resistivity_wire",
+          "conductivity_relation",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 12.0,
+            "unit": "V",
+            "raw": "12.0 V"
+          },
+          {
+            "answer": 12.0,
+            "unit": "V",
+            "raw": "12 V"
+          },
+          {
+            "answer": 12.0,
+            "unit": "V",
+            "raw": "12.0 V"
+          },
+          {
+            "answer": 12.0,
+            "unit": "V",
+            "raw": "12 V"
+          },
+          {
+            "answer": 12.0,
+            "unit": "V",
+            "raw": "12.0 V"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning, formula, substitution, and units are all correct. The final answer of 12.0 V matches the expected result exactly."
+        }
+      },
+      "structured_output": {
+        "answer": "12.0 V",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Resistance \\( R = 5  \\Omega \\), current \\( I = 2.4  \\text{A} \\).  \nUnknown: Voltage drop \\( V \\).\n\n**STEP 2 - PLAN:**  \nUse Ohm's Law: \\( V = I \\times R \\). This applies because the resistor is ohmic, and the formula directly relates current, resistance, and voltage drop.\n\n**STEP 3 - SOLVE:**  \nSubstitute the given values into Ohm's Law:  \n\\( V = 2.4  \\text{A} \\times 5  \\Omega \\).  \nPerform the calculation:  \n\\( V = 2.4 \\times 5 = 12.0  \\text{V} \\).\n\n**STEP 4 - ANSWER:**  \nANSWER: 12.0 V",
+        "fol": "∀x (CircuitProblem(x) → Uses(OhmsLaw, x) ∨ Uses(KirchhoffLaw, x))",
+        "cot": [
+          "STEP 1 - READ: Given: Resistance \\( R = 5 \\Omega \\), current \\( I = 2.4 \\text{A} \\). Unknown: Voltage drop \\( V \\).",
+          "STEP 2 - PLAN: Use Ohm's Law: \\( V = I \\times R \\). This applies because the resistor is ohmic, and the formula directly relates current, resistance, and voltage drop.",
+          "STEP 3 - SOLVE: Substitute the given values into Ohm's Law: \\( V = 2.4 \\text{A} \\times 5 \\Omega \\). Perform the calculation: \\( V = 2.4 \\times 5 = 12.0 \\text{V} \\).",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Ohm's Law: V = I * R",
+          "Kirchhoff Voltage Law: sum(V) = 0 around any closed loop",
+          "Kirchhoff Current Law: sum(I_in) = sum(I_out) at any node",
+          "Series Resistance: R_total = R1 + R2 + ... + Rn",
+          "Parallel Resistance: 1/R_total = 1/R1 + 1/R2 + ... + 1/Rn",
+          "Current Definition: I = ΔQ / Δt",
+          "Charge Transport: Q = I * t",
+          "Electric Power: P = I * V"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 4,
+      "case": {
+        "id": "circuit_parallel_current",
+        "difficulty": "moderate",
+        "domain": "circuit",
+        "problem": "Two resistors, 6 ohm and 3 ohm, are connected in parallel across a 12 V battery. What is the total current supplied by the battery?",
+        "expected_answer": 6.0,
+        "expected_unit": "A"
+      },
+      "started_at": "2026-05-09T02:17:21.404385+00:00",
+      "finished_at": "2026-05-09T02:18:44.148786+00:00",
+      "duration_seconds": 82.7444071330001,
+      "scoring": {
+        "id": "circuit_parallel_current",
+        "difficulty": "moderate",
+        "domain": "circuit",
+        "expected_answer": 6.0,
+        "expected_unit": "A",
+        "predicted_answer": 6.0,
+        "predicted_unit": "A",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven quantities:  \n- Resistor R1 = 6 Ω  \n- Resistor R2 = 3 Ω  \n- Battery voltage V = 12 V  \n\nUnknown:  \n- Total current supplied by the battery, I_total  \n\n**STEP 2 - PLAN:**  \nThe resistors are connected in parallel across a voltage source. To find the total current, first calculate the equivalent resistance of the parallel combination using the two-resistor parallel formula from the reference table. Then, apply Ohm's law to find the current.  \n\nRelevant formulas:  \n- **two_resistor_parallel**: R_total = (R1 * R2) / (R1 + R2) (applies to exactly two resistors in parallel)  \n- **ohms_law**: I = V / R (applies to find current from voltage and resistance)  \n\n**STEP 3 - SOLVE:**  \nCalculate equivalent resistance:  \nR_total = (6 * 3) / (6 + 3) = 18 / 9 = 2 Ω  \n\nCalculate total current:  \nI_total = V / R_total = 12 / 2 = 6 A  \n\n**STEP 4 - ANSWER:**  \nANSWER: 6 A",
+        "formulas_used": [
+          "ohms_law",
+          "kirchhoff_voltage",
+          "kirchhoff_current",
+          "series_resistance",
+          "parallel_resistance",
+          "current_definition",
+          "charge_from_current",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "series_voltage_divider",
+          "parallel_current_divider_two",
+          "conductance_parallel",
+          "two_resistor_parallel",
+          "resistivity_wire",
+          "conductivity_relation",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 6.0,
+            "unit": "A",
+            "raw": "6 A"
+          },
+          {
+            "answer": 6.0,
+            "unit": "A",
+            "raw": "6 A"
+          },
+          {
+            "answer": 6.0,
+            "unit": "A",
+            "raw": "6 A"
+          },
+          {
+            "answer": 6.0,
+            "unit": "A",
+            "raw": "6 A"
+          },
+          {
+            "answer": 6.0,
+            "unit": "A",
+            "raw": "6 A"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning, formulas, substitutions, and units are all correct. The final answer of 6 A matches the expected 6.0 A."
+        }
+      },
+      "structured_output": {
+        "answer": "6.0 A",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven quantities:  \n- Resistor R1 = 6 Ω  \n- Resistor R2 = 3 Ω  \n- Battery voltage V = 12 V  \n\nUnknown:  \n- Total current supplied by the battery, I_total  \n\n**STEP 2 - PLAN:**  \nThe resistors are connected in parallel across a voltage source. To find the total current, first calculate the equivalent resistance of the parallel combination using the two-resistor parallel formula from the reference table. Then, apply Ohm's law to find the current.  \n\nRelevant formulas:  \n- **two_resistor_parallel**: R_total = (R1 * R2) / (R1 + R2) (applies to exactly two resistors in parallel)  \n- **ohms_law**: I = V / R (applies to find current from voltage and resistance)  \n\n**STEP 3 - SOLVE:**  \nCalculate equivalent resistance:  \nR_total = (6 * 3) / (6 + 3) = 18 / 9 = 2 Ω  \n\nCalculate total current:  \nI_total = V / R_total = 12 / 2 = 6 A  \n\n**STEP 4 - ANSWER:**  \nANSWER: 6 A",
+        "fol": "∀x (CircuitProblem(x) → Uses(OhmsLaw, x) ∨ Uses(KirchhoffLaw, x))",
+        "cot": [
+          "STEP 1 - READ: Given quantities: - Resistor R1 = 6 Ω - Resistor R2 = 3 Ω - Battery voltage V = 12 V Unknown: - Total current supplied by the battery, I_total",
+          "STEP 2 - PLAN: The resistors are connected in parallel across a voltage source. To find the total current, first calculate the equivalent resistance of the parallel combination using the two-resistor parallel formula from the reference table. Then, apply Ohm's law to find the current. Relevant formulas: - two_resistor_parallel: R_total = (R1 * R2) / (R1 + R2) (applies to exactly two resistors in parallel) - ohms_law: I = V / R (applies to find current from voltage and resistance)",
+          "STEP 3 - SOLVE: Calculate equivalent resistance: R_total = (6 * 3) / (6 + 3) = 18 / 9 = 2 Ω Calculate total current: I_total = V / R_total = 12 / 2 = 6 A",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Ohm's Law: V = I * R",
+          "Kirchhoff Voltage Law: sum(V) = 0 around any closed loop",
+          "Kirchhoff Current Law: sum(I_in) = sum(I_out) at any node",
+          "Series Resistance: R_total = R1 + R2 + ... + Rn",
+          "Parallel Resistance: 1/R_total = 1/R1 + 1/R2 + ... + 1/Rn",
+          "Current Definition: I = ΔQ / Δt",
+          "Charge Transport: Q = I * t",
+          "Electric Power: P = I * V"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 5,
+      "case": {
+        "id": "circuit_three_series_current",
+        "difficulty": "moderate",
+        "domain": "circuit",
+        "problem": "A 24 V source is connected to three series resistors of 6 ohm, 3 ohm, and 1 ohm. What current flows through the circuit?",
+        "expected_answer": 2.4,
+        "expected_unit": "A"
+      },
+      "started_at": "2026-05-09T02:18:44.148818+00:00",
+      "finished_at": "2026-05-09T02:19:38.435302+00:00",
+      "duration_seconds": 54.28649076600004,
+      "scoring": {
+        "id": "circuit_three_series_current",
+        "difficulty": "moderate",
+        "domain": "circuit",
+        "expected_answer": 2.4,
+        "expected_unit": "A",
+        "predicted_answer": 2.4,
+        "predicted_unit": "A",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Voltage source \\( V = 24  \\text{V} \\), resistors \\( R_1 = 6  \\Omega \\), \\( R_2 = 3  \\Omega \\), \\( R_3 = 1  \\Omega \\) connected in series. Unknown: Current \\( I \\).\n\n**STEP 2 - PLAN:**  \nSelect the series resistance formula: \\( R_{\\text{total}} = R_1 + R_2 + R_3 \\) (ID: series_resistance). This applies because the resistors are in series, so their resistances add up. Then, use Ohm's Law: \\( V = I \\cdot R_{\\text{total}} \\) (ID: ohms_law) to find the current. This applies because the total voltage is across the series combination, and the current is the same throughout.\n\n**STEP 3 - SOLVE:**  \nCalculate total resistance:  \n\\( R_{\\text{total}} = 6  \\Omega + 3  \\Omega + 1  \\Omega = 10  \\Omega \\).  \nThen, using Ohm's Law:  \n\\( I = \\frac{V}{R_{\\text{total}}} = \\frac{24  \\text{V}}{10  \\Omega} = 2.4  \\text{A} \\).\n\n**STEP 4 - ANSWER:**  \nANSWER: 2.4 A",
+        "formulas_used": [
+          "ohms_law",
+          "kirchhoff_voltage",
+          "kirchhoff_current",
+          "series_resistance",
+          "parallel_resistance",
+          "current_definition",
+          "charge_from_current",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "series_voltage_divider",
+          "parallel_current_divider_two",
+          "conductance_parallel",
+          "two_resistor_parallel",
+          "resistivity_wire",
+          "conductivity_relation",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 2.4,
+            "unit": "A",
+            "raw": "2.4 A"
+          },
+          {
+            "answer": 2.4,
+            "unit": "A",
+            "raw": "2.4 A"
+          },
+          {
+            "answer": 2.4,
+            "unit": "A",
+            "raw": "2.4 A"
+          },
+          {
+            "answer": 2.4,
+            "unit": "A",
+            "raw": "2.4 A"
+          },
+          {
+            "answer": 2.4,
+            "unit": "A",
+            "raw": "2.4 A"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning, formulas, substitutions, and units are all correct. The final answer of 2.4 A is fully supported and matches the expected result."
+        }
+      },
+      "structured_output": {
+        "answer": "2.4 A",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Voltage source \\( V = 24  \\text{V} \\), resistors \\( R_1 = 6  \\Omega \\), \\( R_2 = 3  \\Omega \\), \\( R_3 = 1  \\Omega \\) connected in series. Unknown: Current \\( I \\).\n\n**STEP 2 - PLAN:**  \nSelect the series resistance formula: \\( R_{\\text{total}} = R_1 + R_2 + R_3 \\) (ID: series_resistance). This applies because the resistors are in series, so their resistances add up. Then, use Ohm's Law: \\( V = I \\cdot R_{\\text{total}} \\) (ID: ohms_law) to find the current. This applies because the total voltage is across the series combination, and the current is the same throughout.\n\n**STEP 3 - SOLVE:**  \nCalculate total resistance:  \n\\( R_{\\text{total}} = 6  \\Omega + 3  \\Omega + 1  \\Omega = 10  \\Omega \\).  \nThen, using Ohm's Law:  \n\\( I = \\frac{V}{R_{\\text{total}}} = \\frac{24  \\text{V}}{10  \\Omega} = 2.4  \\text{A} \\).\n\n**STEP 4 - ANSWER:**  \nANSWER: 2.4 A",
+        "fol": "∀x (CircuitProblem(x) → Uses(OhmsLaw, x) ∨ Uses(KirchhoffLaw, x))",
+        "cot": [
+          "STEP 1 - READ: Given: Voltage source \\( V = 24 \\text{V} \\), resistors \\( R_1 = 6 \\Omega \\), \\( R_2 = 3 \\Omega \\), \\( R_3 = 1 \\Omega \\) connected in series. Unknown: Current \\( I \\).",
+          "STEP 2 - PLAN: Select the series resistance formula: \\( R_{\\text{total}} = R_1 + R_2 + R_3 \\) (ID: series_resistance). This applies because the resistors are in series, so their resistances add up. Then, use Ohm's Law: \\( V = I \\cdot R_{\\text{total}} \\) (ID: ohms_law) to find the current. This applies because the total voltage is across the series combination, and the current is the same throughout.",
+          "STEP 3 - SOLVE: Calculate total resistance: \\( R_{\\text{total}} = 6 \\Omega + 3 \\Omega + 1 \\Omega = 10 \\Omega \\). Then, using Ohm's Law: \\( I = \\frac{V}{R_{\\text{total}}} = \\frac{24 \\text{V}}{10 \\Omega} = 2.4 \\text{A} \\).",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Ohm's Law: V = I * R",
+          "Kirchhoff Voltage Law: sum(V) = 0 around any closed loop",
+          "Kirchhoff Current Law: sum(I_in) = sum(I_out) at any node",
+          "Series Resistance: R_total = R1 + R2 + ... + Rn",
+          "Parallel Resistance: 1/R_total = 1/R1 + 1/R2 + ... + 1/Rn",
+          "Current Definition: I = ΔQ / Δt",
+          "Charge Transport: Q = I * t",
+          "Electric Power: P = I * V"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 6,
+      "case": {
+        "id": "circuit_series_parallel_current",
+        "difficulty": "complex",
+        "domain": "circuit",
+        "problem": "A 10.8 V battery is connected to a 3 ohm resistor in series with a parallel pair of 4 ohm and 6 ohm resistors. What is the total current from the battery?",
+        "expected_answer": 2.0,
+        "expected_unit": "A"
+      },
+      "started_at": "2026-05-09T02:19:38.435325+00:00",
+      "finished_at": "2026-05-09T02:21:57.201859+00:00",
+      "duration_seconds": 138.76654156599943,
+      "scoring": {
+        "id": "circuit_series_parallel_current",
+        "difficulty": "complex",
+        "domain": "circuit",
+        "expected_answer": 2.0,
+        "expected_unit": "A",
+        "predicted_answer": 2.0,
+        "predicted_unit": "A",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven:  \n- Battery voltage, \\(V = 10.8 \\, \\text{V}\\)  \n- Series resistor, \\(R_{\\text{series}} = 3 \\, \\Omega\\)  \n- Parallel resistors: \\(R_1 = 4 \\, \\Omega\\), \\(R_2 = 6 \\, \\Omega\\)  \nUnknown: Total current from the battery, \\(I_{\\text{total}}\\)\n\n**STEP 2 - PLAN:**  \nTo find the total current, first find the equivalent resistance of the circuit. The parallel resistors can be simplified using the two-resistor parallel equivalent formula. Then, the series resistor is added to this equivalent resistance to get the total resistance. Finally, use Ohm's law to find the current.  \n- Formula for two resistors in parallel: \\(R_{\\text{parallel}} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}\\)  \n- Ohm's law: \\(I = \\frac{V}{R_{\\text{total}}}\\)  \n- \\(R_{\\text{total}} = R_{\\text{series}} + R_{\\text{parallel}}\\)\n\n**STEP 3 - SOLVE:**  \nCalculate \\(R_{\\text{parallel}}\\):  \n\\(R_{\\text{parallel}} = \\frac{4 \\cdot 6}{4 + 6} = \\frac{24}{10} = 2.4 \\, \\Omega\\)  \nCalculate \\(R_{\\text{total}}\\):  \n\\(R_{\\text{total}} = 3 + 2.4 = 5.4 \\, \\Omega\\)  \nCalculate \\(I_{\\text{total}}\\):  \n\\(I_{\\text{total}} = \\frac{10.8}{5.4} = 2 \\, \\text{A}\\)\n\n**STEP 4 - ANSWER:**  \nANSWER: 2 A",
+        "formulas_used": [
+          "ohms_law",
+          "kirchhoff_voltage",
+          "kirchhoff_current",
+          "series_resistance",
+          "parallel_resistance",
+          "current_definition",
+          "charge_from_current",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "series_voltage_divider",
+          "parallel_current_divider_two",
+          "conductance_parallel",
+          "two_resistor_parallel",
+          "resistivity_wire",
+          "conductivity_relation",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 2.0,
+            "unit": "A",
+            "raw": "2 A"
+          },
+          {
+            "answer": 2.0,
+            "unit": "A",
+            "raw": "2 A"
+          },
+          {
+            "answer": 2.0,
+            "unit": "A",
+            "raw": "2 A"
+          },
+          {
+            "answer": 2.0,
+            "unit": "A",
+            "raw": "2 A"
+          },
+          {
+            "answer": 2.0,
+            "unit": "A",
+            "raw": "2 A"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning and formulas are correct: the 4 ohm and 6 ohm resistors combine to 2.4 ohms, giving 5.4 ohms total and 10.8/5.4 = 2.0 A. Units and substitutions are handled properly."
+        }
+      },
+      "structured_output": {
+        "answer": "2.0 A",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven:  \n- Battery voltage, \\(V = 10.8 \\, \\text{V}\\)  \n- Series resistor, \\(R_{\\text{series}} = 3 \\, \\Omega\\)  \n- Parallel resistors: \\(R_1 = 4 \\, \\Omega\\), \\(R_2 = 6 \\, \\Omega\\)  \nUnknown: Total current from the battery, \\(I_{\\text{total}}\\)\n\n**STEP 2 - PLAN:**  \nTo find the total current, first find the equivalent resistance of the circuit. The parallel resistors can be simplified using the two-resistor parallel equivalent formula. Then, the series resistor is added to this equivalent resistance to get the total resistance. Finally, use Ohm's law to find the current.  \n- Formula for two resistors in parallel: \\(R_{\\text{parallel}} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}\\)  \n- Ohm's law: \\(I = \\frac{V}{R_{\\text{total}}}\\)  \n- \\(R_{\\text{total}} = R_{\\text{series}} + R_{\\text{parallel}}\\)\n\n**STEP 3 - SOLVE:**  \nCalculate \\(R_{\\text{parallel}}\\):  \n\\(R_{\\text{parallel}} = \\frac{4 \\cdot 6}{4 + 6} = \\frac{24}{10} = 2.4 \\, \\Omega\\)  \nCalculate \\(R_{\\text{total}}\\):  \n\\(R_{\\text{total}} = 3 + 2.4 = 5.4 \\, \\Omega\\)  \nCalculate \\(I_{\\text{total}}\\):  \n\\(I_{\\text{total}} = \\frac{10.8}{5.4} = 2 \\, \\text{A}\\)\n\n**STEP 4 - ANSWER:**  \nANSWER: 2 A",
+        "fol": "∀x (CircuitProblem(x) → Uses(OhmsLaw, x) ∨ Uses(KirchhoffLaw, x))",
+        "cot": [
+          "STEP 1 - READ: Given: - Battery voltage, \\(V = 10.8 \\, \\text{V}\\) - Series resistor, \\(R_{\\text{series}} = 3 \\, \\Omega\\) - Parallel resistors: \\(R_1 = 4 \\, \\Omega\\), \\(R_2 = 6 \\, \\Omega\\) Unknown: Total current from the battery, \\(I_{\\text{total}}\\)",
+          "STEP 2 - PLAN: To find the total current, first find the equivalent resistance of the circuit. The parallel resistors can be simplified using the two-resistor parallel equivalent formula. Then, the series resistor is added to this equivalent resistance to get the total resistance. Finally, use Ohm's law to find the current. - Formula for two resistors in parallel: \\(R_{\\text{parallel}} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}\\) - Ohm's law: \\(I = \\frac{V}{R_{\\text{total}}}\\) - \\(R_{\\text{total}} = R_{\\text{series}} + R_{\\text{parallel}}\\)",
+          "STEP 3 - SOLVE: Calculate \\(R_{\\text{parallel}}\\): \\(R_{\\text{parallel}} = \\frac{4 \\cdot 6}{4 + 6} = \\frac{24}{10} = 2.4 \\, \\Omega\\) Calculate \\(R_{\\text{total}}\\): \\(R_{\\text{total}} = 3 + 2.4 = 5.4 \\, \\Omega\\) Calculate \\(I_{\\text{total}}\\): \\(I_{\\text{total}} = \\frac{10.8}{5.4} = 2 \\, \\text{A}\\)",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Ohm's Law: V = I * R",
+          "Kirchhoff Voltage Law: sum(V) = 0 around any closed loop",
+          "Kirchhoff Current Law: sum(I_in) = sum(I_out) at any node",
+          "Series Resistance: R_total = R1 + R2 + ... + Rn",
+          "Parallel Resistance: 1/R_total = 1/R1 + 1/R2 + ... + 1/Rn",
+          "Current Definition: I = ΔQ / Δt",
+          "Charge Transport: Q = I * t",
+          "Electric Power: P = I * V"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 7,
+      "case": {
+        "id": "circuit_kcl_unknown_current",
+        "difficulty": "complex",
+        "domain": "circuit",
+        "problem": "At a circuit node, currents of 2.0 A and 3.5 A enter. One outgoing branch carries 1.2 A. What current must leave through the second outgoing branch?",
+        "expected_answer": 4.3,
+        "expected_unit": "A"
+      },
+      "started_at": "2026-05-09T02:21:57.201889+00:00",
+      "finished_at": "2026-05-09T02:22:51.349432+00:00",
+      "duration_seconds": 54.14755059199979,
+      "scoring": {
+        "id": "circuit_kcl_unknown_current",
+        "difficulty": "complex",
+        "domain": "circuit",
+        "expected_answer": 4.3,
+        "expected_unit": "A",
+        "predicted_answer": 4.3,
+        "predicted_unit": "A",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Two currents enter a node: 2.0 A and 3.5 A. One outgoing branch carries 1.2 A. Unknown: Current in the second outgoing branch.\n\n**STEP 2 - PLAN:**  \nUse Kirchhoff Current Law (ID kirchhoff_current) because it applies at circuit nodes under charge conservation. The law states that the sum of currents entering the node equals the sum of currents leaving the node.\n\n**STEP 3 - SOLVE:**  \nSum of incoming currents: 2.0 A + 3.5 A = 5.5 A.  \nSum of outgoing currents: 1.2 A + I_out2.  \nApply KCL: 5.5 A = 1.2 A + I_out2.  \nSolve for I_out2: I_out2 = 5.5 A - 1.2 A = 4.3 A.\n\n**STEP 4 - ANSWER:**  \nANSWER: 4.3 A",
+        "formulas_used": [
+          "ohms_law",
+          "kirchhoff_voltage",
+          "kirchhoff_current",
+          "series_resistance",
+          "parallel_resistance",
+          "current_definition",
+          "charge_from_current",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "series_voltage_divider",
+          "parallel_current_divider_two",
+          "conductance_parallel",
+          "two_resistor_parallel",
+          "resistivity_wire",
+          "conductivity_relation",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 4.3,
+            "unit": "A",
+            "raw": "4.3 A"
+          },
+          {
+            "answer": 4.3,
+            "unit": "A",
+            "raw": "4.3 A"
+          },
+          {
+            "answer": 4.3,
+            "unit": "A",
+            "raw": "4.3 A"
+          },
+          {
+            "answer": 4.3,
+            "unit": "A",
+            "raw": "4.3 A"
+          },
+          {
+            "answer": 4.3,
+            "unit": "A",
+            "raw": "4.3 A"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning correctly applies Kirchhoff's current law, uses consistent units, and performs the subtraction accurately. The final answer of 4.3 A is fully supported."
+        }
+      },
+      "structured_output": {
+        "answer": "4.3 A",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Two currents enter a node: 2.0 A and 3.5 A. One outgoing branch carries 1.2 A. Unknown: Current in the second outgoing branch.\n\n**STEP 2 - PLAN:**  \nUse Kirchhoff Current Law (ID kirchhoff_current) because it applies at circuit nodes under charge conservation. The law states that the sum of currents entering the node equals the sum of currents leaving the node.\n\n**STEP 3 - SOLVE:**  \nSum of incoming currents: 2.0 A + 3.5 A = 5.5 A.  \nSum of outgoing currents: 1.2 A + I_out2.  \nApply KCL: 5.5 A = 1.2 A + I_out2.  \nSolve for I_out2: I_out2 = 5.5 A - 1.2 A = 4.3 A.\n\n**STEP 4 - ANSWER:**  \nANSWER: 4.3 A",
+        "fol": "∀x (CircuitProblem(x) → Uses(OhmsLaw, x) ∨ Uses(KirchhoffLaw, x))",
+        "cot": [
+          "STEP 1 - READ: Given: Two currents enter a node: 2.0 A and 3.5 A. One outgoing branch carries 1.2 A. Unknown: Current in the second outgoing branch.",
+          "STEP 2 - PLAN: Use Kirchhoff Current Law (ID kirchhoff_current) because it applies at circuit nodes under charge conservation. The law states that the sum of currents entering the node equals the sum of currents leaving the node.",
+          "STEP 3 - SOLVE: Sum of incoming currents: 2.0 A + 3.5 A = 5.5 A. Sum of outgoing currents: 1.2 A + I_out2. Apply KCL: 5.5 A = 1.2 A + I_out2. Solve for I_out2: I_out2 = 5.5 A - 1.2 A = 4.3 A.",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Ohm's Law: V = I * R",
+          "Kirchhoff Voltage Law: sum(V) = 0 around any closed loop",
+          "Kirchhoff Current Law: sum(I_in) = sum(I_out) at any node",
+          "Series Resistance: R_total = R1 + R2 + ... + Rn",
+          "Parallel Resistance: 1/R_total = 1/R1 + 1/R2 + ... + 1/Rn",
+          "Current Definition: I = ΔQ / Δt",
+          "Charge Transport: Q = I * t",
+          "Electric Power: P = I * V"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 8,
+      "case": {
+        "id": "electrostatics_point_field",
+        "difficulty": "simple",
+        "domain": "electrostatics",
+        "problem": "A point charge of +2.0 microcoulomb is in vacuum. What is the electric field strength 0.30 m from the charge?",
+        "expected_answer": 199777.77777777778,
+        "expected_unit": "N/C",
+        "accepted_units": [
+          "N/C",
+          "V/m"
+        ]
+      },
+      "started_at": "2026-05-09T02:22:51.349458+00:00",
+      "finished_at": "2026-05-09T02:25:50.505599+00:00",
+      "duration_seconds": 179.1561485760003,
+      "scoring": {
+        "id": "electrostatics_point_field",
+        "difficulty": "simple",
+        "domain": "electrostatics",
+        "expected_answer": 199777.77777777778,
+        "expected_unit": "N/C",
+        "predicted_answer": 200000.0,
+        "predicted_unit": "N/C",
+        "confidence": 0.6,
+        "relative_error": 0.0011123470522802952,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "",
+        "formulas_used": [
+          "capacitance_def",
+          "series_capacitance",
+          "parallel_capacitance",
+          "energy_capacitor",
+          "coulombs_law",
+          "electric_field_point",
+          "electric_potential",
+          "charge_from_current",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "parallel_plate_capacitance",
+          "parallel_plate_dielectric",
+          "electric_field_uniform",
+          "electric_force_on_charge",
+          "electric_field_superposition",
+          "electric_potential_superposition",
+          "electric_potential_energy_two_charges",
+          "gauss_law",
+          "electric_flux_uniform",
+          "field_infinite_line_charge",
+          "field_infinite_sheet_charge",
+          "field_conducting_surface",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 2.2000000000000003e-05,
+            "unit": "C",
+            "raw": "2.2 × 10^ -5 C",
+            "source": "reasoning_fallback"
+          },
+          {
+            "answer": 8990000000.0,
+            "unit": "N",
+            "raw": "8.99 × 10^9 N",
+            "source": "reasoning_fallback"
+          },
+          {
+            "answer": 200000.0,
+            "unit": "N/C",
+            "raw": "2.0 × 10^5 N/C",
+            "source": "reasoning_fallback"
+          },
+          {
+            "answer": 200000.0,
+            "unit": "N/C",
+            "raw": "2.0e5 N/C",
+            "source": "reasoning_fallback"
+          },
+          {
+            "answer": 200000.0,
+            "unit": "N/C",
+            "raw": "2.0e5 N/C"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 97,
+          "feedback": "The result is essentially correct and matches the expected value within normal rounding. The electric field value of 2.0×10^5 N/C is appropriate, though no reasoning or formula steps were shown."
+        }
+      },
+      "structured_output": {
+        "answer": "200000.0 N/C",
+        "explanation": "",
+        "fol": "∀x (ElectrostaticsProblem(x) → Uses(CoulombLaw, x) ∨ Uses(CapacitanceRelations, x))",
+        "cot": [],
+        "premises": [
+          "Capacitance Definition: C = Q / V",
+          "Series Capacitance: 1/C_total = 1/C1 + 1/C2",
+          "Parallel Capacitance: C_total = C1 + C2 + ... + Cn",
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Coulomb's Law: F = k * q1 * q2 / r^2",
+          "Electric Field of a Point Charge: E = k * Q / r^2",
+          "Electric Potential of a Point Charge: V = k * Q / r",
+          "Charge Transport: Q = I * t"
+        ],
+        "confidence": 0.6
+      }
+    },
+    {
+      "index": 9,
+      "case": {
+        "id": "electrostatics_capacitance_definition",
+        "difficulty": "simple",
+        "domain": "electrostatics",
+        "problem": "A capacitor stores 3.0 microcoulomb of charge when connected to 12 V. What is its capacitance?",
+        "expected_answer": 2.5e-07,
+        "expected_unit": "F"
+      },
+      "started_at": "2026-05-09T02:25:50.505625+00:00",
+      "finished_at": "2026-05-09T02:26:47.824125+00:00",
+      "duration_seconds": 57.318508590999954,
+      "scoring": {
+        "id": "electrostatics_capacitance_definition",
+        "difficulty": "simple",
+        "domain": "electrostatics",
+        "expected_answer": 2.5e-07,
+        "expected_unit": "F",
+        "predicted_answer": 2.5e-07,
+        "predicted_unit": "F",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Charge \\( Q = 3.0 \\times 10^{-6} \\, \\text{C} \\) (converted from 3.0 microcoulomb), Voltage \\( V = 12 \\, \\text{V} \\).  \nUnknown: Capacitance \\( C \\).\n\n**STEP 2 - PLAN:**  \nRelevant formula: capacitance_def: \\( C = Q / V \\).  \nThis applies because it is the definition of capacitance for a capacitor with a defined potential difference.\n\n**STEP 3 - SOLVE:**  \nPseudocode:  \n```python\nQ = 3.0e-6  # in coulombs\nV = 12      # in volts\nC = Q / V   # in farads\n```  \nArithmetic:  \n\\( C = \\frac{3.0 \\times 10^{-6}}{12} = 2.5 \\times 10^{-7} \\, \\text{F} \\).\n\n**STEP 4 - ANSWER:**  \nANSWER: 2.5e-7 F",
+        "formulas_used": [
+          "capacitance_def",
+          "series_capacitance",
+          "parallel_capacitance",
+          "energy_capacitor",
+          "coulombs_law",
+          "electric_field_point",
+          "electric_potential",
+          "charge_from_current",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "parallel_plate_capacitance",
+          "parallel_plate_dielectric",
+          "electric_field_uniform",
+          "electric_force_on_charge",
+          "electric_field_superposition",
+          "electric_potential_superposition",
+          "electric_potential_energy_two_charges",
+          "gauss_law",
+          "electric_flux_uniform",
+          "field_infinite_line_charge",
+          "field_infinite_sheet_charge",
+          "field_conducting_surface",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 2.5e-07,
+            "unit": "F",
+            "raw": "2.5e-7 F"
+          },
+          {
+            "answer": 2.5e-07,
+            "unit": "F",
+            "raw": "2.5e-7 F"
+          },
+          {
+            "answer": 2.5e-07,
+            "unit": "F",
+            "raw": "2.5e-7 F"
+          },
+          {
+            "answer": 2.5e-07,
+            "unit": "F",
+            "raw": "2.5e-7 F"
+          },
+          {
+            "answer": 2.5e-07,
+            "unit": "F",
+            "raw": "2.5e-7 F"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning is correct: it uses the definition C = Q/V, converts microcoulombs properly, and computes the correct value. Units and final answer are both correct."
+        }
+      },
+      "structured_output": {
+        "answer": "2.5e-07 F",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Charge \\( Q = 3.0 \\times 10^{-6} \\, \\text{C} \\) (converted from 3.0 microcoulomb), Voltage \\( V = 12 \\, \\text{V} \\).  \nUnknown: Capacitance \\( C \\).\n\n**STEP 2 - PLAN:**  \nRelevant formula: capacitance_def: \\( C = Q / V \\).  \nThis applies because it is the definition of capacitance for a capacitor with a defined potential difference.\n\n**STEP 3 - SOLVE:**  \nPseudocode:  \n```python\nQ = 3.0e-6  # in coulombs\nV = 12      # in volts\nC = Q / V   # in farads\n```  \nArithmetic:  \n\\( C = \\frac{3.0 \\times 10^{-6}}{12} = 2.5 \\times 10^{-7} \\, \\text{F} \\).\n\n**STEP 4 - ANSWER:**  \nANSWER: 2.5e-7 F",
+        "fol": "∀x (ElectrostaticsProblem(x) → Uses(CoulombLaw, x) ∨ Uses(CapacitanceRelations, x))",
+        "cot": [
+          "STEP 1 - READ: Given: Charge \\( Q = 3.0 \\times 10^{-6} \\, \\text{C} \\) (converted from 3.0 microcoulomb), Voltage \\( V = 12 \\, \\text{V} \\). Unknown: Capacitance \\( C \\).",
+          "STEP 2 - PLAN: Relevant formula: capacitance_def: \\( C = Q / V \\). This applies because it is the definition of capacitance for a capacitor with a defined potential difference.",
+          "STEP 3 - SOLVE: Pseudocode: ```python Q = 3.0e-6 # in coulombs V = 12 # in volts C = Q / V # in farads ``` Arithmetic: \\( C = \\frac{3.0 \\times 10^{-6}}{12} = 2.5 \\times 10^{-7} \\, \\text{F} \\).",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Capacitance Definition: C = Q / V",
+          "Series Capacitance: 1/C_total = 1/C1 + 1/C2",
+          "Parallel Capacitance: C_total = C1 + C2 + ... + Cn",
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Coulomb's Law: F = k * q1 * q2 / r^2",
+          "Electric Field of a Point Charge: E = k * Q / r^2",
+          "Electric Potential of a Point Charge: V = k * Q / r",
+          "Charge Transport: Q = I * t"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 10,
+      "case": {
+        "id": "electrostatics_charge_from_capacitance",
+        "difficulty": "simple",
+        "domain": "electrostatics",
+        "problem": "A 47 microfarad capacitor is charged to 12 V. What charge is stored on the capacitor?",
+        "expected_answer": 0.000564,
+        "expected_unit": "C"
+      },
+      "started_at": "2026-05-09T02:26:47.824152+00:00",
+      "finished_at": "2026-05-09T02:28:42.927276+00:00",
+      "duration_seconds": 115.10313398900053,
+      "scoring": {
+        "id": "electrostatics_charge_from_capacitance",
+        "difficulty": "simple",
+        "domain": "electrostatics",
+        "expected_answer": 0.000564,
+        "expected_unit": "C",
+        "predicted_answer": 0.0005608,
+        "predicted_unit": "C",
+        "confidence": 1.0,
+        "relative_error": 0.005673758865248364,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\nSTEP 1 - READ:  \nGiven quantities:  \n- Capacitance \\( C = 47 \\, \\mu\\text{F} = 47 \\times 10^{-6} \\, \\text{F} \\)  \n- Voltage \\( V = 12 \\, \\text{V} \\)  \nUnknown: Charge \\( Q \\)  \n\nSTEP 2 - PLAN:  \nRelevant formula: capacitor_charge with formula \\( Q = C \\times V \\). This applies to ideal capacitors, and the capacitor is charged to a voltage, so it is ideal.  \n\nSTEP 3 - SOLVE:  \nUse the formula \\( Q = C \\times V \\).  \nSubstitute the values:  \n\\( C = 47 \\times 10^{-6} \\, \\text{F} \\)  \n\\( V = 12 \\, \\text{V} \\)  \n\\( Q = (47 \\times 10^{-6}) \\times 12 \\)  \nCalculate:  \n\\( 47 \\times 12 = 564 \\)  \n\\( 564 \\times 10^{-6} = 5.64 \\times 10^{-4} \\, \\text{C} \\)  \n\nSTEP 4 - ANSWER:  \nANSWER: 5.64e-4 C",
+        "formulas_used": [
+          "capacitance_def",
+          "series_capacitance",
+          "parallel_capacitance",
+          "energy_capacitor",
+          "coulombs_law",
+          "electric_field_point",
+          "electric_potential",
+          "charge_from_current",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "parallel_plate_capacitance",
+          "parallel_plate_dielectric",
+          "electric_field_uniform",
+          "electric_force_on_charge",
+          "electric_field_superposition",
+          "electric_potential_superposition",
+          "electric_potential_energy_two_charges",
+          "gauss_law",
+          "electric_flux_uniform",
+          "field_infinite_line_charge",
+          "field_infinite_sheet_charge",
+          "field_conducting_surface",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 0.000564,
+            "unit": "C",
+            "raw": "5.64e-4 C"
+          },
+          {
+            "answer": 0.00056,
+            "unit": "C",
+            "raw": "5.6e-4 C"
+          },
+          {
+            "answer": 0.00056,
+            "unit": "C",
+            "raw": "5.6e-4 C"
+          },
+          {
+            "answer": 0.00056,
+            "unit": "C",
+            "raw": "5.6e-4 C"
+          },
+          {
+            "answer": 0.00056,
+            "unit": "C",
+            "raw": "5.6e-4 C"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning and formula are correct, the microfarad conversion is handled properly, and the final charge matches the expected value. The slight formatting difference is harmless."
+        }
+      },
+      "structured_output": {
+        "answer": "0.0005608 C",
+        "explanation": "\nSTEP 1 - READ:  \nGiven quantities:  \n- Capacitance \\( C = 47 \\, \\mu\\text{F} = 47 \\times 10^{-6} \\, \\text{F} \\)  \n- Voltage \\( V = 12 \\, \\text{V} \\)  \nUnknown: Charge \\( Q \\)  \n\nSTEP 2 - PLAN:  \nRelevant formula: capacitor_charge with formula \\( Q = C \\times V \\). This applies to ideal capacitors, and the capacitor is charged to a voltage, so it is ideal.  \n\nSTEP 3 - SOLVE:  \nUse the formula \\( Q = C \\times V \\).  \nSubstitute the values:  \n\\( C = 47 \\times 10^{-6} \\, \\text{F} \\)  \n\\( V = 12 \\, \\text{V} \\)  \n\\( Q = (47 \\times 10^{-6}) \\times 12 \\)  \nCalculate:  \n\\( 47 \\times 12 = 564 \\)  \n\\( 564 \\times 10^{-6} = 5.64 \\times 10^{-4} \\, \\text{C} \\)  \n\nSTEP 4 - ANSWER:  \nANSWER: 5.64e-4 C",
+        "fol": "∀x (ElectrostaticsProblem(x) → Uses(CoulombLaw, x) ∨ Uses(CapacitanceRelations, x))",
+        "cot": [
+          "STEP 1 - READ: Given quantities: - Capacitance \\( C = 47 \\, \\mu\\text{F} = 47 \\times 10^{-6} \\, \\text{F} \\) - Voltage \\( V = 12 \\, \\text{V} \\) Unknown: Charge \\( Q \\)",
+          "STEP 2 - PLAN: Relevant formula: capacitor_charge with formula \\( Q = C \\times V \\). This applies to ideal capacitors, and the capacitor is charged to a voltage, so it is ideal.",
+          "STEP 3 - SOLVE: Use the formula \\( Q = C \\times V \\). Substitute the values: \\( C = 47 \\times 10^{-6} \\, \\text{F} \\) \\( V = 12 \\, \\text{V} \\) \\( Q = (47 \\times 10^{-6}) \\times 12 \\) Calculate: \\( 47 \\times 12 = 564 \\) \\( 564 \\times 10^{-6} = 5.64 \\times 10^{-4} \\, \\text{C} \\)",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Capacitance Definition: C = Q / V",
+          "Series Capacitance: 1/C_total = 1/C1 + 1/C2",
+          "Parallel Capacitance: C_total = C1 + C2 + ... + Cn",
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Coulomb's Law: F = k * q1 * q2 / r^2",
+          "Electric Field of a Point Charge: E = k * Q / r^2",
+          "Electric Potential of a Point Charge: V = k * Q / r",
+          "Charge Transport: Q = I * t"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 11,
+      "case": {
+        "id": "electrostatics_parallel_capacitance",
+        "difficulty": "moderate",
+        "domain": "electrostatics",
+        "problem": "Capacitors of 2 microfarad, 3 microfarad, and 5 microfarad are connected in parallel. What is the equivalent capacitance?",
+        "expected_answer": 1e-05,
+        "expected_unit": "F"
+      },
+      "started_at": "2026-05-09T02:28:42.927307+00:00",
+      "finished_at": "2026-05-09T02:30:37.323747+00:00",
+      "duration_seconds": 114.39644823799972,
+      "scoring": {
+        "id": "electrostatics_parallel_capacitance",
+        "difficulty": "moderate",
+        "domain": "electrostatics",
+        "expected_answer": 1e-05,
+        "expected_unit": "F",
+        "predicted_answer": 1e-05,
+        "predicted_unit": "F",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n### STEP 1 - READ\nGiven quantities:  \n- Capacitor 1: 2 μF  \n- Capacitor 2: 3 μF  \n- Capacitor 3: 5 μF  \nAll capacitors are connected in parallel.  \nUnknown: Equivalent capacitance \\( C_{\\text{total}} \\).  \n\n### STEP 2 - PLAN\nUse the formula for parallel capacitance:  \nparallel_capacitance | Parallel Capacitance | \\( C_{\\text{total}} = C_1 + C_2 + \\dots + C_n \\)  \nThis applies because the capacitors are connected in parallel, and the formula sums the capacitances directly.  \n\n### STEP 3 - SOLVE\nConvert capacitances to SI units (farads):  \n- \\( C_1 = 2 \\times 10^{-6}  \\text{F} \\)  \n- \\( C_2 = 3 \\times 10^{-6}  \\text{F} \\)  \n- \\( C_3 = 5 \\times 10^{-6}  \\text{F} \\)  \n\nCalculate \\( C_{\\text{total}} \\):  \n\\( C_{\\text{total}} = C_1 + C_2 + C_3 = 2 \\times 10^{-6} + 3 \\times 10^{-6} + 5 \\times 10^{-6} = 10 \\times 10^{-6}  \\text{F} = 10^{-5}  \\text{F} \\)  \n\n### STEP 4 - ANSWER\nANSWER: 1.0e-5 F",
+        "formulas_used": [
+          "capacitance_def",
+          "series_capacitance",
+          "parallel_capacitance",
+          "energy_capacitor",
+          "coulombs_law",
+          "electric_field_point",
+          "electric_potential",
+          "charge_from_current",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "parallel_plate_capacitance",
+          "parallel_plate_dielectric",
+          "electric_field_uniform",
+          "electric_force_on_charge",
+          "electric_field_superposition",
+          "electric_potential_superposition",
+          "electric_potential_energy_two_charges",
+          "gauss_law",
+          "electric_flux_uniform",
+          "field_infinite_line_charge",
+          "field_infinite_sheet_charge",
+          "field_conducting_surface",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 1e-05,
+            "unit": "F",
+            "raw": "1.0e-5 F"
+          },
+          {
+            "answer": 1e-05,
+            "unit": "F",
+            "raw": "1.0e-5 F"
+          },
+          {
+            "answer": 1e-05,
+            "unit": "F",
+            "raw": "1.0e-5 F"
+          },
+          {
+            "answer": 1e-05,
+            "unit": "F",
+            "raw": "1.0e-5 F"
+          },
+          {
+            "answer": 1e-05,
+            "unit": "F",
+            "raw": "1.0e-5 F"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning and formula are correct for capacitors in parallel, and the unit conversion and addition are done properly. The final answer matches the expected value exactly."
+        }
+      },
+      "structured_output": {
+        "answer": "1e-05 F",
+        "explanation": "\n### STEP 1 - READ\nGiven quantities:  \n- Capacitor 1: 2 μF  \n- Capacitor 2: 3 μF  \n- Capacitor 3: 5 μF  \nAll capacitors are connected in parallel.  \nUnknown: Equivalent capacitance \\( C_{\\text{total}} \\).  \n\n### STEP 2 - PLAN\nUse the formula for parallel capacitance:  \nparallel_capacitance | Parallel Capacitance | \\( C_{\\text{total}} = C_1 + C_2 + \\dots + C_n \\)  \nThis applies because the capacitors are connected in parallel, and the formula sums the capacitances directly.  \n\n### STEP 3 - SOLVE\nConvert capacitances to SI units (farads):  \n- \\( C_1 = 2 \\times 10^{-6}  \\text{F} \\)  \n- \\( C_2 = 3 \\times 10^{-6}  \\text{F} \\)  \n- \\( C_3 = 5 \\times 10^{-6}  \\text{F} \\)  \n\nCalculate \\( C_{\\text{total}} \\):  \n\\( C_{\\text{total}} = C_1 + C_2 + C_3 = 2 \\times 10^{-6} + 3 \\times 10^{-6} + 5 \\times 10^{-6} = 10 \\times 10^{-6}  \\text{F} = 10^{-5}  \\text{F} \\)  \n\n### STEP 4 - ANSWER\nANSWER: 1.0e-5 F",
+        "fol": "∀x (ElectrostaticsProblem(x) → Uses(CoulombLaw, x) ∨ Uses(CapacitanceRelations, x))",
+        "cot": [
+          "### STEP 1 - READ",
+          "Given quantities:",
+          "- Capacitor 1: 2 μF",
+          "- Capacitor 2: 3 μF"
+        ],
+        "premises": [
+          "Capacitance Definition: C = Q / V",
+          "Series Capacitance: 1/C_total = 1/C1 + 1/C2",
+          "Parallel Capacitance: C_total = C1 + C2 + ... + Cn",
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Coulomb's Law: F = k * q1 * q2 / r^2",
+          "Electric Field of a Point Charge: E = k * Q / r^2",
+          "Electric Potential of a Point Charge: V = k * Q / r",
+          "Charge Transport: Q = I * t"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 12,
+      "case": {
+        "id": "electrostatics_series_capacitance",
+        "difficulty": "moderate",
+        "domain": "electrostatics",
+        "problem": "A 6 microfarad capacitor and a 3 microfarad capacitor are connected in series. What is the equivalent capacitance?",
+        "expected_answer": 2e-06,
+        "expected_unit": "F"
+      },
+      "started_at": "2026-05-09T02:30:37.323777+00:00",
+      "finished_at": "2026-05-09T02:32:23.411997+00:00",
+      "duration_seconds": 106.08822488500027,
+      "scoring": {
+        "id": "electrostatics_series_capacitance",
+        "difficulty": "moderate",
+        "domain": "electrostatics",
+        "expected_answer": 2e-06,
+        "expected_unit": "F",
+        "predicted_answer": 2e-06,
+        "predicted_unit": "F",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\nSTEP 1 - READ: Given quantities: C1 = 6 μF, C2 = 3 μF. The unknown is the equivalent capacitance C_total for capacitors in series.\n\nSTEP 2 - PLAN: Use the series capacitance formula from the reference table: 1/C_total = 1/C1 + 1/C2. This applies because the capacitors are connected in series.\n\nSTEP 3 - SOLVE: Substitute the given values into the formula. First, ensure units are consistent. C1 = 6 μF and C2 = 3 μF are given, but the answer must be in SI units (farads). Calculate C_total in microfarads and then convert.\n\n1/C_total = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 0.5  \nC_total = 1 / 0.5 = 2 μF\n\nConvert to SI units: 2 μF = 2 × 10^{-6} F.\n\nSTEP 4 - ANSWER:  \nANSWER: 2e-6 F",
+        "formulas_used": [
+          "capacitance_def",
+          "series_capacitance",
+          "parallel_capacitance",
+          "energy_capacitor",
+          "coulombs_law",
+          "electric_field_point",
+          "electric_potential",
+          "charge_from_current",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "parallel_plate_capacitance",
+          "parallel_plate_dielectric",
+          "electric_field_uniform",
+          "electric_force_on_charge",
+          "electric_field_superposition",
+          "electric_potential_superposition",
+          "electric_potential_energy_two_charges",
+          "gauss_law",
+          "electric_flux_uniform",
+          "field_infinite_line_charge",
+          "field_infinite_sheet_charge",
+          "field_conducting_surface",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 2e-06,
+            "unit": "F",
+            "raw": "2e-6 F"
+          },
+          {
+            "answer": 2e-06,
+            "unit": "F",
+            "raw": "2e-6 F"
+          },
+          {
+            "answer": 2e-06,
+            "unit": "F",
+            "raw": "2e-6 F"
+          },
+          {
+            "answer": 2e-06,
+            "unit": "F",
+            "raw": "2.0e-6 F"
+          },
+          {
+            "answer": 2e-06,
+            "unit": "F",
+            "raw": "2.0e-6 F"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning and formula are correct for capacitors in series, and the substitution is done accurately. Unit conversion to SI is also correct, leading to the right final answer."
+        }
+      },
+      "structured_output": {
+        "answer": "2e-06 F",
+        "explanation": "\nSTEP 1 - READ: Given quantities: C1 = 6 μF, C2 = 3 μF. The unknown is the equivalent capacitance C_total for capacitors in series.\n\nSTEP 2 - PLAN: Use the series capacitance formula from the reference table: 1/C_total = 1/C1 + 1/C2. This applies because the capacitors are connected in series.\n\nSTEP 3 - SOLVE: Substitute the given values into the formula. First, ensure units are consistent. C1 = 6 μF and C2 = 3 μF are given, but the answer must be in SI units (farads). Calculate C_total in microfarads and then convert.\n\n1/C_total = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 0.5  \nC_total = 1 / 0.5 = 2 μF\n\nConvert to SI units: 2 μF = 2 × 10^{-6} F.\n\nSTEP 4 - ANSWER:  \nANSWER: 2e-6 F",
+        "fol": "∀x (ElectrostaticsProblem(x) → Uses(CoulombLaw, x) ∨ Uses(CapacitanceRelations, x))",
+        "cot": [
+          "STEP 1 - READ: Given quantities: C1 = 6 μF, C2 = 3 μF. The unknown is the equivalent capacitance C_total for capacitors in series.",
+          "STEP 2 - PLAN: Use the series capacitance formula from the reference table: 1/C_total = 1/C1 + 1/C2. This applies because the capacitors are connected in series.",
+          "STEP 3 - SOLVE: Substitute the given values into the formula. First, ensure units are consistent. C1 = 6 μF and C2 = 3 μF are given, but the answer must be in SI units (farads). Calculate C_total in microfarads and then convert. 1/C_total = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 0.5 C_total = 1 / 0.5 = 2 μF Convert to SI units: 2 μF = 2 × 10^{-6} F.",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Capacitance Definition: C = Q / V",
+          "Series Capacitance: 1/C_total = 1/C1 + 1/C2",
+          "Parallel Capacitance: C_total = C1 + C2 + ... + Cn",
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Coulomb's Law: F = k * q1 * q2 / r^2",
+          "Electric Field of a Point Charge: E = k * Q / r^2",
+          "Electric Potential of a Point Charge: V = k * Q / r",
+          "Charge Transport: Q = I * t"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 13,
+      "case": {
+        "id": "electrostatics_coulomb_force",
+        "difficulty": "moderate",
+        "domain": "electrostatics",
+        "problem": "Two point charges of +2.0 microcoulomb and +3.0 microcoulomb are separated by 0.50 m in vacuum. What is the magnitude of the electrostatic force between them?",
+        "expected_answer": 0.21576,
+        "expected_unit": "N"
+      },
+      "started_at": "2026-05-09T02:32:23.412016+00:00",
+      "finished_at": "2026-05-09T02:35:06.049956+00:00",
+      "duration_seconds": 162.6379475550002,
+      "scoring": {
+        "id": "electrostatics_coulomb_force",
+        "difficulty": "moderate",
+        "domain": "electrostatics",
+        "expected_answer": 0.21576,
+        "expected_unit": "N",
+        "predicted_answer": 0.22000000000000003,
+        "predicted_unit": "N",
+        "confidence": 1.0,
+        "relative_error": 0.019651464590285602,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n### Response to: Two point charges of +2.0 microcoulomb and +3.0 microcoulomb are separated by 0.50 m in vacuum. What is the magnitude of the electrostatic force between them?\n\n**STEP 1 - READ:**  \nGiven quantities:  \n- Charge \\( q_1 = 2.0 \\, \\mu\\text{C} = 2.0 \\times 10^{-6} \\, \\text{C} \\)  \n- Charge \\( q_2 = 3.0 \\, \\mu\\text{C} = 3.0 \\times 10^{-6} \\, \\text{C} \\)  \n- Separation \\( r = 0.50 \\, \\text{m} \\)  \nUnknown: Magnitude of the electrostatic force \\( F \\).  \n\n**STEP 2 - PLAN:**  \nUse Coulomb's Law (ID: coulombs_law) because it applies to point charges in vacuum or air. The formula is \\( F = k \\cdot \\frac{q_1 \\cdot q_2}{r^2} \\), where \\( k = 8.99 \\times 10^9 \\, \\text{N} \\cdot \\text{m}^2 / \\text{C}^2 \\).  \n\n**STEP 3 - SOLVE:**  \nConvert charges to SI units:  \n\\( q_1 = 2.0 \\times 10^{-6} \\, \\text{C} \\), \\( q_2 = 3.0 \\times 10^{-6} \\, \\text{C} \\).  \nCalculate \\( q_1 \\cdot q_2 = (2.0 \\times 10^{-6}) \\cdot (3.0 \\times 10^{-6}) = 6.0 \\times 10^{-12} \\, \\text{C}^2 \\).  \nCalculate \\( r^2 = (0.50)^2 = 0.25 \\, \\text{m}^2 \\).  \nSubstitute into Coulomb's Law:  \n\\( F = (8.99 \\times 10^9) \\cdot \\frac{6.0 \\times 10^{-12}}{0.25} \\).  \nFirst, compute \\( 8.99 \\times 10^9 \\cdot 6.0 \\times 10^{-12} = 5.394 \\times 10^{-2} \\).  \nThen, \\( F = \\frac{5.394 \\times 10^{-2}}{0.25} = 0.21576 \\, \\text{N} \\).  \nRound to two significant figures (based on input precision): 0.22 N.  \n\n**STEP 4 - ANSWER:**  \nANSWER: 0.22 N",
+        "formulas_used": [
+          "capacitance_def",
+          "series_capacitance",
+          "parallel_capacitance",
+          "energy_capacitor",
+          "coulombs_law",
+          "electric_field_point",
+          "electric_potential",
+          "charge_from_current",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "parallel_plate_capacitance",
+          "parallel_plate_dielectric",
+          "electric_field_uniform",
+          "electric_force_on_charge",
+          "electric_field_superposition",
+          "electric_potential_superposition",
+          "electric_potential_energy_two_charges",
+          "gauss_law",
+          "electric_flux_uniform",
+          "field_infinite_line_charge",
+          "field_infinite_sheet_charge",
+          "field_conducting_surface",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 0.22,
+            "unit": "N",
+            "raw": "0.22 N"
+          },
+          {
+            "answer": 0.22,
+            "unit": "N",
+            "raw": "0.22 N"
+          },
+          {
+            "answer": 0.22,
+            "unit": "N",
+            "raw": "0.22 N"
+          },
+          {
+            "answer": 0.22,
+            "unit": "N",
+            "raw": "0.22 N"
+          },
+          {
+            "answer": 0.22,
+            "unit": "N",
+            "raw": "0.22 N"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The solution uses the correct formula, conversions, substitutions, and arithmetic. The final 0.22 N is an appropriate rounding of 0.21576 N, so the reasoning and result are correct."
+        }
+      },
+      "structured_output": {
+        "answer": "0.22000000000000003 N",
+        "explanation": "\n### Response to: Two point charges of +2.0 microcoulomb and +3.0 microcoulomb are separated by 0.50 m in vacuum. What is the magnitude of the electrostatic force between them?\n\n**STEP 1 - READ:**  \nGiven quantities:  \n- Charge \\( q_1 = 2.0 \\, \\mu\\text{C} = 2.0 \\times 10^{-6} \\, \\text{C} \\)  \n- Charge \\( q_2 = 3.0 \\, \\mu\\text{C} = 3.0 \\times 10^{-6} \\, \\text{C} \\)  \n- Separation \\( r = 0.50 \\, \\text{m} \\)  \nUnknown: Magnitude of the electrostatic force \\( F \\).  \n\n**STEP 2 - PLAN:**  \nUse Coulomb's Law (ID: coulombs_law) because it applies to point charges in vacuum or air. The formula is \\( F = k \\cdot \\frac{q_1 \\cdot q_2}{r^2} \\), where \\( k = 8.99 \\times 10^9 \\, \\text{N} \\cdot \\text{m}^2 / \\text{C}^2 \\).  \n\n**STEP 3 - SOLVE:**  \nConvert charges to SI units:  \n\\( q_1 = 2.0 \\times 10^{-6} \\, \\text{C} \\), \\( q_2 = 3.0 \\times 10^{-6} \\, \\text{C} \\).  \nCalculate \\( q_1 \\cdot q_2 = (2.0 \\times 10^{-6}) \\cdot (3.0 \\times 10^{-6}) = 6.0 \\times 10^{-12} \\, \\text{C}^2 \\).  \nCalculate \\( r^2 = (0.50)^2 = 0.25 \\, \\text{m}^2 \\).  \nSubstitute into Coulomb's Law:  \n\\( F = (8.99 \\times 10^9) \\cdot \\frac{6.0 \\times 10^{-12}}{0.25} \\).  \nFirst, compute \\( 8.99 \\times 10^9 \\cdot 6.0 \\times 10^{-12} = 5.394 \\times 10^{-2} \\).  \nThen, \\( F = \\frac{5.394 \\times 10^{-2}}{0.25} = 0.21576 \\, \\text{N} \\).  \nRound to two significant figures (based on input precision): 0.22 N.  \n\n**STEP 4 - ANSWER:**  \nANSWER: 0.22 N",
+        "fol": "∀x (ElectrostaticsProblem(x) → Uses(CoulombLaw, x) ∨ Uses(CapacitanceRelations, x))",
+        "cot": [
+          "STEP 1 - READ: Given quantities: - Charge \\( q_1 = 2.0 \\, \\mu\\text{C} = 2.0 \\times 10^{-6} \\, \\text{C} \\) - Charge \\( q_2 = 3.0 \\, \\mu\\text{C} = 3.0 \\times 10^{-6} \\, \\text{C} \\) - Separation \\( r = 0.50 \\, \\text{m} \\) Unknown: Magnitude of the electrostatic force \\( F \\).",
+          "STEP 2 - PLAN: Use Coulomb's Law (ID: coulombs_law) because it applies to point charges in vacuum or air. The formula is \\( F = k \\cdot \\frac{q_1 \\cdot q_2}{r^2} \\), where \\( k = 8.99 \\times 10^9 \\, \\text{N} \\cdot \\text{m}^2 / \\text{C}^2 \\).",
+          "STEP 3 - SOLVE: Convert charges to SI units: \\( q_1 = 2.0 \\times 10^{-6} \\, \\text{C} \\), \\( q_2 = 3.0 \\times 10^{-6} \\, \\text{C} \\). Calculate \\( q_1 \\cdot q_2 = (2.0 \\times 10^{-6}) \\cdot (3.0 \\times 10^{-6}) = 6.0 \\times 10^{-12} \\, \\text{C}^2 \\). Calculate \\( r^2 = (0.50)^2 = 0.25 \\, \\text{m}^2 \\). Substitute into Coulomb's Law: \\( F = (8.99 \\times 10^9) \\cdot \\frac{6.0 \\times 10^{-12}}{0.25} \\). First, compute \\( 8.99 \\times 10^9 \\cdot 6.0 \\times 10^{-12} = 5.394 \\times 10^{-2} \\). Then, \\( F = \\frac{5.394 \\times 10^{-2}}{0.25} = 0.21576 \\, \\text{N} \\). Round to two significant figures (based on input precision): 0.22 N.",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Capacitance Definition: C = Q / V",
+          "Series Capacitance: 1/C_total = 1/C1 + 1/C2",
+          "Parallel Capacitance: C_total = C1 + C2 + ... + Cn",
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Coulomb's Law: F = k * q1 * q2 / r^2",
+          "Electric Field of a Point Charge: E = k * Q / r^2",
+          "Electric Potential of a Point Charge: V = k * Q / r",
+          "Charge Transport: Q = I * t"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 14,
+      "case": {
+        "id": "electrostatics_point_potential",
+        "difficulty": "moderate",
+        "domain": "electrostatics",
+        "problem": "What is the electric potential 0.20 m from a +5.0 microcoulomb point charge in vacuum?",
+        "expected_answer": 224750.0,
+        "expected_unit": "V"
+      },
+      "started_at": "2026-05-09T02:35:06.049981+00:00",
+      "finished_at": "2026-05-09T02:38:00.761632+00:00",
+      "duration_seconds": 174.71165954299977,
+      "scoring": {
+        "id": "electrostatics_point_potential",
+        "difficulty": "moderate",
+        "domain": "electrostatics",
+        "expected_answer": 224750.0,
+        "expected_unit": "V",
+        "predicted_answer": 222500.0,
+        "predicted_unit": "V",
+        "confidence": 0.4,
+        "relative_error": 0.010011123470522803,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven quantities: charge \\( Q = +5.0 \\times 10^{-6} \\, \\text{C} \\) (5.0 microcoulombs), distance \\( r = 0.20 \\, \\text{m} \\), medium is vacuum.  \nUnknown: electric potential \\( V \\).\n\n**STEP 2 - PLAN:**  \nUse the formula for electric potential of a point charge from the reference table: \\( V = k \\cdot Q / r \\), where \\( k = 8.99 \\times 10^9 \\, \\text{N·m}^2/\\text{C}^2 \\) is the Coulomb constant. This formula applies because the charge is a point charge and the medium is vacuum, matching the conditions.\n\n**STEP 3 - SOLVE:**  \nCalculate \\( V \\) using the formula \\( V = k \\cdot Q / r \\).  \nFirst, compute \\( k \\cdot Q \\):  \n\\( k \\cdot Q = (8.99 \\times 10^9) \\times (5.0 \\times 10^{-6}) = 4.495 \\times 10^4 \\).  \nThen, divide by \\( r \\):  \n\\( V = (4.495 \\times 10^4) / 0.20 = 2.2475 \\times 10^5 \\, \\text{V} \\).  \nRound to two significant figures (since \\( Q \\) and \\( r \\) each have two significant figures):  \n\\( V \\approx 2.2 \\times 10^5 \\, \\text{V} \\).\n\n**STEP 4 - ANSWER:**  \nANSWER: 2.2e5 V",
+        "formulas_used": [
+          "capacitance_def",
+          "series_capacitance",
+          "parallel_capacitance",
+          "energy_capacitor",
+          "coulombs_law",
+          "electric_field_point",
+          "electric_potential",
+          "charge_from_current",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "parallel_plate_capacitance",
+          "parallel_plate_dielectric",
+          "electric_field_uniform",
+          "electric_force_on_charge",
+          "electric_field_superposition",
+          "electric_potential_superposition",
+          "electric_potential_energy_two_charges",
+          "gauss_law",
+          "electric_flux_uniform",
+          "field_infinite_line_charge",
+          "field_infinite_sheet_charge",
+          "field_conducting_surface",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 220000.0,
+            "unit": "V",
+            "raw": "2.2e5 V"
+          },
+          {
+            "answer": 22500.0,
+            "unit": "V",
+            "raw": "2.25e4 V"
+          },
+          {
+            "answer": 225000.0,
+            "unit": "V",
+            "raw": "2.25e5 V"
+          },
+          {
+            "answer": 8990000000.0,
+            "unit": "N",
+            "raw": "8.99 × 10^9 N",
+            "source": "reasoning_fallback"
+          },
+          {
+            "answer": 4.9999999999999996e-06,
+            "unit": "C",
+            "raw": "+5.0 × 10^ -6 C"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 93,
+          "feedback": "The reasoning, formula, and unit handling are correct, and the exact intermediate value 2.2475 × 10^5 V matches the expected answer. The only issue is that the final reported value 2.2e5 V is rounded more coarsely than the expected 224750.0 V."
+        }
+      },
+      "structured_output": {
+        "answer": "222500.0 V",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven quantities: charge \\( Q = +5.0 \\times 10^{-6} \\, \\text{C} \\) (5.0 microcoulombs), distance \\( r = 0.20 \\, \\text{m} \\), medium is vacuum.  \nUnknown: electric potential \\( V \\).\n\n**STEP 2 - PLAN:**  \nUse the formula for electric potential of a point charge from the reference table: \\( V = k \\cdot Q / r \\), where \\( k = 8.99 \\times 10^9 \\, \\text{N·m}^2/\\text{C}^2 \\) is the Coulomb constant. This formula applies because the charge is a point charge and the medium is vacuum, matching the conditions.\n\n**STEP 3 - SOLVE:**  \nCalculate \\( V \\) using the formula \\( V = k \\cdot Q / r \\).  \nFirst, compute \\( k \\cdot Q \\):  \n\\( k \\cdot Q = (8.99 \\times 10^9) \\times (5.0 \\times 10^{-6}) = 4.495 \\times 10^4 \\).  \nThen, divide by \\( r \\):  \n\\( V = (4.495 \\times 10^4) / 0.20 = 2.2475 \\times 10^5 \\, \\text{V} \\).  \nRound to two significant figures (since \\( Q \\) and \\( r \\) each have two significant figures):  \n\\( V \\approx 2.2 \\times 10^5 \\, \\text{V} \\).\n\n**STEP 4 - ANSWER:**  \nANSWER: 2.2e5 V",
+        "fol": "∀x (ElectrostaticsProblem(x) → Uses(CoulombLaw, x) ∨ Uses(CapacitanceRelations, x))",
+        "cot": [
+          "STEP 1 - READ: Given quantities: charge \\( Q = +5.0 \\times 10^{-6} \\, \\text{C} \\) (5.0 microcoulombs), distance \\( r = 0.20 \\, \\text{m} \\), medium is vacuum. Unknown: electric potential \\( V \\).",
+          "STEP 2 - PLAN: Use the formula for electric potential of a point charge from the reference table: \\( V = k \\cdot Q / r \\), where \\( k = 8.99 \\times 10^9 \\, \\text{N·m}^2/\\text{C}^2 \\) is the Coulomb constant. This formula applies because the charge is a point charge and the medium is vacuum, matching the conditions.",
+          "STEP 3 - SOLVE: Calculate \\( V \\) using the formula \\( V = k \\cdot Q / r \\). First, compute \\( k \\cdot Q \\): \\( k \\cdot Q = (8.99 \\times 10^9) \\times (5.0 \\times 10^{-6}) = 4.495 \\times 10^4 \\). Then, divide by \\( r \\): \\( V = (4.495 \\times 10^4) / 0.20 = 2.2475 \\times 10^5 \\, \\text{V} \\). Round to two significant figures (since \\( Q \\) and \\( r \\) each have two significant figures): \\( V \\approx 2.2 \\times 10^5 \\, \\text{V} \\).",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Capacitance Definition: C = Q / V",
+          "Series Capacitance: 1/C_total = 1/C1 + 1/C2",
+          "Parallel Capacitance: C_total = C1 + C2 + ... + Cn",
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Coulomb's Law: F = k * q1 * q2 / r^2",
+          "Electric Field of a Point Charge: E = k * Q / r^2",
+          "Electric Potential of a Point Charge: V = k * Q / r",
+          "Charge Transport: Q = I * t"
+        ],
+        "confidence": 0.4
+      }
+    },
+    {
+      "index": 15,
+      "case": {
+        "id": "electrostatics_two_charge_potential",
+        "difficulty": "complex",
+        "domain": "electrostatics",
+        "problem": "At a point, a +3.0 microcoulomb charge and a -1.0 microcoulomb charge are each 0.50 m away. What is the net electric potential at that point?",
+        "expected_answer": 35960.0,
+        "expected_unit": "V"
+      },
+      "started_at": "2026-05-09T02:38:00.761656+00:00",
+      "finished_at": "2026-05-09T02:41:01.589796+00:00",
+      "duration_seconds": 180.82814751000024,
+      "scoring": {
+        "id": "electrostatics_two_charge_potential",
+        "difficulty": "complex",
+        "domain": "electrostatics",
+        "expected_answer": 35960.0,
+        "expected_unit": "V",
+        "predicted_answer": 36000.0,
+        "predicted_unit": "V",
+        "confidence": 0.6,
+        "relative_error": 0.0011123470522803114,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "",
+        "formulas_used": [
+          "capacitance_def",
+          "series_capacitance",
+          "parallel_capacitance",
+          "energy_capacitor",
+          "coulombs_law",
+          "electric_field_point",
+          "electric_potential",
+          "charge_from_current",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "parallel_plate_capacitance",
+          "parallel_plate_dielectric",
+          "electric_field_uniform",
+          "electric_force_on_charge",
+          "electric_field_superposition",
+          "electric_potential_superposition",
+          "electric_potential_energy_two_charges",
+          "gauss_law",
+          "electric_flux_uniform",
+          "field_infinite_line_charge",
+          "field_infinite_sheet_charge",
+          "field_conducting_surface",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 36000.0,
+            "unit": "V",
+            "raw": "3.6 × 10^4 V",
+            "source": "reasoning_fallback"
+          },
+          {
+            "answer": 36000.0,
+            "unit": "V",
+            "raw": "3.6e4 V",
+            "source": "reasoning_fallback"
+          },
+          {
+            "answer": null,
+            "unit": null,
+            "error": "parse_failed",
+            "final_excerpt": "",
+            "reasoning_excerpt": " charge from the point, then V1 = k * Q1 / r, V2 = k * Q2 / r, with r=0.50 m.\n\nBut is r the same? The problem says \"each 0.50 m away\", which might imply that the distance is 0.50 m for both, but perhaps in different directions, but since potential doesn't depend on direction, it's fine.\n\nPerhaps the point is midway or something, but no, the distance is given separately for each, but here it's the same distance.\n\nAnother way to interpret: \"a +3.0 microcoulomb charge and a -1.0 microcoulomb charge are each 0.50 m away\" – this could mean that the charges are located such that from the point, both"
+          },
+          {
+            "answer": 4.0,
+            "unit": "V",
+            "raw": "4 V"
+          },
+          {
+            "answer": 36000.0,
+            "unit": "V",
+            "raw": "3.6e4 V"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The result is correct and consistent with the expected value to appropriate rounding. Formula choice and unit handling are correct, though the explanation is missing."
+        }
+      },
+      "structured_output": {
+        "answer": "36000.0 V",
+        "explanation": "",
+        "fol": "∀x (ElectrostaticsProblem(x) → Uses(CoulombLaw, x) ∨ Uses(CapacitanceRelations, x))",
+        "cot": [],
+        "premises": [
+          "Capacitance Definition: C = Q / V",
+          "Series Capacitance: 1/C_total = 1/C1 + 1/C2",
+          "Parallel Capacitance: C_total = C1 + C2 + ... + Cn",
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Coulomb's Law: F = k * q1 * q2 / r^2",
+          "Electric Field of a Point Charge: E = k * Q / r^2",
+          "Electric Potential of a Point Charge: V = k * Q / r",
+          "Charge Transport: Q = I * t"
+        ],
+        "confidence": 0.6
+      }
+    },
+    {
+      "index": 16,
+      "case": {
+        "id": "electrostatics_three_series_capacitance",
+        "difficulty": "complex",
+        "domain": "electrostatics",
+        "problem": "Three identical 2.0 microfarad capacitors are connected in series. What is their equivalent capacitance?",
+        "expected_answer": 6.666666666666667e-07,
+        "expected_unit": "F"
+      },
+      "started_at": "2026-05-09T02:41:01.589824+00:00",
+      "finished_at": "2026-05-09T02:43:52.337981+00:00",
+      "duration_seconds": 170.7481645099997,
+      "scoring": {
+        "id": "electrostatics_three_series_capacitance",
+        "difficulty": "complex",
+        "domain": "electrostatics",
+        "expected_answer": 6.666666666666667e-07,
+        "expected_unit": "F",
+        "predicted_answer": 6.7e-07,
+        "predicted_unit": "F",
+        "confidence": 1.0,
+        "relative_error": 0.0050000000000000044,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n### Step 1 - READ\nGiven quantities: Three capacitors, each with capacitance \\( C = 2.0 \\, \\mu\\text{F} \\) (microfarads), connected in series.  \nUnknown: Equivalent capacitance \\( C_{\\text{total}} \\).  \n\n### Step 2 - PLAN\nUse the formula for series capacitance:  \n\\( \\frac{1}{C_{\\text{total}}} = \\frac{1}{C_1} + \\frac{1}{C_2} + \\frac{1}{C_3} \\)  \nSince all capacitors are identical, \\( C_1 = C_2 = C_3 = 2.0 \\times 10^{-6} \\, \\text{F} \\).  \nThe formula applies because it describes the equivalent capacitance for capacitors connected in series.  \n\n### Step 3 - SOLVE\nConvert capacitances to SI units:  \n\\( C = 2.0 \\times 10^{-6} \\, \\text{F} \\) for each capacitor.  \n\nCalculate \\( \\frac{1}{C_{\\text{total}}} \\):  \n\\( \\frac{1}{C_{\\text{total}}} = \\frac{1}{2.0 \\times 10^{-6}} + \\frac{1}{2.0 \\times 10^{-6}} + \\frac{1}{2.0 \\times 10^{-6}} = 3 \\times \\frac{1}{2.0 \\times 10^{-6}} \\)  \n\nThen,  \n\\( C_{\\text{total}} = \\frac{1}{3 \\times \\frac{1}{2.0 \\times 10^{-6}}} = \\frac{2.0 \\times 10^{-6}}{3} \\)  \n\nCompute numerically:  \n\\( C_{\\text{total}} = \\frac{2.0 \\times 10^{-6}}{3} = 6.666\\ldots \\times 10^{-7} \\, \\text{F} \\)  \n\nRound to two significant figures (since the given capacitance has two significant figures and the number of capacitors is exact):  \n\\( C_{\\text{total}} = 6.7 \\times 10^{-7} \\, \\text{F} \\)  \n\n### Step 4 - ANSWER\nANSWER: 6.7e-7 F",
+        "formulas_used": [
+          "capacitance_def",
+          "series_capacitance",
+          "parallel_capacitance",
+          "energy_capacitor",
+          "coulombs_law",
+          "electric_field_point",
+          "electric_potential",
+          "charge_from_current",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "parallel_plate_capacitance",
+          "parallel_plate_dielectric",
+          "electric_field_uniform",
+          "electric_force_on_charge",
+          "electric_field_superposition",
+          "electric_potential_superposition",
+          "electric_potential_energy_two_charges",
+          "gauss_law",
+          "electric_flux_uniform",
+          "field_infinite_line_charge",
+          "field_infinite_sheet_charge",
+          "field_conducting_surface",
+          "rc_time_constant",
+          "rc_charging_voltage",
+          "rc_discharging_voltage"
+        ],
+        "all_answers": [
+          {
+            "answer": 6.7e-07,
+            "unit": "F",
+            "raw": "6.7e-7 F"
+          },
+          {
+            "answer": 6.7e-07,
+            "unit": "F",
+            "raw": "6.7e-7 F"
+          },
+          {
+            "answer": 6.7e-07,
+            "unit": "F",
+            "raw": "6.7e-7 F"
+          },
+          {
+            "answer": 6.7e-07,
+            "unit": "F",
+            "raw": "6.7e-7 F",
+            "source": "reasoning_fallback"
+          },
+          {
+            "answer": 6.7e-07,
+            "unit": "F",
+            "raw": "6.7e-7 F"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning, formula, unit conversion, and substitution are all correct. The final value is properly rounded to two significant figures, so it matches the expected result within acceptable precision."
+        }
+      },
+      "structured_output": {
+        "answer": "6.7e-07 F",
+        "explanation": "\n### Step 1 - READ\nGiven quantities: Three capacitors, each with capacitance \\( C = 2.0 \\, \\mu\\text{F} \\) (microfarads), connected in series.  \nUnknown: Equivalent capacitance \\( C_{\\text{total}} \\).  \n\n### Step 2 - PLAN\nUse the formula for series capacitance:  \n\\( \\frac{1}{C_{\\text{total}}} = \\frac{1}{C_1} + \\frac{1}{C_2} + \\frac{1}{C_3} \\)  \nSince all capacitors are identical, \\( C_1 = C_2 = C_3 = 2.0 \\times 10^{-6} \\, \\text{F} \\).  \nThe formula applies because it describes the equivalent capacitance for capacitors connected in series.  \n\n### Step 3 - SOLVE\nConvert capacitances to SI units:  \n\\( C = 2.0 \\times 10^{-6} \\, \\text{F} \\) for each capacitor.  \n\nCalculate \\( \\frac{1}{C_{\\text{total}}} \\):  \n\\( \\frac{1}{C_{\\text{total}}} = \\frac{1}{2.0 \\times 10^{-6}} + \\frac{1}{2.0 \\times 10^{-6}} + \\frac{1}{2.0 \\times 10^{-6}} = 3 \\times \\frac{1}{2.0 \\times 10^{-6}} \\)  \n\nThen,  \n\\( C_{\\text{total}} = \\frac{1}{3 \\times \\frac{1}{2.0 \\times 10^{-6}}} = \\frac{2.0 \\times 10^{-6}}{3} \\)  \n\nCompute numerically:  \n\\( C_{\\text{total}} = \\frac{2.0 \\times 10^{-6}}{3} = 6.666\\ldots \\times 10^{-7} \\, \\text{F} \\)  \n\nRound to two significant figures (since the given capacitance has two significant figures and the number of capacitors is exact):  \n\\( C_{\\text{total}} = 6.7 \\times 10^{-7} \\, \\text{F} \\)  \n\n### Step 4 - ANSWER\nANSWER: 6.7e-7 F",
+        "fol": "∀x (ElectrostaticsProblem(x) → Uses(CoulombLaw, x) ∨ Uses(CapacitanceRelations, x))",
+        "cot": [
+          "### Step 1 - READ",
+          "Given quantities: Three capacitors, each with capacitance \\( C = 2.0 \\, \\mu\\text{F} \\) (microfarads), connected in series.",
+          "Unknown: Equivalent capacitance \\( C_{\\text{total}} \\).",
+          "### Step 2 - PLAN"
+        ],
+        "premises": [
+          "Capacitance Definition: C = Q / V",
+          "Series Capacitance: 1/C_total = 1/C1 + 1/C2",
+          "Parallel Capacitance: C_total = C1 + C2 + ... + Cn",
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Coulomb's Law: F = k * q1 * q2 / r^2",
+          "Electric Field of a Point Charge: E = k * Q / r^2",
+          "Electric Potential of a Point Charge: V = k * Q / r",
+          "Charge Transport: Q = I * t"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 17,
+      "case": {
+        "id": "energy_resistor_work",
+        "difficulty": "simple",
+        "domain": "energy",
+        "problem": "A 60 W lamp runs for 120 s. How much energy does it use?",
+        "expected_answer": 7200.0,
+        "expected_unit": "J"
+      },
+      "started_at": "2026-05-09T02:43:52.338009+00:00",
+      "finished_at": "2026-05-09T02:45:13.932473+00:00",
+      "duration_seconds": 81.59447003599962,
+      "scoring": {
+        "id": "energy_resistor_work",
+        "difficulty": "simple",
+        "domain": "energy",
+        "expected_answer": 7200.0,
+        "expected_unit": "J",
+        "predicted_answer": 7200.0,
+        "predicted_unit": "J",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\nSTEP 1 - READ: Given: Power P = 60 W, time t = 120 s. Unknown: Energy E.\n\nSTEP 2 - PLAN: Use the formula for energy from power and time: E = P * t. This formula applies because the power is constant and given, and energy is calculated as power multiplied by time.\n\nSTEP 3 - SOLVE: E = P * t = 60 W * 120 s. First, perform the multiplication: 60 * 120 = 7200 J. Considering significant figures, P = 60 W has two significant figures, t = 120 s has three significant figures, so the result should have two significant figures. Thus, E = 7.2 × 10^3 J.\n\nANSWER: 7.2e3 J",
+        "formulas_used": [
+          "energy_capacitor",
+          "power_basic",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "electric_potential_energy_two_charges",
+          "rc_time_constant",
+          "rc_discharging_voltage",
+          "efficiency"
+        ],
+        "all_answers": [
+          {
+            "answer": 7200.0,
+            "unit": "J",
+            "raw": "7.2e3 J"
+          },
+          {
+            "answer": 7200.0,
+            "unit": "J",
+            "raw": "7.2e3 J"
+          },
+          {
+            "answer": 7200.0,
+            "unit": "J",
+            "raw": "7200 J"
+          },
+          {
+            "answer": 7200.0,
+            "unit": "J",
+            "raw": "7.2e3 J"
+          },
+          {
+            "answer": 7200.0,
+            "unit": "J",
+            "raw": "7.2e3 J"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning, formula, substitution, and units are all correct: energy equals power times time. The final value 7.2 × 10^3 J is equivalent to 7200.0 J, so the answer is fully correct."
+        }
+      },
+      "structured_output": {
+        "answer": "7200.0 J",
+        "explanation": "\nSTEP 1 - READ: Given: Power P = 60 W, time t = 120 s. Unknown: Energy E.\n\nSTEP 2 - PLAN: Use the formula for energy from power and time: E = P * t. This formula applies because the power is constant and given, and energy is calculated as power multiplied by time.\n\nSTEP 3 - SOLVE: E = P * t = 60 W * 120 s. First, perform the multiplication: 60 * 120 = 7200 J. Considering significant figures, P = 60 W has two significant figures, t = 120 s has three significant figures, so the result should have two significant figures. Thus, E = 7.2 × 10^3 J.\n\nANSWER: 7.2e3 J",
+        "fol": "∀x (EnergyProblem(x) → ConservesOrComputesEnergy(x))",
+        "cot": [
+          "STEP 1 - READ: Given: Power P = 60 W, time t = 120 s. Unknown: Energy E.",
+          "STEP 2 - PLAN: Use the formula for energy from power and time: E = P * t. This formula applies because the power is constant and given, and energy is calculated as power multiplied by time.",
+          "STEP 3 - SOLVE: E = P * t = 60 W * 120 s. First, perform the multiplication: 60 * 120 = 7200 J. Considering significant figures, P = 60 W has two significant figures, t = 120 s has three significant figures, so the result should have two significant figures. Thus, E = 7.2 × 10^3 J."
+        ],
+        "premises": [
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Power and Energy: P = E / t; E = P * t",
+          "Electric Power: P = I * V",
+          "Resistor Power from Current: P = I^2 * R",
+          "Resistor Power from Voltage: P = V^2 / R",
+          "Joule Heating Energy: E = I^2 * R * t = V * I * t = V^2 * t / R",
+          "Electrical Work on Charge: W = q * ΔV",
+          "Capacitor Charge: Q = C * V"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 18,
+      "case": {
+        "id": "energy_capacitor_basic",
+        "difficulty": "simple",
+        "domain": "energy",
+        "problem": "A 10 microfarad capacitor is charged to 50 V. What energy is stored in the capacitor?",
+        "expected_answer": 0.0125,
+        "expected_unit": "J"
+      },
+      "started_at": "2026-05-09T02:45:13.932496+00:00",
+      "finished_at": "2026-05-09T02:47:46.892166+00:00",
+      "duration_seconds": 152.9596785849999,
+      "scoring": {
+        "id": "energy_capacitor_basic",
+        "difficulty": "simple",
+        "domain": "energy",
+        "expected_answer": 0.0125,
+        "expected_unit": "J",
+        "predicted_answer": 0.0125,
+        "predicted_unit": "J",
+        "confidence": 0.8,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven quantities:  \n- Capacitance, \\( C = 10 \\, \\mu\\text{F} = 10 \\times 10^{-6} \\, \\text{F} \\)  \n- Voltage, \\( V = 50 \\, \\text{V} \\)  \nUnknown: Energy stored, \\( E \\)  \n\n**STEP 2 - PLAN:**  \nUse the formula for energy stored in a capacitor from the reference table:  \n\\( E = 0.5 \\times C \\times V^2 \\)  \nThis applies to ideal capacitors, and the given values are for an ideal capacitor.  \n\n**STEP 3 - SOLVE:**  \nConvert capacitance to SI units:  \n\\( C = 10 \\times 10^{-6} \\, \\text{F} = 1 \\times 10^{-5} \\, \\text{F} \\)  \nVoltage:  \n\\( V = 50 \\, \\text{V} \\)  \nCalculate \\( V^2 \\):  \n\\( V^2 = 50^2 = 2500 \\, \\text{V}^2 \\)  \nCalculate \\( C \\times V^2 \\):  \n\\( C \\times V^2 = (1 \\times 10^{-5}) \\times 2500 = 0.025 \\, \\text{J} \\)  \nCalculate energy:  \n\\( E = 0.5 \\times 0.025 = 0.0125 \\, \\text{J} \\)  \n\nPython-style pseudocode:  \n```python\nC = 10e-6  # capacitance in farads\nV = 50     # voltage in volts\nE = 0.5 * C * V**2  # energy in joules\n```  \n\n**STEP 4 - ANSWER:**  \nANSWER: 1.25e-2 J",
+        "formulas_used": [
+          "energy_capacitor",
+          "power_basic",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "electric_potential_energy_two_charges",
+          "rc_time_constant",
+          "rc_discharging_voltage",
+          "efficiency"
+        ],
+        "all_answers": [
+          {
+            "answer": 0.0125,
+            "unit": "J",
+            "raw": "1.25e-2 J"
+          },
+          {
+            "answer": 0.0125,
+            "unit": "J",
+            "raw": "1.25e-2 J"
+          },
+          {
+            "answer": 0.013,
+            "unit": "J",
+            "raw": "1.3e-2 J"
+          },
+          {
+            "answer": 0.0125,
+            "unit": "J",
+            "raw": "1.25e-2 J"
+          },
+          {
+            "answer": 0.0125,
+            "unit": "J",
+            "raw": "1.25e-2 J"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The solution uses the correct capacitor energy formula, converts 10 microfarads properly to 1.0e-5 F, and substitutes the values correctly. The arithmetic and final answer of 0.0125 J are fully correct with proper units."
+        }
+      },
+      "structured_output": {
+        "answer": "0.0125 J",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven quantities:  \n- Capacitance, \\( C = 10 \\, \\mu\\text{F} = 10 \\times 10^{-6} \\, \\text{F} \\)  \n- Voltage, \\( V = 50 \\, \\text{V} \\)  \nUnknown: Energy stored, \\( E \\)  \n\n**STEP 2 - PLAN:**  \nUse the formula for energy stored in a capacitor from the reference table:  \n\\( E = 0.5 \\times C \\times V^2 \\)  \nThis applies to ideal capacitors, and the given values are for an ideal capacitor.  \n\n**STEP 3 - SOLVE:**  \nConvert capacitance to SI units:  \n\\( C = 10 \\times 10^{-6} \\, \\text{F} = 1 \\times 10^{-5} \\, \\text{F} \\)  \nVoltage:  \n\\( V = 50 \\, \\text{V} \\)  \nCalculate \\( V^2 \\):  \n\\( V^2 = 50^2 = 2500 \\, \\text{V}^2 \\)  \nCalculate \\( C \\times V^2 \\):  \n\\( C \\times V^2 = (1 \\times 10^{-5}) \\times 2500 = 0.025 \\, \\text{J} \\)  \nCalculate energy:  \n\\( E = 0.5 \\times 0.025 = 0.0125 \\, \\text{J} \\)  \n\nPython-style pseudocode:  \n```python\nC = 10e-6  # capacitance in farads\nV = 50     # voltage in volts\nE = 0.5 * C * V**2  # energy in joules\n```  \n\n**STEP 4 - ANSWER:**  \nANSWER: 1.25e-2 J",
+        "fol": "∀x (EnergyProblem(x) → ConservesOrComputesEnergy(x))",
+        "cot": [
+          "STEP 1 - READ: Given quantities: - Capacitance, \\( C = 10 \\, \\mu\\text{F} = 10 \\times 10^{-6} \\, \\text{F} \\) - Voltage, \\( V = 50 \\, \\text{V} \\) Unknown: Energy stored, \\( E \\)",
+          "STEP 2 - PLAN: Use the formula for energy stored in a capacitor from the reference table: \\( E = 0.5 \\times C \\times V^2 \\) This applies to ideal capacitors, and the given values are for an ideal capacitor.",
+          "STEP 3 - SOLVE: Convert capacitance to SI units: \\( C = 10 \\times 10^{-6} \\, \\text{F} = 1 \\times 10^{-5} \\, \\text{F} \\) Voltage: \\( V = 50 \\, \\text{V} \\) Calculate \\( V^2 \\): \\( V^2 = 50^2 = 2500 \\, \\text{V}^2 \\) Calculate \\( C \\times V^2 \\): \\( C \\times V^2 = (1 \\times 10^{-5}) \\times 2500 = 0.025 \\, \\text{J} \\) Calculate energy: \\( E = 0.5 \\times 0.025 = 0.0125 \\, \\text{J} \\) Python-style pseudocode: ```python C = 10e-6 # capacitance in farads V = 50 # voltage in volts E = 0.5 * C * V2 # energy in joules ```",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Power and Energy: P = E / t; E = P * t",
+          "Electric Power: P = I * V",
+          "Resistor Power from Current: P = I^2 * R",
+          "Resistor Power from Voltage: P = V^2 / R",
+          "Joule Heating Energy: E = I^2 * R * t = V * I * t = V^2 * t / R",
+          "Electrical Work on Charge: W = q * ΔV",
+          "Capacitor Charge: Q = C * V"
+        ],
+        "confidence": 0.8
+      }
+    },
+    {
+      "index": 19,
+      "case": {
+        "id": "energy_resistor_dissipated",
+        "difficulty": "moderate",
+        "domain": "energy",
+        "problem": "A 5 ohm resistor carries a steady current of 2 A for 10 s. How much energy is dissipated in the resistor?",
+        "expected_answer": 200.0,
+        "expected_unit": "J"
+      },
+      "started_at": "2026-05-09T02:47:46.892199+00:00",
+      "finished_at": "2026-05-09T02:48:53.840377+00:00",
+      "duration_seconds": 66.94818227999986,
+      "scoring": {
+        "id": "energy_resistor_dissipated",
+        "difficulty": "moderate",
+        "domain": "energy",
+        "expected_answer": 200.0,
+        "expected_unit": "J",
+        "predicted_answer": 200.0,
+        "predicted_unit": "J",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\nSTEP 1 - READ: Extract all given quantities with values and SI units. Identify the unknown.  \nGiven: Resistance, R = 5 Ω; current, I = 2 A; time, t = 10 s. Unknown: Energy dissipated, E (in joules, J).  \n\nSTEP 2 - PLAN: Select the relevant formula(s) from the reference. State why each applies.  \nUse the formula from the table: E = I^2 * R * t (ID: joule_heating). This applies because the energy dissipated is due to joule heating in an ohmic resistor, and the given quantities are current, resistance, and time.  \n\nSTEP 3 - SOLVE: Write Python-style pseudocode or arithmetic to calculate the answer. Show every substitution.  \nPseudocode:  \n```python  \nI = 2  # amperes  \nR = 5  # ohms  \nt = 10  # seconds  \nE = I**2 * R * t  # joules  \n```  \nSubstitution:  \nE = (2)^2 * 5 * 10 = 4 * 5 * 10 = 200 J  \n\nSTEP 4 - ANSWER: State the final answer on its own line in EXACTLY this format:  \nANSWER: 200 J",
+        "formulas_used": [
+          "energy_capacitor",
+          "power_basic",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "electric_potential_energy_two_charges",
+          "rc_time_constant",
+          "rc_discharging_voltage",
+          "efficiency"
+        ],
+        "all_answers": [
+          {
+            "answer": 200.0,
+            "unit": "J",
+            "raw": "200 J"
+          },
+          {
+            "answer": 200.0,
+            "unit": "J",
+            "raw": "200 J"
+          },
+          {
+            "answer": 200.0,
+            "unit": "J",
+            "raw": "200 J"
+          },
+          {
+            "answer": 200.0,
+            "unit": "J",
+            "raw": "200 J"
+          },
+          {
+            "answer": 200.0,
+            "unit": "J",
+            "raw": "200 J"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning, formula, substitutions, and units are all correct. The final answer matches the expected 200 J exactly."
+        }
+      },
+      "structured_output": {
+        "answer": "200.0 J",
+        "explanation": "\nSTEP 1 - READ: Extract all given quantities with values and SI units. Identify the unknown.  \nGiven: Resistance, R = 5 Ω; current, I = 2 A; time, t = 10 s. Unknown: Energy dissipated, E (in joules, J).  \n\nSTEP 2 - PLAN: Select the relevant formula(s) from the reference. State why each applies.  \nUse the formula from the table: E = I^2 * R * t (ID: joule_heating). This applies because the energy dissipated is due to joule heating in an ohmic resistor, and the given quantities are current, resistance, and time.  \n\nSTEP 3 - SOLVE: Write Python-style pseudocode or arithmetic to calculate the answer. Show every substitution.  \nPseudocode:  \n```python  \nI = 2  # amperes  \nR = 5  # ohms  \nt = 10  # seconds  \nE = I**2 * R * t  # joules  \n```  \nSubstitution:  \nE = (2)^2 * 5 * 10 = 4 * 5 * 10 = 200 J  \n\nSTEP 4 - ANSWER: State the final answer on its own line in EXACTLY this format:  \nANSWER: 200 J",
+        "fol": "∀x (EnergyProblem(x) → ConservesOrComputesEnergy(x))",
+        "cot": [
+          "STEP 1 - READ: Extract all given quantities with values and SI units. Identify the unknown. Given: Resistance, R = 5 Ω; current, I = 2 A; time, t = 10 s. Unknown: Energy dissipated, E (in joules, J).",
+          "STEP 2 - PLAN: Select the relevant formula(s) from the reference. State why each applies. Use the formula from the table: E = I^2 * R * t (ID: joule_heating). This applies because the energy dissipated is due to joule heating in an ohmic resistor, and the given quantities are current, resistance, and time.",
+          "STEP 3 - SOLVE: Write Python-style pseudocode or arithmetic to calculate the answer. Show every substitution. Pseudocode: ```python I = 2 # amperes R = 5 # ohms t = 10 # seconds E = I2 * R * t # joules ``` Substitution: E = (2)^2 * 5 * 10 = 4 * 5 * 10 = 200 J",
+          "STEP 4 - ANSWER: State the final answer on its own line in EXACTLY this format:"
+        ],
+        "premises": [
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Power and Energy: P = E / t; E = P * t",
+          "Electric Power: P = I * V",
+          "Resistor Power from Current: P = I^2 * R",
+          "Resistor Power from Voltage: P = V^2 / R",
+          "Joule Heating Energy: E = I^2 * R * t = V * I * t = V^2 * t / R",
+          "Electrical Work on Charge: W = q * ΔV",
+          "Capacitor Charge: Q = C * V"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 20,
+      "case": {
+        "id": "energy_capacitor_from_charge",
+        "difficulty": "moderate",
+        "domain": "energy",
+        "problem": "A capacitor has capacitance 8 microfarad and stores charge 40 microcoulomb. What energy is stored in it?",
+        "expected_answer": 0.0001,
+        "expected_unit": "J"
+      },
+      "started_at": "2026-05-09T02:48:53.840395+00:00",
+      "finished_at": "2026-05-09T02:51:16.353372+00:00",
+      "duration_seconds": 142.5129828070003,
+      "scoring": {
+        "id": "energy_capacitor_from_charge",
+        "difficulty": "moderate",
+        "domain": "energy",
+        "expected_answer": 0.0001,
+        "expected_unit": "J",
+        "predicted_answer": 0.0001,
+        "predicted_unit": "J",
+        "confidence": 1.0,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Capacitance \\( C = 8  \\mu\\text{F} = 8 \\times 10^{-6}  \\text{F} \\), charge \\( Q = 40  \\mu\\text{C} = 40 \\times 10^{-6}  \\text{C} \\).  \nUnknown: Energy stored, \\( E \\).  \n\n**STEP 2 - PLAN:**  \nUse the formula for energy stored in a capacitor from the energy_capacitor entry: \\( E = \\frac{Q^2}{2C} \\). This applies to ideal capacitors, which is given.  \n\n**STEP 3 - SOLVE:**  \nCalculate \\( Q^2 \\):  \n\\( Q = 40 \\times 10^{-6}  \\text{C} \\), so \\( Q^2 = (40 \\times 10^{-6})^2 = 1600 \\times 10^{-12} = 1.6 \\times 10^{-9}  \\text{C}^2 \\).  \n\nCalculate \\( 2C \\):  \n\\( C = 8 \\times 10^{-6}  \\text{F} \\), so \\( 2C = 2 \\times 8 \\times 10^{-6} = 16 \\times 10^{-6}  \\text{F} \\).  \n\nNow, \\( E = \\frac{Q^2}{2C} = \\frac{1.6 \\times 10^{-9}}{16 \\times 10^{-6}} \\).  \nSimplify: \\( \\frac{1.6 \\times 10^{-9}}{16 \\times 10^{-6}} = \\frac{1.6}{16} \\times 10^{-9 - (-6)} = 0.1 \\times 10^{-3} = 1 \\times 10^{-4}  \\text{J} \\).  \n\n**STEP 4 - ANSWER:**  \nANSWER: 1e-4 J",
+        "formulas_used": [
+          "energy_capacitor",
+          "power_basic",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "electric_potential_energy_two_charges",
+          "rc_time_constant",
+          "rc_discharging_voltage",
+          "efficiency"
+        ],
+        "all_answers": [
+          {
+            "answer": 0.0001,
+            "unit": "J",
+            "raw": "1e-4 J"
+          },
+          {
+            "answer": 0.0001,
+            "unit": "J",
+            "raw": "1.00e-4 J"
+          },
+          {
+            "answer": 0.0001,
+            "unit": "J",
+            "raw": "1.00e-4 J"
+          },
+          {
+            "answer": 0.0001,
+            "unit": "J",
+            "raw": "1.00e-4 J"
+          },
+          {
+            "answer": 0.0001,
+            "unit": "J",
+            "raw": "1e-4 J"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The solution uses the correct capacitor energy formula, converts micro-units properly, and carries out the substitution and arithmetic correctly. The final answer 1e-4 J matches the expected value and has the correct unit."
+        }
+      },
+      "structured_output": {
+        "answer": "0.0001 J",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Capacitance \\( C = 8  \\mu\\text{F} = 8 \\times 10^{-6}  \\text{F} \\), charge \\( Q = 40  \\mu\\text{C} = 40 \\times 10^{-6}  \\text{C} \\).  \nUnknown: Energy stored, \\( E \\).  \n\n**STEP 2 - PLAN:**  \nUse the formula for energy stored in a capacitor from the energy_capacitor entry: \\( E = \\frac{Q^2}{2C} \\). This applies to ideal capacitors, which is given.  \n\n**STEP 3 - SOLVE:**  \nCalculate \\( Q^2 \\):  \n\\( Q = 40 \\times 10^{-6}  \\text{C} \\), so \\( Q^2 = (40 \\times 10^{-6})^2 = 1600 \\times 10^{-12} = 1.6 \\times 10^{-9}  \\text{C}^2 \\).  \n\nCalculate \\( 2C \\):  \n\\( C = 8 \\times 10^{-6}  \\text{F} \\), so \\( 2C = 2 \\times 8 \\times 10^{-6} = 16 \\times 10^{-6}  \\text{F} \\).  \n\nNow, \\( E = \\frac{Q^2}{2C} = \\frac{1.6 \\times 10^{-9}}{16 \\times 10^{-6}} \\).  \nSimplify: \\( \\frac{1.6 \\times 10^{-9}}{16 \\times 10^{-6}} = \\frac{1.6}{16} \\times 10^{-9 - (-6)} = 0.1 \\times 10^{-3} = 1 \\times 10^{-4}  \\text{J} \\).  \n\n**STEP 4 - ANSWER:**  \nANSWER: 1e-4 J",
+        "fol": "∀x (EnergyProblem(x) → ConservesOrComputesEnergy(x))",
+        "cot": [
+          "STEP 1 - READ: Given: Capacitance \\( C = 8 \\mu\\text{F} = 8 \\times 10^{-6} \\text{F} \\), charge \\( Q = 40 \\mu\\text{C} = 40 \\times 10^{-6} \\text{C} \\). Unknown: Energy stored, \\( E \\).",
+          "STEP 2 - PLAN: Use the formula for energy stored in a capacitor from the energy_capacitor entry: \\( E = \\frac{Q^2}{2C} \\). This applies to ideal capacitors, which is given.",
+          "STEP 3 - SOLVE: Calculate \\( Q^2 \\): \\( Q = 40 \\times 10^{-6} \\text{C} \\), so \\( Q^2 = (40 \\times 10^{-6})^2 = 1600 \\times 10^{-12} = 1.6 \\times 10^{-9} \\text{C}^2 \\). Calculate \\( 2C \\): \\( C = 8 \\times 10^{-6} \\text{F} \\), so \\( 2C = 2 \\times 8 \\times 10^{-6} = 16 \\times 10^{-6} \\text{F} \\). Now, \\( E = \\frac{Q^2}{2C} = \\frac{1.6 \\times 10^{-9}}{16 \\times 10^{-6}} \\). Simplify: \\( \\frac{1.6 \\times 10^{-9}}{16 \\times 10^{-6}} = \\frac{1.6}{16} \\times 10^{-9 - (-6)} = 0.1 \\times 10^{-3} = 1 \\times 10^{-4} \\text{J} \\).",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Power and Energy: P = E / t; E = P * t",
+          "Electric Power: P = I * V",
+          "Resistor Power from Current: P = I^2 * R",
+          "Resistor Power from Voltage: P = V^2 / R",
+          "Joule Heating Energy: E = I^2 * R * t = V * I * t = V^2 * t / R",
+          "Electrical Work on Charge: W = q * ΔV",
+          "Capacitor Charge: Q = C * V"
+        ],
+        "confidence": 1.0
+      }
+    },
+    {
+      "index": 21,
+      "case": {
+        "id": "energy_find_capacitor_voltage",
+        "difficulty": "complex",
+        "domain": "energy",
+        "problem": "A 20 microfarad capacitor stores 0.040 J of energy. What voltage is across the capacitor?",
+        "expected_answer": 63.245553203367585,
+        "expected_unit": "V"
+      },
+      "started_at": "2026-05-09T02:51:16.353394+00:00",
+      "finished_at": "2026-05-09T02:54:14.867543+00:00",
+      "duration_seconds": 178.51415746699968,
+      "scoring": {
+        "id": "energy_find_capacitor_voltage",
+        "difficulty": "complex",
+        "domain": "energy",
+        "expected_answer": 63.245553203367585,
+        "expected_unit": "V",
+        "predicted_answer": 63.0,
+        "predicted_unit": "V",
+        "confidence": 0.6,
+        "relative_error": 0.0038825370469604864,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "",
+        "formulas_used": [
+          "energy_capacitor",
+          "power_basic",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "electric_potential_energy_two_charges",
+          "rc_time_constant",
+          "rc_discharging_voltage",
+          "efficiency"
+        ],
+        "all_answers": [
+          {
+            "answer": 63.0,
+            "unit": "V",
+            "raw": "63 V",
+            "source": "reasoning_fallback"
+          },
+          {
+            "answer": 63.0,
+            "unit": "V",
+            "raw": "63 V"
+          },
+          {
+            "answer": 0.04,
+            "unit": "J",
+            "raw": "0.040 J"
+          },
+          {
+            "answer": 2.0,
+            "unit": "C",
+            "raw": "2C",
+            "source": "reasoning_fallback"
+          },
+          {
+            "answer": 63.0,
+            "unit": "V",
+            "raw": "63 V",
+            "source": "reasoning_fallback"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 58,
+          "feedback": "The final voltage is close to the correct value and the units are right, but no reasoning, formula, or substitution is shown. With no demonstrated method, the answer is only weakly supported despite being numerically near correct."
+        }
+      },
+      "structured_output": {
+        "answer": "63.0 V",
+        "explanation": "",
+        "fol": "∀x (EnergyProblem(x) → ConservesOrComputesEnergy(x))",
+        "cot": [],
+        "premises": [
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Power and Energy: P = E / t; E = P * t",
+          "Electric Power: P = I * V",
+          "Resistor Power from Current: P = I^2 * R",
+          "Resistor Power from Voltage: P = V^2 / R",
+          "Joule Heating Energy: E = I^2 * R * t = V * I * t = V^2 * t / R",
+          "Electrical Work on Charge: W = q * ΔV",
+          "Capacitor Charge: Q = C * V"
+        ],
+        "confidence": 0.6
+      }
+    },
+    {
+      "index": 22,
+      "case": {
+        "id": "energy_series_capacitor_energy",
+        "difficulty": "complex",
+        "domain": "energy",
+        "problem": "A 4 microfarad capacitor and a 12 microfarad capacitor are connected in series across 100 V. What total energy is stored in the equivalent capacitance?",
+        "expected_answer": 0.015,
+        "expected_unit": "J"
+      },
+      "started_at": "2026-05-09T02:54:14.867570+00:00",
+      "finished_at": "2026-05-09T02:57:10.759006+00:00",
+      "duration_seconds": 175.891443599,
+      "scoring": {
+        "id": "energy_series_capacitor_energy",
+        "difficulty": "complex",
+        "domain": "energy",
+        "expected_answer": 0.015,
+        "expected_unit": "J",
+        "predicted_answer": 0.015,
+        "predicted_unit": "J",
+        "confidence": 0.8,
+        "relative_error": 0.0,
+        "tolerance": 0.03,
+        "pass_reason": "within_relative_tolerance",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Two capacitors, C₁ = 4 μF and C₂ = 12 μF, connected in series across a voltage of 100 V. Unknown: Total energy stored in the equivalent capacitance.\n\n**STEP 2 - PLAN:**  \nUse the formula for equivalent capacitance of capacitors in series: C_eq = (C₁ * C₂) / (C₁ + C₂). Then, use the energy stored in a capacitor: E = 0.5 * C_eq * V², where V is the voltage across the equivalent capacitor.\n\n**STEP 3 - SOLVE:**  \nConvert capacitances to SI units: C₁ = 4 × 10⁻⁶ F, C₂ = 12 × 10⁻⁶ F, V = 100 V.  \nCalculate equivalent capacitance: C_eq = (4 × 10⁻⁶ * 12 × 10⁻⁶) / (4 × 10⁻⁶ + 12 × 10⁻⁶) = (48 × 10⁻¹²) / (16 × 10⁻⁶) = 3 × 10⁻⁶ F.  \nCalculate energy: E = 0.5 * 3 × 10⁻⁶ * (100)² = 0.5 * 3 × 10⁻⁶ * 10000 = 0.5 * 3 × 10⁻² = 0.015 J.\n\n**STEP 4 - ANSWER:**  \nANSWER: 0.015 J",
+        "formulas_used": [
+          "energy_capacitor",
+          "power_basic",
+          "electric_power",
+          "resistor_power_current",
+          "resistor_power_voltage",
+          "joule_heating",
+          "work_charge_potential",
+          "capacitor_charge",
+          "capacitor_voltage",
+          "capacitor_energy_voltage_from_energy",
+          "capacitor_energy_capacitance_from_energy",
+          "capacitor_series_charge_same",
+          "capacitor_parallel_voltage_same",
+          "electric_potential_energy_two_charges",
+          "rc_time_constant",
+          "rc_discharging_voltage",
+          "efficiency"
+        ],
+        "all_answers": [
+          {
+            "answer": 0.015,
+            "unit": "J",
+            "raw": "0.015 J"
+          },
+          {
+            "answer": 0.015,
+            "unit": "J",
+            "raw": "1.5e-2 J"
+          },
+          {
+            "answer": 100.0,
+            "unit": "V",
+            "raw": "100 V"
+          },
+          {
+            "answer": 0.015,
+            "unit": "J",
+            "raw": "1.5 × 10^ -2 J"
+          },
+          {
+            "answer": 0.015,
+            "unit": "J",
+            "raw": "1.5e-2 J"
+          }
+        ],
+        "numeric_ok": true,
+        "unit_ok": true,
+        "passed": true,
+        "judge": {
+          "score": 100,
+          "feedback": "The reasoning, formulas, unit conversions, and substitutions are all correct. The final energy of 0.015 J is fully supported and matches the expected answer."
+        }
+      },
+      "structured_output": {
+        "answer": "0.015 J",
+        "explanation": "\n**STEP 1 - READ:**  \nGiven: Two capacitors, C₁ = 4 μF and C₂ = 12 μF, connected in series across a voltage of 100 V. Unknown: Total energy stored in the equivalent capacitance.\n\n**STEP 2 - PLAN:**  \nUse the formula for equivalent capacitance of capacitors in series: C_eq = (C₁ * C₂) / (C₁ + C₂). Then, use the energy stored in a capacitor: E = 0.5 * C_eq * V², where V is the voltage across the equivalent capacitor.\n\n**STEP 3 - SOLVE:**  \nConvert capacitances to SI units: C₁ = 4 × 10⁻⁶ F, C₂ = 12 × 10⁻⁶ F, V = 100 V.  \nCalculate equivalent capacitance: C_eq = (4 × 10⁻⁶ * 12 × 10⁻⁶) / (4 × 10⁻⁶ + 12 × 10⁻⁶) = (48 × 10⁻¹²) / (16 × 10⁻⁶) = 3 × 10⁻⁶ F.  \nCalculate energy: E = 0.5 * 3 × 10⁻⁶ * (100)² = 0.5 * 3 × 10⁻⁶ * 10000 = 0.5 * 3 × 10⁻² = 0.015 J.\n\n**STEP 4 - ANSWER:**  \nANSWER: 0.015 J",
+        "fol": "∀x (EnergyProblem(x) → ConservesOrComputesEnergy(x))",
+        "cot": [
+          "STEP 1 - READ: Given: Two capacitors, C₁ = 4 μF and C₂ = 12 μF, connected in series across a voltage of 100 V. Unknown: Total energy stored in the equivalent capacitance.",
+          "STEP 2 - PLAN: Use the formula for equivalent capacitance of capacitors in series: C_eq = (C₁ * C₂) / (C₁ + C₂). Then, use the energy stored in a capacitor: E = 0.5 * C_eq * V², where V is the voltage across the equivalent capacitor.",
+          "STEP 3 - SOLVE: Convert capacitances to SI units: C₁ = 4 × 10⁻⁶ F, C₂ = 12 × 10⁻⁶ F, V = 100 V. Calculate equivalent capacitance: C_eq = (4 × 10⁻⁶ * 12 × 10⁻⁶) / (4 × 10⁻⁶ + 12 × 10⁻⁶) = (48 × 10⁻¹²) / (16 × 10⁻⁶) = 3 × 10⁻⁶ F. Calculate energy: E = 0.5 * 3 × 10⁻⁶ * (100)² = 0.5 * 3 × 10⁻⁶ * 10000 = 0.5 * 3 × 10⁻² = 0.015 J.",
+          "STEP 4 - ANSWER:"
+        ],
+        "premises": [
+          "Energy Stored in a Capacitor: E = 0.5 * C * V^2; E = Q^2/(2C); E = 0.5 * Q * V",
+          "Power and Energy: P = E / t; E = P * t",
+          "Electric Power: P = I * V",
+          "Resistor Power from Current: P = I^2 * R",
+          "Resistor Power from Voltage: P = V^2 / R",
+          "Joule Heating Energy: E = I^2 * R * t = V * I * t = V^2 * t / R",
+          "Electrical Work on Charge: W = q * ΔV",
+          "Capacitor Charge: Q = C * V"
+        ],
+        "confidence": 0.8
+      }
+    }
+  ]
+}

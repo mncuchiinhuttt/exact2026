@@ -23,18 +23,22 @@ AWQ Marlin, useful when GPU VRAM is below roughly 20GB:
       --port 8000
 """
 
+import os
+
+
 # === DEPENDENCIES ===
 # pip install openai
 # vLLM server must be running before executing this pipeline.
 
 MODEL_NAME = "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
-BASE_URL = "http://localhost:8000/v1"
-API_KEY = "EMPTY"
+BASE_URL = os.getenv("EXACT_VLLM_BASE_URL", "http://localhost:8000/v1")
+API_KEY = os.getenv("EXACT_VLLM_API_KEY", "EMPTY")
 
-DEFAULT_K = 5
-MAX_WORKERS = 5
-TEMPERATURE = 0.6
-TOP_P = 0.95
-MAX_TOKENS = 4096
+DEFAULT_K = int(os.getenv("EXACT_K", "5"))
+MAX_WORKERS = int(os.getenv("EXACT_MAX_WORKERS", str(DEFAULT_K)))
+TEMPERATURE = float(os.getenv("EXACT_TEMPERATURE", "0.6"))
+TOP_P = float(os.getenv("EXACT_TOP_P", "0.95"))
+MAX_TOKENS = int(os.getenv("EXACT_MAX_TOKENS", "4096"))
+ENABLE_THINKING = os.getenv("EXACT_ENABLE_THINKING", "1").lower() not in {"0", "false", "no"}
 
-EXTRA_BODY = {"chat_template_kwargs": {"enable_thinking": True}}
+EXTRA_BODY = {"chat_template_kwargs": {"enable_thinking": ENABLE_THINKING}}

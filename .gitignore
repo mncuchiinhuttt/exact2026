@@ -1,1 +1,9 @@
 .env
+.triton
+.codex
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd

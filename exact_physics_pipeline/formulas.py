@@ -1,5 +1,6 @@
 """Static formula database and retrieval helpers."""
 
+import re
 from typing import Any
 
 
@@ -394,11 +395,42 @@ FORMULA_DB: dict[str, Formula] = {
 }
 
 
-def retrieve_formulas(domain: str) -> list[Formula]:
-    """Return formulas relevant to a classified domain."""
+DEFAULT_FAST_FORMULA_LIMIT = 10
+
+
+def _formula_score(formula: Formula, problem: str) -> int:
+    """Score a formula against problem text using lightweight keyword overlap."""
+    text = problem.lower()
+    haystack = " ".join(
+        [
+            formula["id"].replace("_", " "),
+            formula["name"],
+            formula["formula"],
+            formula["conditions"],
+            " ".join(formula["variables"].values()),
+        ]
+    ).lower()
+    score = 0
+    for token in set(re.findall(r"[a-zA-Z]+", haystack)):
+        if len(token) >= 4 and token in text:
+            score += 1
+    for strong_token in ["series", "parallel", "capacitor", "charge", "energy", "power", "field", "potential", "current", "voltage"]:
+        if strong_token in text and strong_token in haystack:
+            score += 3
+    return score
+
+
+def retrieve_formulas(domain: str, problem: str | None = None, max_formulas: int | None = None) -> list[Formula]:
+    """Return formulas relevant to a classified domain, optionally ranked for a problem."""
     if domain == "general":
-        return list(FORMULA_DB.values())
-    return [formula for formula in FORMULA_DB.values() if domain in formula["domains"]]
+        formulas = list(FORMULA_DB.values())
+    else:
+        formulas = [formula for formula in FORMULA_DB.values() if domain in formula["domains"]]
+
+    if problem and max_formulas:
+        formulas = sorted(formulas, key=lambda formula: _formula_score(formula, problem), reverse=True)
+        return formulas[:max_formulas]
+    return formulas
 
 
 def format_formula_table(formulas: list[Formula]) -> str:

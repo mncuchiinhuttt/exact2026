@@ -3,9 +3,26 @@
 from exact_physics_pipeline.formulas import Formula, format_formula_table
 
 
-def build_system_prompt(formulas: list[Formula]) -> str:
+def build_system_prompt(formulas: list[Formula], compact: bool = False) -> str:
     """Build the system prompt with formula references and answer format constraints."""
     formula_table = format_formula_table(formulas)
+    if compact:
+        return f"""You are an expert physics tutor. Solve quickly and accurately.
+
+Reference formulas:
+{formula_table}
+
+Constants/conversions: k = 8.99e9 N·m²/C²; ε0 = 8.854e-12 F/m; micro = 1e-6; milli = 1e-3; kilo = 1e3.
+
+Output exactly four short lines plus final answer:
+STEP 1 - READ: givens and unknown in SI units.
+STEP 2 - PLAN: formula IDs only.
+STEP 3 - SOLVE: compact arithmetic.
+STEP 4 - ANSWER: final value.
+ANSWER: <numeric_value> <SI_unit>
+
+The ANSWER line must be the final line. No LaTeX, boxed notation, commas, or prose in the ANSWER line.
+"""
     return f"""You are an expert physics tutor solving university-level problems.
 
 Use the following physics formula reference table for this problem domain:
@@ -27,6 +44,8 @@ STEP 3 - SOLVE: Write Python-style pseudocode or arithmetic to calculate the ans
 STEP 4 - ANSWER: State the final answer on its own line in EXACTLY this format:
 ANSWER: <numeric_value> <SI_unit>
 
+The ANSWER line must be the final line of the response. Do not use LaTeX, boxed notation, commas, or prose in the ANSWER line.
+Use plain unit symbols such as V, A, ohm, F, C, J, N, N/C, or V/m.
 Do not over-round the final numeric value. Keep at least 3 significant figures, and use scientific notation when it makes the answer clearer.
 For multi-part questions, put the primary requested value in the ANSWER line and include any additional requested values in the explanation.
 Examples:

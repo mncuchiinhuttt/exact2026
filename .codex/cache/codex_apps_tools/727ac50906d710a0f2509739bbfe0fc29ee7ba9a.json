@@ -5,7 +5,7 @@
       "server_name": "codex_apps",
       "tool_name": "_get_screenshot",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_get_screenshot",
         "title": "get_screenshot",
@@ -53,14 +53,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_create_design_system_rules",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_create_design_system_rules",
         "title": "create_design_system_rules",
@@ -99,14 +98,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_design_context",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_get_design_context",
         "title": "get_design_context",
@@ -170,14 +168,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_metadata",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_get_metadata",
         "title": "get_metadata",
@@ -229,14 +226,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_variable_defs",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_get_variable_defs",
         "title": "get_variable_defs",
@@ -288,14 +284,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_figjam",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_get_figjam",
         "title": "get_figjam",
@@ -344,14 +339,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_generate_figma_design",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_generate_figma_design",
         "title": "generate_figma_design",
@@ -411,14 +405,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_generate_diagram",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_generate_diagram",
         "title": "generate_diagram",
@@ -480,14 +473,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_code_connect_map",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_get_code_connect_map",
         "title": "get_code_connect_map",
@@ -535,14 +527,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_generate_deck",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_generate_deck",
         "title": "generate_deck",
@@ -732,14 +723,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_whoami",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_whoami",
         "title": "whoami",
@@ -768,14 +758,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_add_code_connect_map",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_add_code_connect_map",
         "title": "add_code_connect_map",
@@ -868,14 +857,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_code_connect_suggestions",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_get_code_connect_suggestions",
         "title": "get_code_connect_suggestions",
@@ -931,14 +919,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_send_code_connect_mappings",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_send_code_connect_mappings",
         "title": "send_code_connect_mappings",
@@ -1049,14 +1036,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_code_components",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_list_code_components",
         "title": "list_code_components",
@@ -1102,14 +1088,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_code_component_info",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_get_code_component_info",
         "title": "get_code_component_info",
@@ -1165,14 +1150,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_context_for_code_connect",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_get_context_for_code_connect",
         "title": "get_context_for_code_connect",
@@ -1224,14 +1208,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_use_figma",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_use_figma",
         "title": "use_figma",
@@ -1285,14 +1268,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_libraries",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_get_libraries",
         "title": "get_libraries",
@@ -1330,14 +1312,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_search_design_system",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_search_design_system",
         "title": "search_design_system",
@@ -1406,14 +1387,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_create_new_file",
       "tool_namespace": "mcp__codex_apps__figma",
-      "server_instructions": null,
+      "namespace_description": "Make diagrams and slides",
       "tool": {
         "name": "figma_create_new_file",
         "title": "create_new_file",
@@ -1469,14 +1449,13 @@
       },
       "connector_id": "connector_68df038e0ba48191908c8434991bbac2",
       "connector_name": "Figma",
-      "plugin_display_names": [],
-      "connector_description": "Make diagrams and slides"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_add_comment_to_issue",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_add_comment_to_issue",
         "title": "add_comment_to_issue",
@@ -1552,14 +1531,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_add_issue_assignees",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_add_issue_assignees",
         "title": "add_issue_assignees",
@@ -1669,14 +1647,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_add_issue_labels",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_add_issue_labels",
         "title": "add_issue_labels",
@@ -1786,14 +1763,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_add_reaction_to_issue_comment",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_add_reaction_to_issue_comment",
         "title": "add_reaction_to_issue_comment",
@@ -1959,14 +1935,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_add_reaction_to_pr",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_add_reaction_to_pr",
         "title": "add_reaction_to_pr",
@@ -2132,14 +2107,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_add_reaction_to_pr_review_comment",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_add_reaction_to_pr_review_comment",
         "title": "add_reaction_to_pr_review_comment",
@@ -2305,14 +2279,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_add_review_to_pr",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_add_review_to_pr",
         "title": "add_review_to_pr",
@@ -2536,14 +2509,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_check_repo_initialized",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_check_repo_initialized",
         "title": "check_repo_initialized",
@@ -2606,14 +2578,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_compare_commits",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_compare_commits",
         "title": "compare_commits",
@@ -2660,14 +2631,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_convert_pull_request_to_draft",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_convert_pull_request_to_draft",
         "title": "convert_pull_request_to_draft",
@@ -2727,14 +2697,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_create_blob",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_create_blob",
         "title": "create_blob",
@@ -2804,14 +2773,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_create_branch",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_create_branch",
         "title": "create_branch",
@@ -2877,14 +2845,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_create_commit",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_create_commit",
         "title": "create_commit",
@@ -2956,14 +2923,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_create_file",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_create_file",
         "title": "create_file",
@@ -3048,14 +3014,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_create_issue",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_create_issue",
         "title": "create_issue",
@@ -3214,14 +3179,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_create_pull_request",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_create_pull_request",
         "title": "create_pull_request",
@@ -3305,14 +3269,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_create_tree",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_create_tree",
         "title": "create_tree",
@@ -3389,14 +3352,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_delete_file",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_delete_file",
         "title": "delete_file",
@@ -3481,14 +3443,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_dismiss_pull_request_review",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_dismiss_pull_request_review",
         "title": "dismiss_pull_request_review",
@@ -3559,14 +3520,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_download_user_content",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_download_user_content",
         "title": "download_user_content",
@@ -3620,14 +3580,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_download_workflow_artifact",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_download_workflow_artifact",
         "title": "download_workflow_artifact",
@@ -3782,14 +3741,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_enable_auto_merge",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_enable_auto_merge",
         "title": "enable_auto_merge",
@@ -3849,14 +3807,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch",
         "title": "fetch",
@@ -3965,14 +3922,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_blob",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_blob",
         "title": "fetch_blob",
@@ -4032,14 +3988,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_commit",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_commit",
         "title": "fetch_commit",
@@ -4155,14 +4110,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_commit_workflow_runs",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_commit_workflow_runs",
         "title": "fetch_commit_workflow_runs",
@@ -4237,14 +4191,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_file",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_file",
         "title": "fetch_file",
@@ -4320,14 +4273,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_issue",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_issue",
         "title": "fetch_issue",
@@ -4426,14 +4378,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_issue_comments",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_issue_comments",
         "title": "fetch_issue_comments",
@@ -4538,14 +4489,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_pr",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_pr",
         "title": "fetch_pr",
@@ -4681,14 +4631,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_pr_comments",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_pr_comments",
         "title": "fetch_pr_comments",
@@ -4793,14 +4742,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_pr_file_patch",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_pr_file_patch",
         "title": "fetch_pr_file_patch",
@@ -4912,14 +4860,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_pr_patch",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_pr_patch",
         "title": "fetch_pr_patch",
@@ -5054,14 +5001,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_workflow_job_logs",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_workflow_job_logs",
         "title": "fetch_workflow_job_logs",
@@ -5131,14 +5077,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_workflow_job_steps",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_workflow_job_steps",
         "title": "fetch_workflow_job_steps",
@@ -5213,14 +5158,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_workflow_run_artifacts",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_workflow_run_artifacts",
         "title": "fetch_workflow_run_artifacts",
@@ -5308,14 +5252,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_fetch_workflow_run_jobs",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_fetch_workflow_run_jobs",
         "title": "fetch_workflow_run_jobs",
@@ -5390,14 +5333,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_commit_combined_status",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_get_commit_combined_status",
         "title": "get_commit_combined_status",
@@ -5472,14 +5414,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_issue_comment_reactions",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_get_issue_comment_reactions",
         "title": "get_issue_comment_reactions",
@@ -5681,14 +5622,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_pr_diff",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_get_pr_diff",
         "title": "get_pr_diff",
@@ -5768,14 +5708,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_pr_info",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_get_pr_info",
         "title": "get_pr_info",
@@ -5835,14 +5774,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_pr_reactions",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_get_pr_reactions",
         "title": "get_pr_reactions",
@@ -6044,14 +5982,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_pr_review_comment_reactions",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_get_pr_review_comment_reactions",
         "title": "get_pr_review_comment_reactions",
@@ -6253,14 +6190,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_profile",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_get_profile",
         "title": "get_profile",
@@ -6377,14 +6313,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_repo",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_get_repo",
         "title": "get_repo",
@@ -6437,14 +6372,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_repo_collaborator_permission",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_get_repo_collaborator_permission",
         "title": "get_repo_collaborator_permission",
@@ -6520,14 +6454,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_user_login",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_get_user_login",
         "title": "get_user_login",
@@ -6572,14 +6505,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_users_recent_prs_in_repo",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_get_users_recent_prs_in_repo",
         "title": "get_users_recent_prs_in_repo",
@@ -6672,14 +6604,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_label_pr",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_label_pr",
         "title": "label_pr",
@@ -6745,14 +6676,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_installations",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_list_installations",
         "title": "list_installations",
@@ -6812,14 +6742,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_installed_accounts",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_list_installed_accounts",
         "title": "list_installed_accounts",
@@ -6879,14 +6808,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_pr_changed_filenames",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_list_pr_changed_filenames",
         "title": "list_pr_changed_filenames",
@@ -6960,14 +6888,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_pull_request_review_threads",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_list_pull_request_review_threads",
         "title": "list_pull_request_review_threads",
@@ -7042,14 +6969,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_pull_request_reviews",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_list_pull_request_reviews",
         "title": "list_pull_request_reviews",
@@ -7124,14 +7050,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_recent_issues",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_list_recent_issues",
         "title": "list_recent_issues",
@@ -7197,14 +7122,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_repositories",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_list_repositories",
         "title": "list_repositories",
@@ -7283,14 +7207,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_repositories_by_affiliation",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_list_repositories_by_affiliation",
         "title": "list_repositories_by_affiliation",
@@ -7371,14 +7294,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_repositories_by_installation",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_list_repositories_by_installation",
         "title": "list_repositories_by_installation",
@@ -7459,14 +7381,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_user_org_memberships",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_list_user_org_memberships",
         "title": "list_user_org_memberships",
@@ -7511,14 +7432,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_user_orgs",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_list_user_orgs",
         "title": "list_user_orgs",
@@ -7563,14 +7483,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_lock_issue_conversation",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_lock_issue_conversation",
         "title": "lock_issue_conversation",
@@ -7659,14 +7578,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_mark_pull_request_ready_for_review",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_mark_pull_request_ready_for_review",
         "title": "mark_pull_request_ready_for_review",
@@ -7726,14 +7644,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_merge_pull_request",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_merge_pull_request",
         "title": "merge_pull_request",
@@ -7890,14 +7807,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_remove_issue_assignees",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_remove_issue_assignees",
         "title": "remove_issue_assignees",
@@ -8007,14 +7923,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_remove_issue_label",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_remove_issue_label",
         "title": "remove_issue_label",
@@ -8121,14 +8036,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_remove_pull_request_reviewers",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_remove_pull_request_reviewers",
         "title": "remove_pull_request_reviewers",
@@ -8220,14 +8134,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_remove_reaction_from_issue_comment",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_remove_reaction_from_issue_comment",
         "title": "remove_reaction_from_issue_comment",
@@ -8303,14 +8216,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_remove_reaction_from_pr",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_remove_reaction_from_pr",
         "title": "remove_reaction_from_pr",
@@ -8386,14 +8298,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_remove_reaction_from_pr_review_comment",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_remove_reaction_from_pr_review_comment",
         "title": "remove_reaction_from_pr_review_comment",
@@ -8469,14 +8380,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_reply_to_review_comment",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_reply_to_review_comment",
         "title": "reply_to_review_comment",
@@ -8558,14 +8468,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_request_pull_request_reviewers",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_request_pull_request_reviewers",
         "title": "request_pull_request_reviewers",
@@ -8657,14 +8566,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_rerun_failed_workflow_run_jobs",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_rerun_failed_workflow_run_jobs",
         "title": "rerun_failed_workflow_run_jobs",
@@ -8734,14 +8642,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_rerun_workflow_job",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_rerun_workflow_job",
         "title": "rerun_workflow_job",
@@ -8811,14 +8718,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_resolve_review_thread",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_resolve_review_thread",
         "title": "resolve_review_thread",
@@ -8883,14 +8789,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_search",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_search",
         "title": "search",
@@ -8997,14 +8902,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_search_branches",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_search_branches",
         "title": "search_branches",
@@ -9089,14 +8993,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_search_commits",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_search_commits",
         "title": "search_commits",
@@ -9238,14 +9141,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_search_installed_repositories_streaming",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_search_installed_repositories_streaming",
         "title": "search_installed_repositories_streaming",
@@ -9330,14 +9232,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_search_installed_repositories_v2",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_search_installed_repositories_v2",
         "title": "search_installed_repositories_v2",
@@ -9440,14 +9341,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_search_issues",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_search_issues",
         "title": "search_issues",
@@ -9576,14 +9476,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_search_prs",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_search_prs",
         "title": "search_prs",
@@ -9728,14 +9627,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_search_repositories",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_search_repositories",
         "title": "search_repositories",
@@ -9849,14 +9747,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_unlock_issue_conversation",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_unlock_issue_conversation",
         "title": "unlock_issue_conversation",
@@ -9926,14 +9823,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_unresolve_review_thread",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_unresolve_review_thread",
         "title": "unresolve_review_thread",
@@ -9998,14 +9894,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_update_file",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_update_file",
         "title": "update_file",
@@ -10096,14 +9991,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_update_issue",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_update_issue",
         "title": "update_issue",
@@ -10311,14 +10205,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_update_issue_comment",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_update_issue_comment",
         "title": "update_issue_comment",
@@ -10394,14 +10287,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_update_pull_request",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_update_pull_request",
         "title": "update_pull_request",
@@ -10530,14 +10422,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_update_ref",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_update_ref",
         "title": "update_ref",
@@ -10609,14 +10500,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_update_review_comment",
       "tool_namespace": "mcp__codex_apps__github",
-      "server_instructions": null,
+      "namespace_description": "Access repositories, issues, and pull requests. Required for some features such as Codex",
       "tool": {
         "name": "github_update_review_comment",
         "title": "update_review_comment",
@@ -10692,14 +10582,13 @@
       },
       "connector_id": "connector_76869538009648d5b282a4bb21c3d157",
       "connector_name": "GitHub",
-      "plugin_display_names": [],
-      "connector_description": "Access repositories, issues, and pull requests. Required for some features such as Codex"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_search_vercel_documentation",
       "tool_namespace": "mcp__codex_apps__vercel",
-      "server_instructions": null,
+      "namespace_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing.",
       "tool": {
         "name": "vercel_search_vercel_documentation",
         "title": "search_vercel_documentation",
@@ -10742,14 +10631,13 @@
       },
       "connector_id": "connector_690a90ec05c881918afb6a55dc9bbaa1",
       "connector_name": "Vercel",
-      "plugin_display_names": [],
-      "connector_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing."
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_deploy_to_vercel",
       "tool_namespace": "mcp__codex_apps__vercel",
-      "server_instructions": null,
+      "namespace_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing.",
       "tool": {
         "name": "vercel_deploy_to_vercel",
         "title": "deploy_to_vercel",
@@ -10778,14 +10666,13 @@
       },
       "connector_id": "connector_690a90ec05c881918afb6a55dc9bbaa1",
       "connector_name": "Vercel",
-      "plugin_display_names": [],
-      "connector_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing."
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_projects",
       "tool_namespace": "mcp__codex_apps__vercel",
-      "server_instructions": null,
+      "namespace_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing.",
       "tool": {
         "name": "vercel_list_projects",
         "title": "list_projects",
@@ -10823,14 +10710,13 @@
       },
       "connector_id": "connector_690a90ec05c881918afb6a55dc9bbaa1",
       "connector_name": "Vercel",
-      "plugin_display_names": [],
-      "connector_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing."
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_project",
       "tool_namespace": "mcp__codex_apps__vercel",
-      "server_instructions": null,
+      "namespace_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing.",
       "tool": {
         "name": "vercel_get_project",
         "title": "get_project",
@@ -10873,14 +10759,13 @@
       },
       "connector_id": "connector_690a90ec05c881918afb6a55dc9bbaa1",
       "connector_name": "Vercel",
-      "plugin_display_names": [],
-      "connector_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing."
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_deployments",
       "tool_namespace": "mcp__codex_apps__vercel",
-      "server_instructions": null,
+      "namespace_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing.",
       "tool": {
         "name": "vercel_list_deployments",
         "title": "list_deployments",
@@ -10931,14 +10816,13 @@
       },
       "connector_id": "connector_690a90ec05c881918afb6a55dc9bbaa1",
       "connector_name": "Vercel",
-      "plugin_display_names": [],
-      "connector_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing."
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_deployment",
       "tool_namespace": "mcp__codex_apps__vercel",
-      "server_instructions": null,
+      "namespace_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing.",
       "tool": {
         "name": "vercel_get_deployment",
         "title": "get_deployment",
@@ -10981,14 +10865,13 @@
       },
       "connector_id": "connector_690a90ec05c881918afb6a55dc9bbaa1",
       "connector_name": "Vercel",
-      "plugin_display_names": [],
-      "connector_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing."
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_deployment_build_logs",
       "tool_namespace": "mcp__codex_apps__vercel",
-      "server_instructions": null,
+      "namespace_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing.",
       "tool": {
         "name": "vercel_get_deployment_build_logs",
         "title": "get_deployment_build_logs",
@@ -11036,14 +10919,13 @@
       },
       "connector_id": "connector_690a90ec05c881918afb6a55dc9bbaa1",
       "connector_name": "Vercel",
-      "plugin_display_names": [],
-      "connector_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing."
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_get_access_to_vercel_url",
       "tool_namespace": "mcp__codex_apps__vercel",
-      "server_instructions": null,
+      "namespace_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing.",
       "tool": {
         "name": "vercel_get_access_to_vercel_url",
         "title": "get_access_to_vercel_url",
@@ -11081,14 +10963,13 @@
       },
       "connector_id": "connector_690a90ec05c881918afb6a55dc9bbaa1",
       "connector_name": "Vercel",
-      "plugin_display_names": [],
-      "connector_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing."
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_web_fetch_vercel_url",
       "tool_namespace": "mcp__codex_apps__vercel",
-      "server_instructions": null,
+      "namespace_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing.",
       "tool": {
         "name": "vercel_web_fetch_vercel_url",
         "title": "web_fetch_vercel_url",
@@ -11126,14 +11007,13 @@
       },
       "connector_id": "connector_690a90ec05c881918afb6a55dc9bbaa1",
       "connector_name": "Vercel",
-      "plugin_display_names": [],
-      "connector_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing."
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_list_teams",
       "tool_namespace": "mcp__codex_apps__vercel",
-      "server_instructions": null,
+      "namespace_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing.",
       "tool": {
         "name": "vercel_list_teams",
         "title": "list_teams",
@@ -11162,14 +11042,13 @@
       },
       "connector_id": "connector_690a90ec05c881918afb6a55dc9bbaa1",
       "connector_name": "Vercel",
-      "plugin_display_names": [],
-      "connector_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing."
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "_check_domain_availability_and_price",
       "tool_namespace": "mcp__codex_apps__vercel",
-      "server_instructions": null,
+      "namespace_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing.",
       "tool": {
         "name": "vercel_check_domain_availability_and_price",
         "title": "check_domain_availability_and_price",
@@ -11213,14 +11092,13 @@
       },
       "connector_id": "connector_690a90ec05c881918afb6a55dc9bbaa1",
       "connector_name": "Vercel",
-      "plugin_display_names": [],
-      "connector_description": "Provides access to documentation search for a specific hosting and deployment platform and tools to manage its projects and deployments, including listing projects, deployments, build logs, and creating temporary authenticated share URLs or fetching protected deployment URLs. Also supports deploying the current project through the platform’s API, listing teams, and checking domain availability and pricing."
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "__fetch",
       "tool_namespace": "mcp__codex_apps__notion__legacy",
-      "server_instructions": null,
+      "namespace_description": "Search and reference your Notion pages",
       "tool": {
         "name": "notion (legacy)_fetch",
         "title": "fetch",
@@ -11258,14 +11136,13 @@
       },
       "connector_id": "connector_37316be7febe4224b3d31465bae4dbd7",
       "connector_name": "Notion (Legacy)",
-      "plugin_display_names": [],
-      "connector_description": "Search and reference your Notion pages"
+      "plugin_display_names": []
     },
     {
       "server_name": "codex_apps",
       "tool_name": "__search",
       "tool_namespace": "mcp__codex_apps__notion__legacy",
-      "server_instructions": null,
+      "namespace_description": "Search and reference your Notion pages",
       "tool": {
         "name": "notion (legacy)_search",
         "title": "search",
@@ -11329,8 +11206,7 @@
       },
       "connector_id": "connector_37316be7febe4224b3d31465bae4dbd7",
       "connector_name": "Notion (Legacy)",
-      "plugin_display_names": [],
-      "connector_description": "Search and reference your Notion pages"
+      "plugin_display_names": []
     }
   ]
 }

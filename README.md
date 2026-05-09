@@ -85,6 +85,7 @@ Useful overrides:
 ```bash
 PORT=8001 scripts/model_server.sh serve-fp8
 GPU_MEMORY_UTILIZATION=0.85 scripts/model_server.sh serve-fp8
+MAX_MODEL_LEN_FP8=8192 scripts/model_server.sh serve-fp8
 ```
 
 The pipeline expects the server at:
@@ -92,6 +93,61 @@ The pipeline expects the server at:
 ```text
 http://localhost:8000/v1
 ```
+
+## Speed Tips
+
+The largest speed cost is self-consistency: `k=5` means five model calls per
+problem. Use smaller `k` and shorter output while debugging:
+
+```bash
+python evaluate.py --fast --limit 3
+python run.py --fast --problem "A 12 V battery is connected to a 6 ohm resistor. What is the current?"
+```
+
+`--fast` is shorthand for:
+
+```text
+--direct-first --k 1 --max-tokens 512 --max-formulas 8 --compact --no-thinking
+```
+
+The direct solver covers common Ohm's law, resistor network, capacitor,
+electrostatics, and energy formulas without calling the LLM. If it cannot match
+the problem confidently, `run.py --fast` falls back to the compact vLLM path.
+
+In the standard vLLM path, the same deterministic solver is also used as a
+precision refinement pass. When the self-consistency consensus is in the same
+unit family and close to a known formula result, the pipeline returns the exact
+computed value and a visible four-step explanation. This reduces harmless but
+score-costly rounding drift such as `63 V` versus `63.2455532034 V`.
+
+You can also set environment defaults:
+
+```bash
+EXACT_K=1 EXACT_MAX_TOKENS=1024 python evaluate.py --limit 3
+```
+
+For final scoring, return to:
+
+```bash
+python evaluate.py --k 5 --max-tokens 4096
+```
+
+Benchmark the accuracy/speed tradeoff:
+
+```bash
+python evaluate.py --fast
+python evaluate.py --k 3 --max-tokens 1024 --max-formulas 12 --compact
+python evaluate.py --k 5 --max-tokens 4096
+```
+
+Server-side, shorter context reduces KV-cache memory and can improve throughput:
+
+```bash
+MAX_MODEL_LEN_FP8=8192 scripts/model_server.sh serve-fp8
+```
+
+Keeping the vLLM server warm between runs matters; do not restart it for every
+evaluation unless you changed server settings.
 
 ## Run The Demo
 
@@ -108,6 +164,63 @@ The demo runs three hardcoded examples:
 3. Capacitor energy problem
 
 Each result prints the domain, answer, unit, confidence, and the first 500 characters of the explanation.
+
+## Structured Contest Output
+
+Use `run.py` when you need the contest/API response shape directly:
+
+```bash
+python run.py --problem "A 12 V battery is connected to a 6 ohm resistor. What is the current?"
+```
+
+For latency-sensitive API endpoints, use fast mode:
+
+```bash
+python run.py --fast --problem "A 12 V battery is connected to a 6 ohm resistor. What is the current?"
+```
+
+or pipe input through stdin:
+
+```bash
+echo "A 10 microfarad capacitor is charged to 50 V. What energy is stored?" | python run.py
+```
+
+The output shape is:
+
+```json
+{
+  "answer": "2.0 A",
+  "explanation": "Full visible explanation from the model or deterministic refinement.",
+  "fol": "∀x (CircuitProblem(x) → Uses(OhmsLaw, x) ∨ Uses(KirchhoffLaw, x))",
+  "cot": [
+    "STEP 1 - READ: ...",
+    "STEP 2 - PLAN: ...",
+    "STEP 3 - SOLVE: ...",
+    "STEP 4 - ANSWER: ..."
+  ],
+  "premises": [
+    "Ohm's Law: V = I * R"
+  ],
+  "confidence": 0.8
+}
+```
+
+For an API endpoint, import the function:
+
+```python
+from run import run_structured
+
+def solve_endpoint(problem: str) -> dict:
+    return run_structured(
+        problem,
+        k=1,
+        max_tokens=512,
+        max_formulas=8,
+        compact_prompt=True,
+        enable_thinking=False,
+        direct_first=True,
+    )
+```
 
 ## Run Evaluation Cases
 
@@ -139,11 +252,11 @@ To grade the model's explanation quality with OpenAI, add `OPENAI_API_KEY` to
 python evaluate.py --judge
 ```
 
-By default this uses `gpt-5.4-mini` and prints a judge score out of 100 plus a
+By default this uses `gpt-5.4` and prints a judge score out of 100 plus a
 short feedback note. You can override the judge model:
 
 ```bash
-python evaluate.py --judge --judge-model gpt-5-mini
+python evaluate.py --judge --judge-model gpt-5.4-mini
 python evaluate.py --judge --judge-failures-only
 ```
 
@@ -219,6 +332,12 @@ optional judge feedback, and a structured output block:
 }
 ```
 
+To summarize an existing log and find parser failures or rounding drift:
+
+```bash
+python analyze_logs.py logs/evaluation_20260508_031026Z.json
+```
+
 ## Use The Pipeline In Python
 
 ```python
@@ -242,6 +361,8 @@ print(result["answer"], result["unit"], result["confidence"])
     "explanation": str,
     "raw_think": str,
     "all_answers": list[dict],
+    "source": "vllm" | "direct_solver" | "direct_refinement",
+    "model_answer": dict | None,
 }
 ```
 
