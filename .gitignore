@@ -1,6 +1,6 @@
 .env
-.triton
-.codex
+.triton/
+.codex/
 __pycache__/
 *.py[cod]
 *$py.class
