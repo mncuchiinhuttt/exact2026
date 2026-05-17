@@ -1,1 +1,12 @@
+transformers
+peft
+trl
+datasets
 openai
+torch
+accelerate
+scipy
+
+# Optional: CUDA only. Not required for AMD ROCm (MI300X) users.
+# bitsandbytes
+
