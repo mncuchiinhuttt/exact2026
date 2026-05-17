@@ -1,4 +1,4 @@
-"""LoRA SFT training for DeepSeek-R1-0528-Qwen3-8B."""
+"""DoRA SFT training for DeepSeek-R1-0528-Qwen3-8B."""
 
 from __future__ import annotations
 
@@ -6,7 +6,6 @@ import argparse
 import json
 import logging
 import os
-import shutil
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -129,7 +128,7 @@ def _load_model(model_name_or_path: str, backend: str, local_files_only: bool = 
 
 
 def main() -> None:
-    """Train a LoRA adapter from prepared ChatML JSONL data."""
+    """Train a DoRA adapter from prepared ChatML JSONL data."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", type=int, choices=[0, 1], default=1)
     parser.add_argument("--subtask", choices=["1", "2", "both"], default="both")
@@ -140,7 +139,7 @@ def main() -> None:
     parser.add_argument(
         "--model_name_or_path",
         default=os.environ.get("TRAIN_MODEL_NAME_OR_PATH", os.environ.get("MODEL_NAME_OR_PATH", MODEL_ID)),
-        help="Local model directory or Hugging Face model ID to use as the LoRA base model.",
+        help="Local model directory or Hugging Face model ID to use as the DoRA base model.",
     )
     parser.add_argument(
         "--local_files_only",
@@ -171,6 +170,7 @@ def main() -> None:
             lora_dropout=0.05,
             bias="none",
             task_type="CAUSAL_LM",
+            use_dora=True,
         ),
     )
 
@@ -215,10 +215,7 @@ def main() -> None:
     trainer.train()
     trainer.save_model(args.output_dir)
     tokenizer.save_pretrained(args.output_dir)
-    adapter_config_path = Path(args.output_dir, "adapter_config.json")
-    if adapter_config_path.exists():
-        shutil.copyfile(adapter_config_path, Path(args.output_dir, "lora_config.json"))
-    LOGGER.info("Saved LoRA adapter and tokenizer to %s", args.output_dir)
+    LOGGER.info("Saved DoRA adapter, adapter_config.json, and tokenizer to %s", args.output_dir)
 
 
 if __name__ == "__main__":

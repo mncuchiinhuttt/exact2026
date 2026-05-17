@@ -4,7 +4,7 @@ Production-oriented Python codebase for the EXACT 2026 challenge:
 
 - Subtask 1: logic/educational-regulations reasoning
 - Subtask 2: physics reasoning
-- LoRA SFT training for `deepseek-ai/DeepSeek-R1-0528-Qwen3-8B`
+- DoRA SFT training for `deepseek-ai/DeepSeek-R1-0528-Qwen3-8B`
 - vLLM OpenAI-compatible inference for `deepseek-ai/DeepSeek-R1-0528-Qwen3-8B`
 
 ## Layout
@@ -43,8 +43,8 @@ The previous `exact_physics_pipeline/` package is retained for backwards compati
 │   ├── train/
 │   │   ├── data_config.py      # Local BTC and external HuggingFace dataset configs
 │   │   ├── prepare_data.py     # Filtering, normalization, ChatML SFT export
-│   │   ├── train_lora.py       # DeepSeek-R1-0528-Qwen3-8B LoRA SFT
-│   │   └── merge_lora.py       # Merge LoRA adapter into a standalone model
+│   │   ├── train_lora.py       # DeepSeek-R1-0528-Qwen3-8B DoRA SFT
+│   │   └── merge_lora.py       # Merge DoRA adapter into a standalone model
 │   └── pipeline/
 │       ├── router.py           # Detect input shape and route to Subtask 1 or 2
 │       ├── pipeline_physics.py # Subtask 2 orchestration
@@ -70,7 +70,9 @@ The previous `exact_physics_pipeline/` package is retained for backwards compati
 pip install -r requirements.txt
 ```
 
-For NVIDIA CUDA QLoRA training, install bitsandbytes separately:
+PEFT must be version `0.9.0` or newer because DoRA support is required.
+
+For NVIDIA CUDA quantized DoRA training, install bitsandbytes separately:
 
 ```bash
 pip install bitsandbytes
@@ -110,7 +112,7 @@ Install vLLM with ROCm support:
 pip install vllm --extra-index-url https://download.pytorch.org/whl/rocm6.3
 ```
 
-For a LoRA-trained model, replace the model ID in `vllm serve` with the local path to the merged model, such as `output/merged/`.
+For a DoRA-trained model, replace the model ID in `vllm serve` with the local path to the merged model, such as `output/merged/`.
 
 ## Current LLM Layer Implementation
 
@@ -232,7 +234,7 @@ python -m exact2026.train.prepare_data --output_dir output/data --skip_external
 
 Remove `--skip_external` to fetch the configured HuggingFace stage-1 datasets.
 
-## Train LoRA
+## Train DoRA
 
 ```bash
 python -m exact2026.train.train_lora \
@@ -299,11 +301,11 @@ If training is stable and memory is underused, try `--batch_size 12` or `--batch
 
 Backend behavior:
 
-- CUDA: 4-bit NF4 QLoRA with bitsandbytes and `prepare_model_for_kbit_training`
+- CUDA: 4-bit NF4 quantized DoRA with bitsandbytes and `prepare_model_for_kbit_training`
 - ROCm: full bf16 model, no bitsandbytes
 - CPU: full fp32 with a warning
 
-## Merge LoRA
+## Merge DoRA
 
 ```bash
 python -m exact2026.train.merge_lora \

@@ -1,5 +1,5 @@
 transformers
-peft
+peft>=0.9.0
 trl
 datasets
 openai
@@ -9,4 +9,3 @@ scipy
 
 # Optional: CUDA only. Not required for AMD ROCm (MI300X) users.
 # bitsandbytes
-
