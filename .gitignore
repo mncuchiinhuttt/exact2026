@@ -12,3 +12,6 @@ __pycache__/
 *.safetensors
 *.bin
 .venv/
+__pycache__/
+*.py[cod]
+*$py.class
