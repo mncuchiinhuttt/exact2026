@@ -1,0 +1,104 @@
+title EXACT 2026 Pipeline
+
+direction right
+
+User Input [icon: file-text, color: blue] {
+  Single Input [label: "Single input\n--input JSON or raw question"]
+  Batch Input [label: "Batch input\n--input_file JSONL"]
+}
+
+CLI [icon: terminal, label: "run.py\nCLI entrypoint"]
+
+Router [icon: split, color: purple] {
+  Route [label: "router.py\nroute_and_run()"]
+  Subtask Classifier [label: "domain_classifier.py\nclassify_subtask()"]
+}
+
+Physics Pipeline [icon: atom, color: green] {
+  Physics Orchestrator [label: "pipeline_physics.py\nrun_physics()"]
+  Domain Classifier [label: "classify_domain()\ncircuit / electrostatics / energy / general"]
+  Direct Solver [label: "direct_solver.py\ntry_direct_solve()"]
+  Formula Retrieval [label: "formula_db.py\nretrieve_formulas()"]
+  Physics Prompt [label: "prompts.py\nbuild_physics_prompt()"]
+  Numeric Parser [label: "answer_parser.py\nparse_answer()"]
+  Unit Normalizer [label: "unit_normalizer.py\nnormalize_unit()\nexpand_prefix()"]
+  Numeric Vote [label: "voting.py\nrelative-tolerance clustering\nmedian winner"]
+  Physics Output [label: "Physics result\nanswer, unit, explanation,\ncot, confidence, debug"]
+}
+
+Education Pipeline [icon: book-open, color: orange] {
+  Edu Orchestrator [label: "pipeline_edu.py\nrun_edu()"]
+  Edu Prompt [label: "prompts.py\nbuild_edu_prompt()"]
+  Logic Answer Parser [label: "ANSWER line parser\nYes / No / True / False / A-D"]
+  Majority Vote [label: "Exact-string majority vote"]
+  Edu Output [label: "Edu result\nanswer, explanation,\ncot, premises, confidence,\nfol placeholder"]
+}
+
+LLM Layer [icon: cpu, color: gray] {
+  VLLM Client [label: "inference.py\nVLLMClient"]
+  Generate One [label: "generate_one()\nOpenAI chat completion"]
+  Generate K [label: "generate_k()\nparallel self-consistency"]
+  VLLM Server [icon: server, label: "vLLM server\nOpenAI-compatible /v1"]
+  Inference Model [icon: brain, label: "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"]
+}
+
+Training Pipeline [icon: database, color: yellow] {
+  Local Dataset [label: "dataset/\nBTC physics + BTC logic"]
+  Data Config [label: "train/data_config.py\nsource configs"]
+  Prepare Data [label: "train/prepare_data.py\nfilter, normalize, ChatML export"]
+  SFT JSONL [label: "output/data/*.jsonl\ntrain/dev/test"]
+  LoRA Train [label: "train/train_lora.py\nTRL SFTTrainer + PEFT LoRA"]
+  Adapter [label: "output/lora\nLoRA adapter"]
+  Merge LoRA [label: "train/merge_lora.py\nmerge adapter into base"]
+  Merged Model [label: "output/merged\nserve with vLLM"]
+}
+
+Contest Output [icon: check-circle, color: blue, label: "Contest JSON\nanswer, explanation, cot,\nfol, premises, confidence"]
+
+Single Input > CLI
+Batch Input > CLI
+CLI > Route
+Route > Subtask Classifier
+
+Subtask Classifier > Physics Orchestrator: "question only -> Subtask 2"
+Subtask Classifier > Edu Orchestrator: "premises-NL / premises_nl -> Subtask 1"
+
+Physics Orchestrator > Domain Classifier
+Physics Orchestrator > Direct Solver: "optional direct_first"
+Physics Orchestrator > Formula Retrieval
+Formula Retrieval > Physics Prompt
+Physics Prompt > Generate K
+
+Edu Orchestrator > Edu Prompt
+Edu Prompt > Generate K
+
+Generate K > Generate One
+Generate One > VLLM Client
+VLLM Client > VLLM Server
+VLLM Server > Inference Model
+Inference Model > VLLM Server
+VLLM Server > VLLM Client
+VLLM Client > Generate One
+Generate One > Generate K
+
+Generate K > Numeric Parser: "physics generations"
+Numeric Parser > Unit Normalizer
+Unit Normalizer > Numeric Vote
+Direct Solver > Physics Output: "fast direct result or refinement"
+Numeric Vote > Physics Output
+
+Generate K > Logic Answer Parser: "edu generations"
+Logic Answer Parser > Majority Vote
+Majority Vote > Edu Output
+
+Physics Output > Contest Output
+Edu Output > Contest Output
+
+Local Dataset > Data Config
+Data Config > Prepare Data
+Prepare Data > SFT JSONL
+SFT JSONL > LoRA Train
+LoRA Train > Adapter
+Adapter > Merge LoRA
+Merge LoRA > Merged Model
+Merged Model > VLLM Server: "replace model path when serving"
