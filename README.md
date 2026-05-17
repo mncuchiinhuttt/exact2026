@@ -35,6 +35,35 @@ requirements.txt
 
 The previous `exact_physics_pipeline/` package is retained for backwards compatibility and for the deterministic direct solver implementation.
 
+## Current Structure
+
+```text
+.
+├── exact2026/
+│   ├── train/
+│   │   ├── data_config.py      # Local BTC and external HuggingFace dataset configs
+│   │   ├── prepare_data.py     # Filtering, normalization, ChatML SFT export
+│   │   ├── train_lora.py       # DeepSeek-R1-Distill-Qwen3-8B LoRA SFT
+│   │   └── merge_lora.py       # Merge LoRA adapter into a standalone model
+│   └── pipeline/
+│       ├── router.py           # Detect input shape and route to Subtask 1 or 2
+│       ├── pipeline_physics.py # Subtask 2 orchestration
+│       ├── pipeline_edu.py     # Subtask 1 orchestration
+│       ├── inference.py        # vLLM OpenAI-compatible client
+│       ├── prompts.py          # Prompt builders for both subtasks
+│       ├── formula_db.py       # Formula DB and keyword retrieval
+│       ├── domain_classifier.py# Physics domain and subtask classifiers
+│       ├── answer_parser.py    # Numeric ANSWER parsing and SI prefix handling
+│       ├── unit_normalizer.py  # Unit canonicalization
+│       ├── voting.py           # Self-consistency clustering and median voting
+│       └── direct_solver.py    # Wrapper around existing deterministic solver
+├── exact_physics_pipeline/     # Existing physics implementation retained
+├── dataset/                    # Local EXACT 2026 dataset files
+├── run.py                      # Root CLI for single and batch inference
+├── requirements.txt
+└── .env.example
+```
+
 ## Install
 
 ```bash
@@ -83,6 +112,96 @@ pip install vllm --extra-index-url https://download.pytorch.org/whl/rocm6.3
 
 For a LoRA-trained model, replace the model ID in `vllm serve` with the local path to the merged model, such as `output/merged/`.
 
+## Current LLM Layer Implementation
+
+The current LLM layer is implemented in `exact2026/pipeline/`. It does not load model weights inside the Python process. The Python code sends OpenAI-compatible chat requests to a running vLLM server.
+
+### Runtime model
+
+- Inference model: `deepseek-ai/DeepSeek-R1-0528-Qwen3-8B`
+- Training model: `deepseek-ai/DeepSeek-R1-Distill-Qwen3-8B`
+- Client module: `exact2026/pipeline/inference.py`
+- Client class: `VLLMClient`
+- Default endpoint: `http://localhost:8000/v1`
+
+The endpoint can be overridden with:
+
+```bash
+export VLLM_BASE_URL=http://localhost:8000/v1
+export VLLM_MODEL=deepseek-ai/DeepSeek-R1-0528-Qwen3-8B
+export VLLM_API_KEY=EMPTY
+```
+
+### Request flow
+
+```text
+run.py
+  -> exact2026.pipeline.router.route_and_run()
+    -> classify_subtask()
+      -> Subtask 2: run_physics()
+      -> Subtask 1: run_edu()
+```
+
+### Subtask 2 physics flow
+
+```text
+run_physics(question, config)
+  1. classify_domain(question)
+  2. try_direct_solve(question, domain)
+  3. retrieve_formulas(domain, question)
+  4. build_physics_prompt(question, formulas)
+  5. VLLMClient.generate_k(...)
+  6. parse_answer(content, reasoning)
+  7. vote(parsed_answers)
+  8. optionally replace close model answer with deterministic direct-solver result
+  9. return contest-shaped answer, explanation, cot, confidence, debug fields
+```
+
+Important behavior:
+
+- `--fast` sets `k=1`, uses compact prompts, and returns the direct solver result immediately when the direct solver matches the problem.
+- Without `--fast`, the pipeline still computes a direct-solver result when possible, but uses it only as a refinement if the LLM consensus is within 5 percent and the units match.
+- Physics self-consistency uses numeric parsing, unit normalization, SI prefix expansion, relative-tolerance clustering, and median selection.
+
+### Subtask 1 logic/education flow
+
+```text
+run_edu(premises, question, config)
+  1. build_edu_prompt(premises, question)
+  2. VLLMClient.generate_k(...)
+  3. parse final ANSWER line as Yes/No/True/False/A/B/C/D
+  4. majority vote by exact string match
+  5. return answer, explanation, cot, premises, confidence
+```
+
+Current limitation:
+
+- The `fol` field is present but empty.
+- Z3/FOL verification is a placeholder in the prompt and has not been integrated into runtime execution yet.
+
+### vLLM call details
+
+`VLLMClient.generate_one()` sends:
+
+```python
+client.chat.completions.create(
+    model=VLLM_MODEL,
+    messages=messages,
+    temperature=0.6,
+    top_p=0.95,
+    max_tokens=4096,
+    n=1,
+    extra_body={"chat_template_kwargs": {"enable_thinking": True}},
+)
+```
+
+`generate_k()` runs `k` independent calls in parallel with `ThreadPoolExecutor`. The returned fields are:
+
+```text
+content    # final assistant text
+reasoning  # DeepSeek/vLLM reasoning_content when available
+```
+
 ## Run Inference
 
 Subtask 2, auto-detected from `question`:
@@ -124,6 +243,43 @@ python -m exact2026.train.train_lora \
   --epochs 2 \
   --batch_size 2
 ```
+
+For AMD MI300X, the script loads the 8B model in bf16 without bitsandbytes. The MI300X has enough memory to use a larger per-device batch size than the default.
+
+Recommended MI300X starting command:
+
+```bash
+python -m exact2026.train.train_lora \
+  --stage 1 \
+  --subtask both \
+  --data_dir output/data \
+  --output_dir output/lora \
+  --epochs 2 \
+  --batch_size 8
+```
+
+The script currently uses:
+
+```text
+gradient_accumulation_steps = 8
+effective_batch_size = batch_size * 8
+```
+
+Practical MI300X tuning:
+
+```text
+--batch_size 8   -> effective batch 64
+--batch_size 12  -> effective batch 96
+--batch_size 16  -> effective batch 128
+```
+
+Start with `--batch_size 8`, then increase while monitoring memory:
+
+```bash
+rocm-smi
+```
+
+If training is stable and memory is underused, try `--batch_size 12` or `--batch_size 16`. If loss behavior gets worse after increasing batch size, lower the batch size or reduce the learning rate.
 
 Backend behavior:
 
