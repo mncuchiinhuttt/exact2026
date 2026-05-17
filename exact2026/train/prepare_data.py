@@ -8,6 +8,7 @@ import json
 import logging
 import random
 import re
+from zipfile import ZipFile
 from pathlib import Path
 from typing import Any
 
@@ -207,6 +208,122 @@ ANSWER: {record.get("answer", "")}"""
     return {"messages": [{"role": "system", "content": system}, {"role": "user", "content": user}, {"role": "assistant", "content": assistant}]}
 
 
+def _clean_latex_text(text: Any) -> str:
+    """Remove common LaTeX wrappers while preserving readable content."""
+    cleaned = str(text or "").strip()
+    cleaned = cleaned.strip("$").strip()
+    cleaned = re.sub(r"\\(?:mathrm|mathsf|text)\{([^{}]*)\}", r"\1", cleaned)
+    cleaned = cleaned.replace("\\,", "").replace("~", "").replace("−", "-")
+    cleaned = re.sub(r"\s+", " ", cleaned)
+    return cleaned.strip()
+
+
+def _parse_numeric_answer(answer: Any, unit: Any = None) -> tuple[float, str, str] | None:
+    """Parse an answer field that is already expected to be a plain final number."""
+    answer_text = _clean_latex_text(answer)
+    if not answer_text:
+        return None
+    if "=" in answer_text:
+        answer_text = answer_text.rsplit("=", maxsplit=1)[-1].strip()
+    if re.search(r"\\(?:frac|sqrt)|\b(?:frac|sqrt|sin|cos|tan|lambda|theta|alpha|beta|gamma|mu|pi)\b", answer_text):
+        return None
+    match = re.fullmatch(r"([-+]?(?:\d+(?:,\d{3})*(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?)\s*([A-Za-zΩμ°%/·^\-{}]*)", answer_text)
+    if not match:
+        return None
+    try:
+        value = _float_answer(match.group(1))
+    except ValueError:
+        return None
+    raw_unit = _clean_latex_text(unit) or match.group(2) or "1"
+    return value, raw_unit, f"{value:g} {raw_unit}".strip()
+
+
+def _load_scibench(config: DataConfig) -> list[dict[str, Any]]:
+    """Map SciBench rows, whose schema differs from the generic external loader."""
+    from datasets import load_dataset
+
+    dataset = load_dataset(config.hf_id, split="train")
+    samples = []
+    skipped = 0
+    for index, row in enumerate(dataset):
+        question = row.get("problem_text") or row.get("problem") or row.get("question")
+        solution = str(row.get("solution", "")).strip()
+        parsed = _parse_numeric_answer(row.get("answer_number"), row.get("unit"))
+        if not question or not solution or parsed is None:
+            skipped += 1
+            continue
+        value, unit, answer_str = parsed
+        normalized = {
+            "id": str(row.get("problemid") or f"{config.name}-{index}").strip(),
+            "question": str(question).strip(),
+            "cot": solution,
+            "answer_num": value,
+            "unit": normalize_unit(unit),
+            "answer_str": answer_str,
+        }
+        samples.append(build_physics_sft_sample(normalized))
+    LOGGER.info("Mapped %s: kept %s rows, skipped %s rows without solution/numeric answer", config.name, len(samples), skipped)
+    return samples
+
+
+def _ordered_subquestions(question_structure: dict[str, Any]) -> list[tuple[str, str]]:
+    """Return PhysReason sub-questions in numeric order."""
+    items = []
+    for key, value in question_structure.items():
+        match = re.fullmatch(r"sub_question_(\d+)", key)
+        if match:
+            items.append((int(match.group(1)), str(value).strip()))
+    return [(f"sub_question_{number}", question) for number, question in sorted(items)]
+
+
+def _flatten_steps(steps: Any) -> str:
+    """Join PhysReason explanation step dictionaries into one explanation string."""
+    if isinstance(steps, dict):
+        ordered = sorted(steps.items(), key=lambda item: [int(part) if part.isdigit() else part for part in re.split(r"(\d+)", item[0])])
+        return "\n".join(str(value).strip() for _, value in ordered if str(value).strip())
+    return str(steps or "").strip()
+
+
+def _load_physreason(config: DataConfig) -> list[dict[str, Any]]:
+    """Load PhysReason directly from its zip archive to avoid HF schema casting issues."""
+    from huggingface_hub import hf_hub_download
+
+    zip_path = hf_hub_download(config.hf_id, "PhysReason-full.zip", repo_type="dataset")
+    samples = []
+    skipped = 0
+    with ZipFile(zip_path) as archive:
+        problem_files = sorted(name for name in archive.namelist() if name.endswith("problem.json"))
+        for problem_file in problem_files:
+            record = json.loads(archive.read(problem_file))
+            question_structure = record.get("question_structure") or {}
+            context = str(question_structure.get("context", "")).strip()
+            answers = record.get("answer") or []
+            if not isinstance(answers, list):
+                answers = [answers]
+            explanation_steps = record.get("explanation_steps") or {}
+            for answer_index, (sub_key, sub_question) in enumerate(_ordered_subquestions(question_structure)):
+                parsed = _parse_numeric_answer(answers[answer_index] if answer_index < len(answers) else None)
+                cot = _flatten_steps(explanation_steps.get(sub_key))
+                if parsed is None or not context or not sub_question or not cot:
+                    skipped += 1
+                    continue
+                value, unit, answer_str = parsed
+                normalized = {
+                    "id": f"{Path(problem_file).parent.name}-{sub_key}",
+                    "question": f"{context}\n\n{sub_question}",
+                    "cot": cot,
+                    "answer_num": value,
+                    "unit": normalize_unit(unit),
+                    "answer_str": answer_str,
+                }
+                samples.append(build_physics_sft_sample(normalized))
+                if config.max_samples and len(samples) >= config.max_samples:
+                    LOGGER.info("Mapped %s: kept %s numeric sub-questions, skipped %s non-numeric/unmapped sub-questions", config.name, len(samples), skipped)
+                    return samples
+    LOGGER.info("Mapped %s: kept %s numeric sub-questions, skipped %s non-numeric/unmapped sub-questions", config.name, len(samples), skipped)
+    return samples
+
+
 def load_external_hf(config: DataConfig) -> list[dict[str, Any]]:
     """Load and map a HuggingFace dataset into internal SFT sample format."""
     try:
@@ -214,6 +331,18 @@ def load_external_hf(config: DataConfig) -> list[dict[str, Any]]:
     except ImportError:
         LOGGER.warning("datasets is not installed; skipping %s", config.hf_id)
         return []
+    if config.hf_id == "xw27/scibench":
+        try:
+            return _load_scibench(config)
+        except Exception as exc:
+            LOGGER.warning("Could not map %s: %s", config.hf_id, exc)
+            return []
+    if config.hf_id == "zhibei1204/PhysReason":
+        try:
+            return _load_physreason(config)
+        except Exception as exc:
+            LOGGER.warning("Could not map %s: %s", config.hf_id, exc)
+            return []
     try:
         dataset = load_dataset(config.hf_id, split="train")
     except Exception as exc:

@@ -4,7 +4,7 @@ Production-oriented Python codebase for the EXACT 2026 challenge:
 
 - Subtask 1: logic/educational-regulations reasoning
 - Subtask 2: physics reasoning
-- LoRA SFT training for `deepseek-ai/DeepSeek-R1-Distill-Qwen3-8B`
+- LoRA SFT training for `deepseek-ai/DeepSeek-R1-0528-Qwen3-8B`
 - vLLM OpenAI-compatible inference for `deepseek-ai/DeepSeek-R1-0528-Qwen3-8B`
 
 ## Layout
@@ -43,7 +43,7 @@ The previous `exact_physics_pipeline/` package is retained for backwards compati
 │   ├── train/
 │   │   ├── data_config.py      # Local BTC and external HuggingFace dataset configs
 │   │   ├── prepare_data.py     # Filtering, normalization, ChatML SFT export
-│   │   ├── train_lora.py       # DeepSeek-R1-Distill-Qwen3-8B LoRA SFT
+│   │   ├── train_lora.py       # DeepSeek-R1-0528-Qwen3-8B LoRA SFT
 │   │   └── merge_lora.py       # Merge LoRA adapter into a standalone model
 │   └── pipeline/
 │       ├── router.py           # Detect input shape and route to Subtask 1 or 2
@@ -119,7 +119,7 @@ The current LLM layer is implemented in `exact2026/pipeline/`. It does not load 
 ### Runtime model
 
 - Inference model: `deepseek-ai/DeepSeek-R1-0528-Qwen3-8B`
-- Training model: `deepseek-ai/DeepSeek-R1-Distill-Qwen3-8B`
+- Training model: `deepseek-ai/DeepSeek-R1-0528-Qwen3-8B`
 - Client module: `exact2026/pipeline/inference.py`
 - Client class: `VLLMClient`
 - Default endpoint: `http://localhost:8000/v1`
@@ -258,6 +258,22 @@ python -m exact2026.train.train_lora \
   --batch_size 8
 ```
 
+To train from a self-hosted/local copy of the base model, point the trainer at the local model directory:
+
+```bash
+python -m exact2026.train.train_lora \
+  --stage 1 \
+  --subtask both \
+  --data_dir output/data \
+  --output_dir output/lora \
+  --epochs 2 \
+  --batch_size 32 \
+  --model_name_or_path /models/DeepSeek-R1-0528-Qwen3-8B \
+  --local_files_only
+```
+
+You can also set `TRAIN_MODEL_NAME_OR_PATH=/models/DeepSeek-R1-0528-Qwen3-8B` instead of passing `--model_name_or_path`.
+
 The script currently uses:
 
 ```text
@@ -290,5 +306,9 @@ Backend behavior:
 ## Merge LoRA
 
 ```bash
-python -m exact2026.train.merge_lora --adapter_dir output/lora --output_dir output/merged
+python -m exact2026.train.merge_lora \
+  --adapter_dir output/lora \
+  --output_dir output/merged \
+  --base_model /models/DeepSeek-R1-0528-Qwen3-8B \
+  --local_files_only
 ```

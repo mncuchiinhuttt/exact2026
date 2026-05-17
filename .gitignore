@@ -2,9 +2,13 @@
 .triton/
 .codex/
 .copilot/
+.venv/
 __pycache__/
 *.py[cod]
 *$py.class
 *.pyc
 *.pyo
 *.pyd
+*.pt
+*.safetensors
+*.bin

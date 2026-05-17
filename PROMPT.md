@@ -1,6 +1,6 @@
 You are a senior ML engineer. Build a complete, production-ready codebase for the EXACT 2026 challenge.
 The project has two deliverables:
-  A) A LoRA SFT training script for DeepSeek-R1-Distill-Qwen3-8B
+  A) A LoRA SFT training script for DeepSeek-R1-0528-Qwen3-8B
   B) A full inference pipeline that handles both Subtask 1 (logic/edu) and Subtask 2 (physics)
 
 Use Python. Single repo. Clean modular structure.
@@ -250,7 +250,7 @@ Use TRL (SFTTrainer) + PEFT (LoraConfig). Implement:
   - "cpu": load full fp32, warn user
 
 ### Model loading
-  Training model: deepseek-ai/DeepSeek-R1-Distill-Qwen3-8B (distill version for training)
+  Training model: deepseek-ai/DeepSeek-R1-0528-Qwen3-8B
 
   ```python
   if BACKEND == "cuda":

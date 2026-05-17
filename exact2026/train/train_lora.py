@@ -1,17 +1,64 @@
-"""LoRA SFT training for DeepSeek-R1-Distill-Qwen3-8B."""
+"""LoRA SFT training for DeepSeek-R1-0528-Qwen3-8B."""
 
 from __future__ import annotations
 
 import argparse
 import json
 import logging
+import os
+import shutil
+import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import torch
 
 
-MODEL_ID = "deepseek-ai/DeepSeek-R1-Distill-Qwen3-8B"
+MODEL_ID = "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
 LOGGER = logging.getLogger(__name__)
+_LOG_HANDLES = []
+
+
+class _Tee:
+    """Write terminal output to both the console and a log file."""
+
+    def __init__(self, stream, log_file):
+        self.stream = stream
+        self.log_file = log_file
+
+    def write(self, data):
+        self.stream.write(data)
+        self.log_file.write(data)
+
+    def flush(self):
+        self.stream.flush()
+        self.log_file.flush()
+
+    def isatty(self):
+        return self.stream.isatty()
+
+    def __getattr__(self, name):
+        return getattr(self.stream, name)
+
+
+def _setup_logging(output_dir: str | Path) -> Path:
+    """Tee each training run's console output to a timestamped log file."""
+    log_dir = Path(output_dir) / "logs"
+    log_dir.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    log_path = log_dir / f"train_{timestamp}.log"
+    log_file = log_path.open("a", encoding="utf-8")
+    _LOG_HANDLES.append(log_file)
+    sys.stdout = _Tee(sys.stdout, log_file)
+    sys.stderr = _Tee(sys.stderr, log_file)
+    root = logging.getLogger()
+    root.handlers.clear()
+    root.setLevel(logging.INFO)
+    formatter = logging.Formatter("%(asctime)s %(levelname)s:%(name)s:%(message)s")
+    stderr_handler = logging.StreamHandler(sys.stderr)
+    stderr_handler.setFormatter(formatter)
+    root.addHandler(stderr_handler)
+    return log_path
 
 
 def detect_backend() -> str:
@@ -63,21 +110,22 @@ def _load_split(data_dir: Path, prefixes: list[str], split: str):
     return concatenate_datasets(datasets) if len(datasets) > 1 else datasets[0]
 
 
-def _load_model(model_id: str, backend: str):
+def _load_model(model_name_or_path: str, backend: str, local_files_only: bool = False):
     """Load the base model with backend-appropriate precision/quantization."""
     from transformers import AutoModelForCausalLM
 
+    common_kwargs = {"device_map": "auto", "local_files_only": local_files_only, "trust_remote_code": True}
     if backend == "cuda":
         from peft import prepare_model_for_kbit_training
         from transformers import BitsAndBytesConfig
 
         bnb_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_compute_dtype=torch.bfloat16)
-        model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, device_map="auto", trust_remote_code=True)
+        model = AutoModelForCausalLM.from_pretrained(model_name_or_path, quantization_config=bnb_config, **common_kwargs)
         return prepare_model_for_kbit_training(model)
     if backend == "rocm":
-        return AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.bfloat16, device_map="auto", trust_remote_code=True)
+        return AutoModelForCausalLM.from_pretrained(model_name_or_path, dtype=torch.bfloat16, **common_kwargs)
     LOGGER.warning("No GPU detected. Training on CPU will be extremely slow.")
-    return AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float32, trust_remote_code=True)
+    return AutoModelForCausalLM.from_pretrained(model_name_or_path, dtype=torch.float32, local_files_only=local_files_only, trust_remote_code=True)
 
 
 def main() -> None:
@@ -89,19 +137,33 @@ def main() -> None:
     parser.add_argument("--output_dir", default="output/lora")
     parser.add_argument("--epochs", type=float)
     parser.add_argument("--batch_size", type=int, default=2)
+    parser.add_argument(
+        "--model_name_or_path",
+        default=os.environ.get("TRAIN_MODEL_NAME_OR_PATH", os.environ.get("MODEL_NAME_OR_PATH", MODEL_ID)),
+        help="Local model directory or Hugging Face model ID to use as the LoRA base model.",
+    )
+    parser.add_argument(
+        "--local_files_only",
+        action="store_true",
+        help="Load the base model/tokenizer only from local files or the Hugging Face cache.",
+    )
     args = parser.parse_args()
-    logging.basicConfig(level=logging.INFO)
+    log_path = _setup_logging(args.output_dir)
+    LOGGER.info("Writing training log to %s", log_path)
 
     from peft import LoraConfig, get_peft_model
-    from transformers import AutoTokenizer, TrainingArguments
-    from trl import SFTTrainer
+    from transformers import AutoTokenizer
+    from trl import SFTConfig, SFTTrainer
 
     backend = detect_backend()
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True)
+    LOGGER.info("Training base model: %s", args.model_name_or_path)
+    LOGGER.info("Backend: %s", backend)
+    LOGGER.info("Local files only: %s", args.local_files_only)
+    tokenizer = AutoTokenizer.from_pretrained(args.model_name_or_path, local_files_only=args.local_files_only, trust_remote_code=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     model = get_peft_model(
-        _load_model(MODEL_ID, backend),
+        _load_model(args.model_name_or_path, backend, args.local_files_only),
         LoraConfig(
             r=16,
             lora_alpha=32,
@@ -124,7 +186,7 @@ def main() -> None:
     dev_dataset = dev_dataset.map(render, remove_columns=dev_dataset.column_names)
 
     epochs = args.epochs if args.epochs is not None else (2 if args.stage == 1 else 1)
-    training_args = TrainingArguments(
+    training_args = SFTConfig(
         output_dir=args.output_dir,
         num_train_epochs=epochs,
         per_device_train_batch_size=args.batch_size,
@@ -138,23 +200,26 @@ def main() -> None:
         eval_strategy="epoch",
         load_best_model_at_end=True,
         report_to="none",
+        logging_dir=str(Path(args.output_dir) / "logs" / "trainer"),
+        max_length=4096,
+        dataset_text_field="text",
+        packing=False,
     )
     trainer = SFTTrainer(
         model=model,
         args=training_args,
         train_dataset=train_dataset,
         eval_dataset=dev_dataset,
-        tokenizer=tokenizer,
-        max_seq_length=4096,
-        dataset_text_field="text",
-        packing=False,
+        processing_class=tokenizer,
     )
     trainer.train()
     trainer.save_model(args.output_dir)
     tokenizer.save_pretrained(args.output_dir)
-    Path(args.output_dir, "lora_config.json").write_text(model.peft_config["default"].to_json_string(), encoding="utf-8")
+    adapter_config_path = Path(args.output_dir, "adapter_config.json")
+    if adapter_config_path.exists():
+        shutil.copyfile(adapter_config_path, Path(args.output_dir, "lora_config.json"))
+    LOGGER.info("Saved LoRA adapter and tokenizer to %s", args.output_dir)
 
 
 if __name__ == "__main__":
     main()
-

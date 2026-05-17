@@ -1,0 +1,27 @@
+{
+  "physics": {
+    "train": 735,
+    "dev": 91,
+    "test": 93
+  },
+  "logic": {
+    "train": 474,
+    "dev": 59,
+    "test": 60
+  },
+  "ext_scibench": {
+    "train": 109,
+    "dev": 13,
+    "test": 15
+  },
+  "ext_PhysReason": {
+    "train": 942,
+    "dev": 117,
+    "test": 119
+  },
+  "ext_FOLIO": {
+    "train": 800,
+    "dev": 100,
+    "test": 101
+  }
+}
