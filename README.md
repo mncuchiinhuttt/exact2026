@@ -66,6 +66,30 @@ The previous `exact_physics_pipeline/` package is retained for backwards compati
 
 ## Install
 
+Create a virtual environment and install dependencies inside it:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+If you are on Windows PowerShell:
+
+```bash
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+If you are on Windows CMD:
+
+```bat
+python -m venv .venv
+.\.venv\Scripts\activate.bat
+pip install -r requirements.txt
+```
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -84,12 +108,13 @@ For NVIDIA CUDA GPUs:
 
 ```bash
 vllm serve deepseek-ai/DeepSeek-R1-0528-Qwen3-8B \
+  --trust-remote-code \
+  --tokenizer Qwen/Qwen3-8B \
+  --reasoning-parser deepseek_r1 \
   --quantization fp8 \
   --kv-cache-dtype fp8 \
   --max-model-len 16384 \
-  --gpu-memory-utilization 0.90 \
-  --enable-reasoning \
-  --reasoning-parser deepseek_r1 \
+  --gpu-memory-utilization 0.95 \
   --port 8000
 ```
 
@@ -101,7 +126,6 @@ vllm serve deepseek-ai/DeepSeek-R1-0528-Qwen3-8B \
   --kv-cache-dtype fp8 \
   --max-model-len 16384 \
   --gpu-memory-utilization 0.90 \
-  --enable-reasoning \
   --reasoning-parser deepseek_r1 \
   --port 8000
 ```
