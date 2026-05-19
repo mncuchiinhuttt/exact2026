@@ -122,11 +122,13 @@ For AMD ROCm GPUs, for example MI300X:
 
 ```bash
 vllm serve deepseek-ai/DeepSeek-R1-0528-Qwen3-8B \
+  --trust-remote-code \
+  --tokenizer Qwen/Qwen3-8B \
+  --reasoning-parser deepseek_r1 \
   --quantization fp8 \
   --kv-cache-dtype fp8 \
   --max-model-len 16384 \
-  --gpu-memory-utilization 0.90 \
-  --reasoning-parser deepseek_r1 \
+  --gpu-memory-utilization 0.95 \
   --port 8000
 ```
 
