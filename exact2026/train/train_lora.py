@@ -89,9 +89,9 @@ def _dataset_prefixes(stage: int, subtask: str) -> list[str]:
         prefixes.append("physics")
     if stage == 1:
         if subtask in {"1", "both"}:
-            prefixes.append("ext_FOLIO")
+            prefixes.extend(["ext_FOLIO", "ext_proverQA", "ext_logicNLI"])
         if subtask in {"2", "both"}:
-            prefixes.extend(["ext_scibench", "ext_PhysReason"])
+            prefixes.extend(["ext_scibench", "ext_PhysReason", "ext_ug_phys"])
     return prefixes
 
 
@@ -136,6 +136,7 @@ def main() -> None:
     parser.add_argument("--output_dir", default="output/lora")
     parser.add_argument("--epochs", type=float)
     parser.add_argument("--batch_size", type=int, default=2)
+    parser.add_argument("--resume", action="store_true", help="Resume training from the last checkpoint in output_dir.")
     parser.add_argument(
         "--model_name_or_path",
         default=os.environ.get("TRAIN_MODEL_NAME_OR_PATH", os.environ.get("MODEL_NAME_OR_PATH", MODEL_ID)),
@@ -152,6 +153,7 @@ def main() -> None:
 
     from peft import LoraConfig, get_peft_model
     from transformers import AutoTokenizer
+    from transformers.trainer_utils import get_last_checkpoint
     from trl import SFTConfig, SFTTrainer
 
     backend = detect_backend()
@@ -190,12 +192,13 @@ def main() -> None:
         output_dir=args.output_dir,
         num_train_epochs=epochs,
         per_device_train_batch_size=args.batch_size,
+        # per_device_eval_batch_size=1,
         gradient_accumulation_steps=8,
         learning_rate=5e-5 if args.stage == 1 else 2e-4,
         lr_scheduler_type="cosine",
         warmup_ratio=0.05,
         bf16=backend in {"cuda", "rocm"},
-        logging_steps=10,
+        logging_steps=1,
         save_strategy="epoch",
         eval_strategy="epoch",
         load_best_model_at_end=True,
@@ -212,7 +215,16 @@ def main() -> None:
         eval_dataset=dev_dataset,
         processing_class=tokenizer,
     )
-    trainer.train()
+
+    last_checkpoint = None
+    if args.resume and os.path.isdir(args.output_dir):
+        last_checkpoint = get_last_checkpoint(args.output_dir)
+        if last_checkpoint is not None:
+            LOGGER.info("Resuming training from checkpoint: %s", last_checkpoint)
+        else:
+            LOGGER.warning("No checkpoint found in %s, starting from scratch.", args.output_dir)
+
+    trainer.train(resume_from_checkpoint=last_checkpoint)
     trainer.save_model(args.output_dir)
     tokenizer.save_pretrained(args.output_dir)
     LOGGER.info("Saved DoRA adapter, adapter_config.json, and tokenizer to %s", args.output_dir)

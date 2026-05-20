@@ -262,13 +262,16 @@ Remove `--skip_external` to fetch the configured HuggingFace stage-1 datasets.
 
 ## Train DoRA
 
+> [!TIP]
+> If your training gets interrupted (e.g., by a CUDA Out of Memory error or server restart), you can add `--resume` to your command. The script will automatically find the latest checkpoint in your output directory and pick up right where it left off!
+
 ```bash
 python -m exact2026.train.train_lora \
   --stage 1 \
   --subtask both \
   --data_dir output/data \
   --output_dir output/lora \
-  --epochs 2 \
+  --epochs 3 \
   --batch_size 2
 ```
 
@@ -282,7 +285,7 @@ python -m exact2026.train.train_lora \
   --subtask both \
   --data_dir output/data \
   --output_dir output/lora \
-  --epochs 2 \
+  --epochs 3 \
   --batch_size 8
 ```
 
@@ -294,7 +297,7 @@ python -m exact2026.train.train_lora \
   --subtask both \
   --data_dir output/data \
   --output_dir output/lora \
-  --epochs 2 \
+  --epochs 3 \
   --batch_size 32 \
   --model_name_or_path /models/DeepSeek-R1-0528-Qwen3-8B \
   --local_files_only

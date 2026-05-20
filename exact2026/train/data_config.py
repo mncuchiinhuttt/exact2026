@@ -38,11 +38,14 @@ BTC_LOGIC = DataConfig(
 
 EXTERNAL_PHYSICS = [
     DataConfig(name="scibench", hf_id="xw27/scibench", subtask=2, stage=1),
-    DataConfig(name="PhysReason", hf_id="zhibei1204/PhysReason", subtask=2, stage=1, max_samples=5000),
+    DataConfig(name="PhysReason", hf_id="zhibei1204/PhysReason", subtask=2, stage=1),
+    DataConfig(name="ug_phys", hf_id="UGPhysics/ugphysics", subtask=2, stage=1),
 ]
 
 EXTERNAL_LOGIC = [
     DataConfig(name="FOLIO", hf_id="yale-nlp/FOLIO", subtask=1, stage=1),
+    DataConfig(name="proverQA", hf_id="opendatalab/ProverQA", subtask=1, stage=1),
+    DataConfig(name="logicNLI", hf_id="tasksource/LogicNLI", subtask=1, stage=1, max_samples=5000)
 ]
 
 SOURCE_CONFIGS = [BTC_PHYSICS, BTC_LOGIC, *EXTERNAL_PHYSICS, *EXTERNAL_LOGIC]
